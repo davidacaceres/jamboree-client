@@ -20,13 +20,13 @@
                           }
                       },
                       {"image_conf":{
-                         "source":"http://imagen",
+                         "source":"assest/img/mowgli.gif",
                          "align":"center",
                          "background_color":[255,255,255]
                       } 
                       },
                       {"image_conf":{
-                         "source":"http://imagen",
+                         "source":"https://picsum.photos/id/2/400/180",
                          "align":"center",
                           "background_color":[255,255,255]
                       } 
@@ -62,14 +62,14 @@
                       },
                       {"image_conf":
                         {
-                         "source":"http://imagen",
+                         "source":"assest/img/bagheera.gif",
                          "align":"center",
                          "background_color":[255,255,255]                            
                         } 
                       },
                       {"image_conf":
                         {
-                         "source":"http://imagen",
+                         "source":"https://picsum.photos/id/1/400/180",
                          "align":"center",
                          "background_color":[255,255,255]
                         } 
