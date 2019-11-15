@@ -44,12 +44,21 @@ CachedNetworkImage getImageUrl(String url, double width, double height) {
   );
 }
 
-Image getImageContent(String url) {
-  if (url != null && url.isNotEmpty && (url.startsWith("http://") || url.startsWith("https://"))) {
+Image getImageContent({@required String url, @optionalTypeArgs BoxFit fit}) {
+  if (url != null &&
+      url.isNotEmpty &&
+      (url.startsWith("http://") || url.startsWith("https://"))) {
+    if (fit != null) {
+      return Image(image:CachedNetworkImageProvider(url,cacheManager: ),fit: fit,);
+    }
+
     return Image.network(url);
   } else if (url != null && url.isNotEmpty && url.startsWith("assest")) {
+    if (fit != null) {
+      return Image.asset(url,fit: fit);
+    }
     return Image.asset(url);
-  }else{
+  } else {
     return Image.asset("assest/img/asociacion.png");
   }
 }

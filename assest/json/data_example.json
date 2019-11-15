@@ -1,0 +1,87 @@
+{
+     "id": "id_1",
+      "order": 1,
+      "title": "Propuesta Educativa Jamboree 2020",
+      "titleList": "Propuesta Educativa",
+      "image":"http://",
+      "background_page":[0,0,0],
+      "display":
+         [
+             {
+                 "short_title":"Info",
+                 "content":
+                    [
+                      {
+					    "paragraph_conf":
+                          { 
+                            "text_color":[0, 0, 255],
+                            "background_color":[255,255,255],
+                            "data":"En el año 2013 , la Asociación propuso a los jóvenes el 8° Jamboree Nacional, donde la invitación se centraba en la educación entre pares: guías, scouts, pioneras, pioneros"
+                          }
+                      },
+                      {"image_conf":{
+                         "source":"http://imagen",
+                         "align":"center",
+                         "background_color":[255,255,255]
+                      } 
+                      },
+                      {"image_conf":{
+                         "source":"http://imagen",
+                         "align":"center",
+                          "background_color":[255,255,255]
+                      } 
+                      },
+                      {"paragraph_conf":
+                          {
+                            "text_color":[0, 0, 255],
+                            "background_color":[255,255,255],
+                            "data": "En el año 2013 , la Asociación propuso a los jóvenes el 8° Jamboree Nacional, donde la invitación se centraba en la educación entre pares: guías, scouts, pioneras, pioneros"
+                          }
+                      }
+                    ],
+    "childs":[
+        {"id":"id_1", "order":1,"title":"Titulo Hijo 1"},
+        {"id":"id_2","order":2,"title":"Titulo Hijo 2"},
+        {"id":"id_3","order":3,"title":"Titulo Hijo 3"},
+        {"id":"id_4","order":4,"title":"Titulo Hijo 4"}
+    ]
+                    
+             },
+{
+    "short_title":"Cont",
+
+                 "content":
+                    [
+                      {
+					    "paragraph_conf":
+                          { 
+                            "text_color":[0, 0, 255],
+                            "background_color":[255,255,255],
+                            "data":"En el año 2013 , la Asociación propuso a los jóvenes el 8° Jamboree Nacional, donde la invitación se centraba en la educación entre pares: guías, scouts, pioneras, pioneros"
+                          }
+                      },
+                      {"image_conf":
+                        {
+                         "source":"http://imagen",
+                         "align":"center",
+                         "background_color":[255,255,255]                            
+                        } 
+                      },
+                      {"image_conf":
+                        {
+                         "source":"http://imagen",
+                         "align":"center",
+                         "background_color":[255,255,255]
+                        } 
+                      },
+                      {"paragraph_conf":
+                          {
+                            "background_color":[255,255,255],
+                            "background_color": "red",
+                            "data": "En el año 2013 , la Asociación propuso a los jóvenes el 8° Jamboree Nacional, donde la invitación se centraba en la educación entre pares: guías, scouts, pioneras, pioneros"
+                          }
+                      }
+                    ]
+             }             
+        ]
+}

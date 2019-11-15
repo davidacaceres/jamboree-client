@@ -45,11 +45,8 @@ class HomeSearchBar extends StatelessWidget {
 
   void _loadSearchPage(BuildContext context) {
     print('Load Seaarch Page');
-    //return MaterialPageRoute(builder: (context)=>SearchPage());
-//    return CupertinoPageRoute(builder: (context) => SearchPage());
     //Navigator.push(context, PageTransition(type: PageTransitionType.scale, child: SearchPage()));
-    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: SearchPage()));
-
+    Navigator.pushNamed(context,'search');
   }
 
 

@@ -54,7 +54,6 @@ class _HomePageState extends State<HomePage> {
     var size = window.physicalSize;
 
     var carrousel;
-    print('Height: ${size.height}');
     if (size.height > 800) {
       carrousel = CarrouselWidget(
         list: getExampleCarrousel(),
@@ -80,23 +79,6 @@ class _HomePageState extends State<HomePage> {
             ]))
       ],
     );
-
-    //return ;
-
-/*
-    return ListView(
-        shrinkWrap: true,
-        controller: new ScrollController(keepScrollOffset: false),
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: HomeSearchBar(),
-          ),
-          carrousel,
-          ContentRootWidget(contentRoot: getExampleContent())
-        ]);
-
- */
   }
 
   Widget makeMap() {

@@ -1,16 +1,6 @@
 name: Pasaporte
 description: Pasaporte Jamboree 2020
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -28,6 +18,7 @@ dependencies:
   flutter_cache_manager: ^1.1.3
   auto_size_text: ^2.1.0
   splashscreen: ^1.2.0
+  flutter_html: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -37,7 +28,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon/icon.png"
+  image_path: "assest/icon/icon.png"
 
 flutter:
 

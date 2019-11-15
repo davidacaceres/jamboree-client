@@ -11,15 +11,15 @@ class ContentRootWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-            physics: new NeverScrollableScrollPhysics(),
-            childAspectRatio: 1,
-         //   primary: true,
-            //controller: new ScrollController(keepScrollOffset: false),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            cacheExtent: 5,
-            shrinkWrap: true,
-            crossAxisCount: 2,
-            children: getList(context, contentRoot));
+        physics: new NeverScrollableScrollPhysics(),
+        childAspectRatio: 1,
+        //   primary: true,
+        //controller: new ScrollController(keepScrollOffset: false),
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        cacheExtent: 5,
+        shrinkWrap: true,
+        crossAxisCount: 2,
+        children: getList(context, contentRoot));
   }
 
   List<Widget> getList(BuildContext context, List<Content> contentRoot) {
@@ -33,17 +33,11 @@ class ContentRootWidget extends StatelessWidget {
   }
 
   Widget makeCard(BuildContext context, Content content, int i) {
-    var size = MediaQuery.of(context).size;
-    final double itemHeight = ((size.height - kToolbarHeight - 24) / 3) - 50;
-    final double itemWidth = (size.width / 2) - 50;
-    print('w: $itemWidth  - h: $itemHeight');
     return GestureDetector(
-      onTap: () => print('Seleccionado: ${content.titleList} '),
-
-//            Navigator.push(
-//                context,
-//                MaterialPageRoute(
-//                    builder: (context) => AllPublicScreen())),
+      onTap: () {
+        print('Seleccionado: ${content.titleList} ');
+        openDetailContent(context, content);
+      },
       child: _subWidget(context, content, 200, 200),
     );
   }
@@ -71,7 +65,7 @@ class ContentRootWidget extends StatelessWidget {
                   new Expanded(
                       child: Padding(
                           padding: EdgeInsets.all(15),
-                          child: getImageContent(content.imageUrl))),
+                          child: getImageContent(url:content.image))),
                   Padding(
                       padding: EdgeInsets.all(10),
                       child: AutoSizeText(
@@ -85,15 +79,12 @@ class ContentRootWidget extends StatelessWidget {
                 ])));
   }
 
-  Image getImage(String url) {
-    if (url != null &&
-        url.isNotEmpty &&
-        (url.startsWith("http://") || url.startsWith("https://"))) {
-      return Image.network(url);
-    } else if (url != null && url.isNotEmpty && url.startsWith("assest")) {
-      return Image.asset(url);
-    } else {
-      return Image.asset("assest/img/asociacion.png");
-    }
+  void openDetailContent(BuildContext context, Content content) {
+    //GlobalKey keyContent = GlobalKey(debugLabel: content.id);
+    Navigator.pushNamed(context, 'detail', arguments: content);
+//            Navigator.push(
+//                context,
+//                MaterialPageRoute(
+//                    builder: (context) => DetailContent(idContent: keyContent,content: content)));
   }
 }

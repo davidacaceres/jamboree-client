@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:Pasaporte/routes/routes.dart';
 import 'package:Pasaporte/ui/home/home.dart';
 import 'package:Pasaporte/ui/splash_screen.dart';
-import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +14,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: SplashScreenApp(),
+
+      initialRoute: "/",
+      routes: getApplicationRoutes(),
+      onGenerateRoute: (RouteSettings settings){
+        print('La ruta llamada es y no encontrada ${settings.name}');
+        return MaterialPageRoute(builder:(BuildContext context)=> HomePage());
+      },
+      //home: SplashScreenApp(),
     );
   }
 }
