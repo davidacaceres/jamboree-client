@@ -49,7 +49,7 @@ Image getImageContent({@required String url, @optionalTypeArgs BoxFit fit}) {
       url.isNotEmpty &&
       (url.startsWith("http://") || url.startsWith("https://"))) {
     if (fit != null) {
-      return Image(image:CachedNetworkImageProvider(url,cacheManager: ),fit: fit,);
+      return Image(image:CachedNetworkImageProvider(url),fit: fit,);
     }
 
     return Image.network(url);
