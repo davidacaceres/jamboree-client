@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:Pasaporte/example_data/example_data.dart';
+import 'package:Pasaporte/theme/theme_definition.dart' as theme;
 import 'package:Pasaporte/ui/home/widget/carrousel.dart';
 import 'package:Pasaporte/ui/home/widget/content_root.dart';
 import 'package:Pasaporte/ui/home/widget/search_bar.dart';
@@ -21,21 +22,22 @@ class _HomePageState extends State<HomePage> {
         length: 2,
         child: Theme(
             isMaterialAppTheme: true,
-            data: ThemeData(brightness: Brightness.light),
+            data:theme.getThemeScout(),
+        //data: ThemeData(brightness: Brightness.light),
             child: Scaffold(
+             backgroundColor: theme.ScHomePage.background,
               body: Flex(direction: Axis.vertical, children: <Widget>[
                 Expanded(
                     child: TabBarView(children: [makeHome(context), makeMap()]))
               ]),
               bottomNavigationBar: Container(
-                  height: 70,
-                  padding: EdgeInsets.only(bottom: 16),
+                  height: 60,
+                  padding: EdgeInsets.only(bottom: 3),
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: theme.ScBottomBar.background,
                       boxShadow: <BoxShadow>[
                         BoxShadow(
-                            offset: Offset(0, 0),
-                            color: Colors.black12,
+                            color: theme.ScBottomBar.topBorder,
                             blurRadius: 6)
                       ]),
                   child: TabBar(
@@ -43,9 +45,9 @@ class _HomePageState extends State<HomePage> {
                         Tab(icon: Icon(Icons.home, size: 30)),
                         Tab(icon: Icon(Icons.map, size: 30))
                       ],
-                      unselectedLabelColor: Colors.black12,
-                      labelColor: Colors.indigo,
-                      indicatorColor: Colors.indigo,
+                      unselectedLabelColor: theme.ScBottomBar.unSelect,
+                      labelColor: theme.ScBottomBar.selected,//Colors.indigo,
+                      indicatorColor: theme.ScBottomBar.indicatorColor,
                       indicatorWeight: 2)),
             )));
   }

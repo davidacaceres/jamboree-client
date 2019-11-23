@@ -25,7 +25,7 @@ class AfterSplashScreen extends State<SplashScreenApp> {
 
   @override
   Widget build(BuildContext context) => SplashScreen(
-        seconds: 4,
+        seconds: 1,
         navigateAfterSeconds: HomePage(),
         title: Text(
           'Jamboree 2020',

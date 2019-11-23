@@ -2,6 +2,8 @@ import 'package:Pasaporte/model/Content.dart';
 import 'package:Pasaporte/utils/ImageUtils.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:Pasaporte/theme/theme_definition.dart' as theme;
+
 
 class ContentRootWidget extends StatelessWidget {
   final List<Content> contentRoot;
@@ -44,14 +46,15 @@ class ContentRootWidget extends StatelessWidget {
 
   Widget _subWidget(
       BuildContext context, Content content, double hImage, double wImage) {
-    // var size = MediaQuery.of(context).size;
 
     return Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                //                color: theme.ScHomePage.cardBackgroundEndColor,
+                gradient: theme.ScHomePage.cardGradient,
+                border: theme.ScHomePage.cardBorder,
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                       offset: Offset(3, 3),
@@ -70,21 +73,13 @@ class ContentRootWidget extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: AutoSizeText(
                         content.titleList,
-                        style: TextStyle(
-                            color: Colors.indigo,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18),
+                        style: theme.ScHomePage.cardTextStyle,
                         maxLines: 1,
                       ))
                 ])));
   }
 
   void openDetailContent(BuildContext context, Content content) {
-    //GlobalKey keyContent = GlobalKey(debugLabel: content.id);
     Navigator.pushNamed(context, 'detail', arguments: content);
-//            Navigator.push(
-//                context,
-//                MaterialPageRoute(
-//                    builder: (context) => DetailContent(idContent: keyContent,content: content)));
   }
 }
