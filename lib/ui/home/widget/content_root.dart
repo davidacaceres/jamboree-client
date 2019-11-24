@@ -1,8 +1,8 @@
-import 'package:Pasaporte/model/Content.dart';
-import 'package:Pasaporte/utils/ImageUtils.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:Pasaporte/theme/theme_definition.dart' as theme;
+import 'package:Pasaporte_2020/theme/theme_definition.dart' as theme;
 
 
 class ContentRootWidget extends StatelessWidget {
@@ -52,7 +52,6 @@ class ContentRootWidget extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                //                color: theme.ScHomePage.cardBackgroundEndColor,
                 gradient: theme.ScHomePage.cardGradient,
                 border: theme.ScHomePage.cardBorder,
                 boxShadow: <BoxShadow>[

@@ -1,5 +1,5 @@
-import 'package:Pasaporte/model/Content.dart';
-import 'package:Pasaporte/utils/ImageUtils.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 
 

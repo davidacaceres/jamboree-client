@@ -21,7 +21,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.0"
+    version: "2.4.0"
   auto_size_text:
     dependency: "direct main"
     description:
@@ -150,7 +150,7 @@ packages:
       name: image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.8"
+    version: "2.1.9"
   matcher:
     dependency: transitive
     description:
@@ -185,7 +185,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.4.4"
   pedantic:
     dependency: transitive
     description:
@@ -213,14 +213,14 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.5"
+    version: "2.1.2+1"
   shared_preferences:
     dependency: "direct main"
     description:
       name: shared_preferences
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.4+3"
+    version: "0.5.4+5"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -246,7 +246,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.6+5"
+    version: "1.1.7+2"
   stack_trace:
     dependency: transitive
     description:
@@ -274,7 +274,7 @@ packages:
       name: synchronized
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0+1"
+    version: "2.1.0+2"
   term_glyph:
     dependency: transitive
     description:
@@ -302,7 +302,7 @@ packages:
       name: uuid
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.4"
   vector_math:
     dependency: transitive
     description:
@@ -325,5 +325,5 @@ packages:
     source: hosted
     version: "2.2.0"
 sdks:
-  dart: ">=2.4.0 <3.0.0"
-  flutter: ">=1.6.7 <2.0.0"
+  dart: ">=2.5.0 <3.0.0"
+  flutter: ">=1.9.1 <2.0.0"

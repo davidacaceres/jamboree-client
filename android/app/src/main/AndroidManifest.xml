@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cl.agsc.jamboree_2020">
+    package="cl.guiasyscoutsdechile.pasaporte_jamboree_2020">
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Pasaporte Jamboree 2020"
+        android:label="pasaporte_jamboree_2020"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -29,7 +29,5 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

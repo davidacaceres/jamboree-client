@@ -1,16 +1,18 @@
-import 'package:Pasaporte/example_data/example_data.dart';
-import 'package:Pasaporte/model/Content.dart';
-import 'package:Pasaporte/utils/AlignmentUtils.dart';
-import 'package:Pasaporte/utils/ColorUtils.dart';
-import 'package:Pasaporte/utils/ImageUtils.dart';
+import 'package:Pasaporte_2020/example_data/example_data.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
+import 'package:Pasaporte_2020/utils/ColorUtils.dart';
+import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class DisplayWidget extends StatelessWidget {
   final Display display;
   final String parentId;
+  final int index;
 
-  const DisplayWidget({@required this.parentId, @required this.display});
+  const DisplayWidget(
+      {@required this.parentId, @required this.display, @required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +32,14 @@ class DisplayWidget extends StatelessWidget {
 
     for (var i = 0; i < display.content.length; i++) {
       ContentElement c = display.content[i];
+      bool initial = (i == 0 ? true : false);
+
       if (c.imageConf != null) {
         print("Es imagen");
         result.add(_getPicture(context, c.imageConf));
       } else if (c.paragraphConf != null) {
         print('es parrafo');
-        result.add(_getParagraph(context, c.paragraphConf));
+        result.add(_getParagraph(context, c.paragraphConf, initial));
       }
     }
     if (display.childs != null && display.childs.length > 0) {
@@ -54,15 +58,16 @@ class DisplayWidget extends StatelessWidget {
         color: bgColor);
   }
 
-  Widget _getParagraph(BuildContext context, ParagraphConf paragraph) {
+  Widget _getParagraph(
+      BuildContext context, ParagraphConf paragraph, bool initial) {
     Color bgColor = getBackgroundColor(context, paragraph.backgroundColor);
     Color txtColor = getTextColor(context, paragraph.textColor);
-    return Html(
+     Html html=Html(
       data: paragraph.data,
       padding: EdgeInsets.all(8.0),
-      backgroundColor: bgColor,
+      //backgroundColor: bgColor,
       defaultTextStyle:
-          TextStyle(fontFamily: 'Arial', fontSize: 16, color: txtColor),
+      TextStyle(fontFamily: 'Arial', fontSize: 16, color: txtColor),
       linkStyle: const TextStyle(
         color: Colors.blueAccent,
       ),
@@ -76,6 +81,16 @@ class DisplayWidget extends StatelessWidget {
       showImages: true,
       useRichText: true,
     );
+    if(initial) {
+      return Container(
+          decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10), topRight: Radius.circular(10))),
+          child: html);
+    }else{
+      return html;
+    }
   }
 
   Widget _getList(BuildContext context, List<Child> childs) {

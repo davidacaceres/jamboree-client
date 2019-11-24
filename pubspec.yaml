@@ -1,5 +1,5 @@
-name: Pasaporte
-description: Pasaporte Jamboree 2020
+name: Pasaporte_2020
+description: Pasaporte Jamboree 2020 Chile
 
 version: 1.0.0+1
 
@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^0.1.2
   page_transition: ^1.1.5
   shared_preferences: ^0.5.3
@@ -19,42 +18,38 @@ dependencies:
   auto_size_text: ^2.1.0
   splashscreen: ^1.2.0
   flutter_html: ^0.11.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.7.3"
 
 flutter_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
-  image_path: "assest/icon/icon.png"
+  image_path: "assets/icon/icon.png"
 
 flutter:
-
   uses-material-design: true
 
+  # To add assets to your application, add an assets section, like this:
   assets:
-    - assest/img/asociacion.png
-    - assest/img/carpa.jpg
-    - assest/img/boyscout.gif
-    - assest/img/mowgli.gif
-    - assest/img/bagheera.gif
-    - assest/img/agsch-headerr.png
+    - assets/img/
 
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
 
-fonts:
-  - family: Montserrat
-    fonts:
-      - asset: fonts/Montserrat-Regular.ttf
-      - asset: fonts/Montserrat-Italic.ttf
-        style: italic
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Gingerline DEMO Regular
+      fonts:
+        - asset: assets/fonts/Gingerline DEMO.otf
   # fonts:
   #   - family: Schyler
   #     fonts:

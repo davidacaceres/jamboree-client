@@ -1,8 +1,8 @@
-import 'package:Pasaporte/example_data/example_data.dart';
-import 'package:Pasaporte/model/Content.dart';
-import 'package:Pasaporte/ui/search/widget/wsearch_field.dart';
-import 'package:Pasaporte/ui/search/widget/wsearch_history.dart';
-import 'package:Pasaporte/ui/search/widget/wsearch_result.dart';
+import 'package:Pasaporte_2020/example_data/example_data.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/ui/search/widget/wsearch_field.dart';
+import 'package:Pasaporte_2020/ui/search/widget/wsearch_history.dart';
+import 'package:Pasaporte_2020/ui/search/widget/wsearch_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

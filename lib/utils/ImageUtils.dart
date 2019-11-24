@@ -51,14 +51,14 @@ Image getImageContent({@required String url, @optionalTypeArgs BoxFit fit}) {
     if (fit != null) {
       return Image(image:CachedNetworkImageProvider(url),fit: fit,);
     }
+    return Image(image:CachedNetworkImageProvider(url));
 
-    return Image.network(url);
-  } else if (url != null && url.isNotEmpty && url.startsWith("assest")) {
+  } else if (url != null && url.isNotEmpty && url.startsWith("assets")) {
     if (fit != null) {
       return Image.asset(url,fit: fit);
     }
     return Image.asset(url);
   } else {
-    return Image.asset("assest/img/asociacion.png");
+    return Image.asset("assets/img/asociacion.png");
   }
 }

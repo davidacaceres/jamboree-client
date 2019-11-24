@@ -64,6 +64,47 @@ class ScHistorySearch {
   static final Color iconsColor = Colors.color_7;
 }
 
+class ScSplashScreen {
+  static final Color backgroundAsociacion=Colors.color_7.withOpacity(0.0);
+  static final Color background = Colors.color_7;
+  static final Duration duration=Duration(seconds: 2);
+  static final Color  colorText=Colors.color_1;
+  static final String text='Jamboree 2020';
+  static final Color  colorTextLoading=Colors.color_1;
+  static final String textLoading='Inicializando Aplicación';
+  static final Color  colorIconLoading=Colors.color_1;
+
+  static final styleText = TextStyle(color: colorText,
+      fontFamily: "Gingerline DEMO Regular",
+      fontWeight: FontWeight.w800,
+      letterSpacing: 2,
+      fontSize: 28.0,
+      shadows: <Shadow>[ Shadow(blurRadius: 20.0, color: Colors.color_5)]);
+}
+
+class ScContent{
+  static final Color barTopColor= Colors.color_4;
+  static final Color  colorIconBack=Colors.color_7;
+  static final Color defaultColor=Colors.color_9;
+  static final Color selectedColorBackgroundTab=Colors.color_2;
+  static final Color selectedColorTextTab=Colors.color_3;
+  static final Color unSelectedColorBackgroundTab=Colors.color_9;
+  static final Color unSelectedColorTextTab=Colors.color_2;
+
+
+  static final TextStyle titleContent=TextStyle(
+  fontFamily: "Gingerline DEMO Regular",
+  fontWeight: FontWeight.w500,
+  letterSpacing: 1,
+  fontSize: 20);
+
+
+}
+
+class ScTextDefault{
+  static final String appTitle='Jamboree 2020';
+}
+
 final ThemeData _jamboree = ThemeData(
 //  primaryColor: Colors.color_5,
 //  accentColor: Colors.color_6,

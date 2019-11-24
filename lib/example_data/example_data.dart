@@ -1,5 +1,5 @@
-import 'package:Pasaporte/model/Carrousel.dart';
-import 'package:Pasaporte/model/Content.dart';
+import 'package:Pasaporte_2020/model/Carrousel.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
 
 final List<Content> _listContent = [
   new Content(
@@ -7,7 +7,12 @@ final List<Content> _listContent = [
     order: 1,
     title: "Propuesta Educativa Jamboree 2020",
     titleList: "Propuesta Educativa",
-    image: "assest/img/asociacion.png",
+    image: "assets/img/asociacion.png",
+    backgroundPage: [
+      247,
+      177,
+      19
+    ],
     display: [
       Display(shortTitle: "Over", content: [
         ContentElement(
@@ -42,19 +47,24 @@ final List<Content> _listContent = [
       title: "¿Dónde será el Jamboree?",
       titleList: "¿Dónde?",
       order: 2,
-      image: "assest/img/carpa.jpg",
+      image: "assets/img/carpa.jpg",
+backgroundPage: [
+255,
+255,
+255
+],
       display: [
         Display(content: [
           ContentElement(
               paragraphConf: ParagraphConf(backgroundColor: [
-            247,
-            177,
-            19
+            255,
+            255,
+            255
           ], textColor: [
+            255,
             0,
-            0,
-            0
-          ], data: "<h1>&iquest;D&oacute;nde ser&aacute; el Jamboree?<\/h1>\r\n<p style=\"text-align: justify;\"><br \/><strong>El 10&deg; Jamboree Nacional 2020<\/strong> se desarrollar&aacute; en la ic&oacute;nica Hacienda Picarqu&iacute;n, la misma que fue construida para acoger al <span style=\"text-decoration: underline;\">19&deg; Jamboree Scout Mundial<\/span>, a fines de <em>1998<\/em> y comienzos de <em>1999<\/em>. Se ha escogido este sitio por la conmemoraci&oacute;n de los 20 a&ntilde;os de ese encuentro mundial y porque cumple con las caracter&iacute;sticas e infraestructura necesarias para la adecuada realizaci&oacute;n de un campamento que se espera acoja a 10 mil personas.<\/p>\r\n<p style=\"text-align: justify;\">&nbsp;<\/p>\r\n<p style=\"text-align: justify;\"><img src=\"https:\/\/picsum.photos\/id\/22\/400\/180\" alt=\"Imagen de Prueba\" width=\"400\" height=\"180\" \/><\/p>"))
+            255
+          ], data: "<h1>&iquest;D&oacute;nde ser&aacute; el Jamboree_?<\/h1>\r\n<p style=\"text-align: justify;\"><br \/><strong>El 10&deg; Jamboree Nacional 2020<\/strong> se desarrollar&aacute; en la ic&oacute;nica Hacienda Picarqu&iacute;n, la misma que fue construida para acoger al <span style=\"text-decoration: underline;\">19&deg; Jamboree Scout Mundial<\/span>, a fines de <em>1998<\/em> y comienzos de <em>1999<\/em>. Se ha escogido este sitio por la conmemoraci&oacute;n de los 20 a&ntilde;os de ese encuentro mundial y porque cumple con las caracter&iacute;sticas e infraestructura necesarias para la adecuada realizaci&oacute;n de un campamento que se espera acoja a 10 mil personas.<\/p>\r\n<p style=\"text-align: justify;\">&nbsp;<\/p>\r\n<p style=\"text-align: justify;\"><img src=\"https:\/\/picsum.photos\/id\/22\/400\/180\" alt=\"Imagen de Prueba\" width=\"400\" height=\"180\" \/><\/p>"))
         ]),
       ]),
   new Content(
@@ -62,7 +72,7 @@ final List<Content> _listContent = [
       title: "¿Cuándo será el Jamboree?",
       titleList: "¿Cuando?",
       order: 3,
-      image: "assest/img/boyscout.gif",
+      image: "assets/img/boyscout.gif",
       display: [
         Display(
           shortTitle: "Overview",
@@ -125,14 +135,14 @@ final List<Content> _listContent = [
           ],
         ),
       ],
-      image: "assest/img/mowgli.gif"),
+      image: "assets/img/mowgli.gif"),
   new Content(
       id: "id_5",
       order: 5,
       title:
           "El Equipo Organizador del 10° Jamboree Nacional y su estructura organizacional",
       titleList: "El Equipo",
-      image: "assest/img/bagheera.gif",
+      image: "assets/img/bagheera.gif",
       display: [
         Display(shortTitle: "Descripción", content: [
           ContentElement(
@@ -164,7 +174,7 @@ final List<Content> _listContent = [
             ], data: "<h1>El Equipo Organizador del 10&deg; Jamboree Nacional y su estructura organizacional<\/h1><p><br \/>El Jamboree contar&aacute; con una organizaci&oacute;n y estructura apropiada que permita el logro de los objetivos del evento. La conformaci&oacute;n del Equipo de Campo es la siguiente:<\/p><p><br \/>Responsable de Campo: Juan Pablo Reyes<br \/>Asistente de Campo: Daniela Pardo<br \/>Responsable de Programa: Juan Pablo Menichetti<br \/>Responsable de Vida de Subcampo: Carolina Avalos<br \/>Responsable de Servicios: Juan Jos&eacute; Polanco<br \/>Representante del Comit&eacute; Ejecutivo Nacional: Patricio Criado<br \/>Un observador del Consejo Nacional<\/p><p>&nbsp;<\/p><h2>Las cuotas de participaci&oacute;n en el 10&deg; Jamboree<\/h2><p><br \/>Las cuotas fueron establecidas sobre la base de los siguientes criterios:<\/p><ol style=\"list-style-type: lower-alpha;\"><li>Ajuste seg&uacute;n las cuotas consideradas para la Aventura Nacional 2019.<\/li><li>Distancia del lugar de procedencia en relaci&oacute;n con el lugar del 10&deg; Jamboree Nacional.<\/li><li>Categorizaci&oacute;n de Registro de los Grupos.<\/li><li>Diferenciaci&oacute;n seg&uacute;n tipo de asistente: Gu&iacute;as y Scouts; Guiadoras y Dirigentes acompa&ntilde;antes a cargo de las Unidades; Guiadoras, Dirigentes, Pioneras, Pioneros y Caminante que integrar&aacute;n los equipos de voluntarios en servicio.<\/li><\/ol><p>&nbsp;<\/p><h3>&iquest;Qu&eacute; comprenden las cuotas?<\/h3><p>&nbsp;<\/p><ol><li>Arriendo del lugar y pago de su infraestructura y servicios: <strong>alojamiento, aseo, energ&iacute;a el&eacute;ctrica, instalaciones sanitarias, m&oacute;dulos o pabellones, comunicaciones, piscina, cocina, agua potable, gas,<\/strong> entre otros.<\/li><li>Gastos en servicio de apoyo al campamento: infraestructura adicional, instalaciones de salud, arriendo de cabinas sanitarias y duchas de refuerzo, aseo extra de cabinas sanitarias, instalaci&oacute;n de sombras (toldos, mallas y carpas), equipamiento de seguridad y prevenci&oacute;n de riesgos, comunicaciones internas, remuneraciones de personal t&eacute;cnico (gasf&iacute;ter, electricista, choferes, entre otros), transporte interno, materiales para mantenci&oacute;n de infraestructura.<\/li><li>Adquisici&oacute;n o arriendo de materiales y equipos de programa: m&oacute;dulos, talleres, stands y Vida de Subcampo.<\/li><li>Contribuci&oacute;n al financiamiento de la alimentaci&oacute;n para los equipos de voluntarios en servicio.<\/li><\/ol><p>&nbsp;<\/p>")),
             ContentElement(
                 imageConf: ImageConf(
-                    source: "assest/img/mowgli.gif",
+                    source: "assets/img/mowgli.gif",
                     align: "right",
                     backgroundColor: [255, 0, 0, 1])),
             ContentElement(

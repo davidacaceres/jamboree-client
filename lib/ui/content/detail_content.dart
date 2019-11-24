@@ -1,51 +1,52 @@
-import 'package:Pasaporte/model/Content.dart';
-import 'package:Pasaporte/ui/content/widget/wDisplay.dart';
-import 'package:Pasaporte/utils/ColorUtils.dart';
-import 'package:Pasaporte/utils/ImageUtils.dart';
+import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/ui/content/widget/wDisplay.dart';
+import 'package:Pasaporte_2020/utils/ColorUtils.dart';
+import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
+import 'package:Pasaporte_2020/theme/theme_definition.dart' as sc_theme;
 
 class DetailContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Content content=ModalRoute.of(context).settings.arguments;
+    final Content content = ModalRoute.of(context).settings.arguments;
 
     Color bgColor;
-    if(content.backgroundPage==null)
-    {
-        bgColor=Theme.of(context).bottomAppBarColor;
-    }else{
-        bgColor=getBackgroundColor(context, content.backgroundPage);
+    if (content.backgroundPage == null) {
+      bgColor = sc_theme.ScContent.defaultColor;
+    } else {
+      bgColor = getBackgroundColor(context, content.backgroundPage);
     }
 
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        brightness: Brightness.light,
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.indigo,
+       // iconTheme: IconThemeData(color: sc_theme.ScContent.colorIconBack),
+        backgroundColor: sc_theme.ScContent.barTopColor,
       ),
       body: Column(
         children: <Widget>[
-              _logoContent(context, content),
-          getDisplayComponent(context, content),
-          //_tab(context, content),
+          _logoContent(context, content, bgColor),
+          getDisplayComponent(context, content, bgColor),
         ],
       ),
     );
   }
 
-  Widget _logoContent(BuildContext context, Content content) {
+  Widget _logoContent(BuildContext context, Content content, Color color) {
     return Container(
-        height: MediaQuery.of(context).size.height*0.15,
-        child:Padding(
+        height: MediaQuery.of(context).size.height * 0.15,
+        child: getTitle(context, content));
+  }
+
+  Padding getTitle(BuildContext context, Content content) {
+    return Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width*0.30,
-                child:
-            Padding(
+                width: MediaQuery.of(context).size.width * 0.30,
+                child: Padding(
                     padding: EdgeInsets.all(5),
                     child: getImageContent(
                         url: content.image, fit: BoxFit.contain))),
@@ -58,14 +59,14 @@ class DetailContent extends StatelessWidget {
                       textAlign: TextAlign.center,
                       softWrap: true,
                       maxLines: 3,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                      style: sc_theme.ScContent.titleContent,
                     )))
           ],
-        )));
+        ));
   }
 
-  Widget getDisplayComponent(BuildContext context, Content content) {
+  Widget getDisplayComponent(
+      BuildContext context, Content content, Color baseColor) {
     if (content.display == null ||
         content.display.isEmpty ||
         content.display.length <= 0) {
@@ -73,20 +74,20 @@ class DetailContent extends StatelessWidget {
     } else if (content.display.length == 1) {
       return getOneDisplay(context, content);
     } else if (content.display.length > 1) {
-      return getMultiDisplay(context, content);
+      return getMultiDisplay(context, content, baseColor);
     }
     return SizedBox(width: 5);
   }
 
   Widget getOneDisplay(BuildContext context, Content content) {
+    print('Mostrando solo un Display');
     Display display = content.display[0];
-    return SingleChildScrollView(
-        child: Column(
-            children:<Widget>[DisplayWidget(display: display, parentId: content.id)])
-    );
+    return Expanded(
+        child: DisplayWidget(display: display, parentId: content.id, index: 1));
   }
 
-  Widget getMultiDisplay(BuildContext context, Content content) {
+  Widget getMultiDisplay(
+      BuildContext context, Content content, Color baseColor) {
     List<Display> displays = content.display;
     if (content.display == null ||
         content.display.isEmpty ||
@@ -94,25 +95,53 @@ class DetailContent extends StatelessWidget {
       return SizedBox(width: 5);
     }
     int countTabs = displays.length;
+    BoxDecoration decoration = BoxDecoration(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10), topRight: Radius.circular(10)));
+/*
+    if (sc_theme.ScContent.titleGradient && content.display.length>1) {
+
+      Color colorEnd;
+      try {
+        List<int> colorChild =
+            content.display[0].content[0].paragraphConf.backgroundColor;
+        colorEnd = getBackgroundColor(context, colorChild);
+      } catch (ex) {
+        print('No se encontro contenido inicial');
+        colorEnd = baseColor;
+      }
+      print('Color inicial: ${baseColor} color final ${colorEnd}');
+      decoration= BoxDecoration(gradient:  LinearGradient(
+              colors: [baseColor, colorEnd],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.7, 0.95],
+              tileMode: TileMode.repeated));
+
+    }*/
 
     return Expanded(
         flex: 5,
         child: Container(
+          //decoration: decoration,
           height: 50,
           child: DefaultTabController(
               length: countTabs,
               child: Column(children: <Widget>[
                 Container(
-                    height: 50,
-                    margin: EdgeInsets.only(left: 16, right: 16,bottom: 16),
+                    height: 40,
+                    margin: EdgeInsets.only(left: 5, right: 5, bottom: 10),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.deepPurpleAccent),
-                      color: Colors.white,
+                      border: Border.all(
+                          color: sc_theme.ScContent.selectedColorBackgroundTab),
+                      color: sc_theme.ScContent.unSelectedColorBackgroundTab,
+                      //color: Colors.red,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TabBar(
                         isScrollable: false,
-                        unselectedLabelColor: Colors.black,
+                        unselectedLabelColor:
+                            sc_theme.ScContent.unSelectedColorTextTab,
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicator: BoxDecoration(
                             boxShadow: <BoxShadow>[
@@ -121,13 +150,16 @@ class DetailContent extends StatelessWidget {
                                   offset: Offset(3, 3),
                                   blurRadius: 6)
                             ],
-                            color: Colors.deepPurpleAccent,
+                            color:
+                                sc_theme.ScContent.selectedColorBackgroundTab,
                             borderRadius: BorderRadius.circular(6)),
                         tabs: getTabsTitle(displays))),
                 Expanded(
-                    child: TabBarView(
-                  children: getTabViews(content.id, displays),
-                ))
+                    child: Container(
+                        decoration: decoration,
+                        child: TabBarView(
+                          children: getTabViews(content.id, displays),
+                        )))
               ])),
         ));
   }
@@ -150,7 +182,11 @@ class DetailContent extends StatelessWidget {
 
     for (var i = 0; i < displays.length; i++) {
       final Display display = displays[i];
-      final dw = DisplayWidget(display: display, parentId: parentId);
+      final dw = DisplayWidget(
+        display: display,
+        parentId: parentId,
+        index: i,
+      );
       tabViews.add(dw);
     }
     return tabViews;

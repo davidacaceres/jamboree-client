@@ -1,13 +1,14 @@
-import 'package:Pasaporte/ui/content/detail_content.dart';
-import 'package:Pasaporte/ui/home/home.dart';
-import 'package:Pasaporte/ui/search/search_page.dart';
-import 'package:Pasaporte/ui/splash_screen.dart';
+import 'package:Pasaporte_2020/ui/content/detail_content.dart';
+import 'package:Pasaporte_2020/ui/home/home.dart';
+import 'package:Pasaporte_2020/ui/init_screen.dart';
+import 'package:Pasaporte_2020/ui/search/search_page.dart';
+import 'package:Pasaporte_2020/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 final _rutas = <String, WidgetBuilder>{
-  '/': (BuildContext context) => SplashScreenApp(),
-  '/home': (BuildContext context) => HomePage(),
+  '/': (BuildContext context) => SplashScreen(),
+  'home': (BuildContext context) => HomePage(),
   'search': (BuildContext context) =>SearchPage(),
   'detail': (BuildContext context) =>DetailContent(),
 };

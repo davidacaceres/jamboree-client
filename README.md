@@ -1,6 +1,6 @@
-# jamboree_2020
+# pasaporte_jamboree_2020
 
-Información Jamboree Chile 2020
+Pasaporte Jamboree 2020 Chile
 
 ## Getting Started
 

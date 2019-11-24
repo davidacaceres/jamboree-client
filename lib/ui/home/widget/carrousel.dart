@@ -1,9 +1,9 @@
-import 'package:Pasaporte/model/Carrousel.dart';
-import 'package:Pasaporte/utils/ImageUtils.dart';
+import 'package:Pasaporte_2020/model/Carrousel.dart';
+import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:Pasaporte/theme/theme_definition.dart' as theme;
+import 'package:Pasaporte_2020/theme/theme_definition.dart' as theme;
 
 class CarrouselWidget extends StatelessWidget {
   final List<Carrousel> list;

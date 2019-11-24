@@ -1,4 +1,5 @@
-import 'package:Pasaporte/ui/home/home.dart';
+import 'package:Pasaporte_2020/theme/theme_definition.dart' as sc_theme;
+import 'package:Pasaporte_2020/ui/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -24,11 +25,11 @@ class AfterSplashScreen extends State<SplashScreenApp> {
   }
 
   @override
-  Widget build(BuildContext context) => SplashScreen(
-        seconds: 1,
+  Widget build(BuildContext context) => SafeArea(child:SplashScreen(
+        seconds: 5,
         navigateAfterSeconds: HomePage(),
         title: Text(
-          'Jamboree 2020',
+          sc_theme.ScTextDefault.appTitle,
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Arial',
@@ -41,9 +42,10 @@ class AfterSplashScreen extends State<SplashScreenApp> {
           )]
           ),
         ),
-        backgroundColor: Colors.lightBlueAccent,
+      //  backgroundColor: Colors.lightBlueAccent,
+        imageBackground: AssetImage('assets/img/fondo_inicial.png'),
         photoSize: MediaQuery.of(context).size.width * 0.4,
-        image: Image.asset('assest/img/agsch-headerr.png'),
+        image: Image.asset('assets/img/agsch-headerr.png',alignment: Alignment.topCenter,),
         loaderColor: Colors.white,
-      );
+      ));
 }

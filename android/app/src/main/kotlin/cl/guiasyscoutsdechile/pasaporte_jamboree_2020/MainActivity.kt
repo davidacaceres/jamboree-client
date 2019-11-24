@@ -1,4 +1,4 @@
-package cl.agsc.jamboree_2020
+package cl.guiasyscoutsdechile.pasaporte_jamboree_2020
 
 import android.os.Bundle
 
