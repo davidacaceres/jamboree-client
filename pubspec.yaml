@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
+
   page_transition: ^1.1.5
   shared_preferences: ^0.5.3
   carousel_pro: ^1.0.0
@@ -18,6 +19,7 @@ dependencies:
   auto_size_text: ^2.1.0
   flutter_html: ^0.11.0  #Conversor de htl para desplegar contenido
   sembast: ^2.1.1   #Base de datos
+  screenshot_share_image: ^0.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

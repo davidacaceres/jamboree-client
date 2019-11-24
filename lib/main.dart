@@ -1,4 +1,4 @@
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as sc_theme;
+import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:flutter/material.dart';
 
 import 'package:Pasaporte_2020/routes/routes.dart';

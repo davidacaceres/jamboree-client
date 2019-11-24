@@ -1,9 +1,7 @@
 import 'package:Pasaporte_2020/model/Carrousel.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as theme;
 
 class CarrouselWidget extends StatelessWidget {
   final List<Carrousel> list;
@@ -43,12 +41,4 @@ class CarrouselWidget extends StatelessWidget {
     return images;
   }
 
-  CachedNetworkImage _loadImages(String url) {
-    return CachedNetworkImage(
-      imageUrl: url,
-      useOldImageOnUrlChange: true,
-      placeholder: (context, url) => Icon(Icons.cloud_download),
-      errorWidget: (context, url, error) => Icon(Icons.error),
-    );
-  }
 }

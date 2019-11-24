@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 
 class Colors {
   static const Color color_1 = Color(0xFFFFFFFF);
@@ -105,32 +104,16 @@ class ScTextDefault{
   static final String appTitle='Jamboree 2020';
 }
 
-final ThemeData _jamboree = ThemeData(
-//  primaryColor: Colors.color_5,
-//  accentColor: Colors.color_6,
-//  backgroundColor: Colors.color_5,
-//  accentColorBrightness: Brightness.light,
-//
-//  scaffoldBackgroundColor:Colors.color_2,
-//  bottomAppBarColor: Colors.color_7,
-// Define the default brightness and colors.
-//  brightness: Brightness.dark,
-//  primaryColor: Colors.color_2,
-//  accentColor: Colors.color_1,
-//  backgroundColor: Colors.color_1,
-//  bottomAppBarColor: Colors.color_2,
-
-  fontFamily: 'Montserrat',
-
-  textTheme: TextTheme(
-    headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-    body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-  ),
-);
 
 ThemeData _base = ThemeData();
 
 ThemeData getThemeScout() {
   return _base;
+}
+
+String getUrlUpdateInfo(){
+  return 'https://raw.githubusercontent.com/davidacaceres/scout_chile_data/master/json/lastUpdateContent.json';
+}
+String getServerUpdateInfo(){
+  return 'raw.githubusercontent.com';
 }

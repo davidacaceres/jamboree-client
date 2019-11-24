@@ -194,11 +194,11 @@ backgroundPage: [
 
 final List<Carrousel> _listCarrousel = [
   new Carrousel(
-      order: 1, type: "url", image: "https://picsum.photos/id/1/400/180"),
+      order: 1,  image: "https://picsum.photos/id/1/400/180"),
   new Carrousel(
-      order: 2, type: "url", image: "https://picsum.photos/id/2/400/180"),
+      order: 2,  image: "https://picsum.photos/id/2/400/180"),
   new Carrousel(
-      order: 3, type: "url", image: "https://picsum.photos/id/3/400/180"),
+      order: 3,  image: "https://picsum.photos/id/3/400/180"),
 ];
 
 final List<String> _listHistory = [

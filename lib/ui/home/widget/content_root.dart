@@ -2,7 +2,7 @@ import 'package:Pasaporte_2020/model/Content.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as theme;
+import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
 
 
 class ContentRootWidget extends StatelessWidget {

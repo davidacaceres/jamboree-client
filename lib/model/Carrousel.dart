@@ -2,32 +2,52 @@
 //
 //     final carrousel = carrouselFromJson(jsonString);
 
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
-List<Carrousel> carrouselFromJson(String str) => List<Carrousel>.from(json.decode(str).map((x) => Carrousel.fromMap(x)));
-
-String carrouselToJson(List<Carrousel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
-
 class Carrousel {
-  int order;
-  String type;
-  String image;
+  final int order;
+  final String image;
 
   Carrousel({
-    this.order,
-    this.type,
-    this.image,
+    @required this.order,
+    @required this.image,
   });
+
+  factory Carrousel.fromJson(String str) => Carrousel.fromMap(json.decode(str));
+
+  String toJson() => json.encode(toMap());
 
   factory Carrousel.fromMap(Map<String, dynamic> json) => Carrousel(
     order: json["order"],
-    type: json["type"],
     image: json["image"],
   );
 
   Map<String, dynamic> toMap() => {
     "order": order,
-    "type": type,
     "image": image,
   };
+
+  @override
+  String toString() {
+    return 'Carrousel{order: $order, image: $image}';
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Carrousel &&
+              runtimeType == other.runtimeType &&
+              order == other.order &&
+              image == other.image;
+
+  @override
+  int get hashCode =>
+      order.hashCode ^
+      image.hashCode;
+
+
+
+
+
 }

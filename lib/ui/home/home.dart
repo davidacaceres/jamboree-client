@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as theme;
+import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
 import 'package:Pasaporte_2020/ui/home/widget/carrousel.dart';
 import 'package:Pasaporte_2020/ui/home/widget/content_root.dart';
 import 'package:Pasaporte_2020/ui/home/widget/search_bar.dart';

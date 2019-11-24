@@ -2,8 +2,10 @@ import 'package:Pasaporte_2020/model/Content.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wDisplay.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as sc_theme;
+import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
+import 'package:screenshot_share_image/screenshot_share_image.dart';
 
 class DetailContent extends StatelessWidget {
   @override
@@ -22,6 +24,13 @@ class DetailContent extends StatelessWidget {
       appBar: AppBar(
        // iconTheme: IconThemeData(color: sc_theme.ScContent.colorIconBack),
         backgroundColor: sc_theme.ScContent.barTopColor,
+        actions: <Widget>[IconButton(
+          icon: Icon(Icons.share),
+          onPressed: () {
+            print('compartir');
+            ScreenshotShareImage.takeScreenshotShareImage();
+          },
+        )],
       ),
       body: Column(
         children: <Widget>[

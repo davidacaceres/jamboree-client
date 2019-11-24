@@ -1,11 +1,14 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:Pasaporte_2020/database/update/process_update.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
-import 'package:Pasaporte_2020/theme/theme_definition.dart' as sc_theme;
+import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:ui' as ui;
 
@@ -20,13 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    print('Cargando Timer');
-    Timer(sc_theme.ScSplashScreen.duration,
-        () => Navigator.pushNamed(context, 'home'));
+
     init();
-//        MyNavigator.goToIntro(context));
   }
 
   @override
@@ -39,7 +38,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-
                     Expanded(
                       flex: 6,
                       child: Align(
@@ -71,29 +69,50 @@ class _SplashScreenState extends State<SplashScreen> {
                           alignment: Alignment.topCenter,
                           child: Padding(
                               padding: EdgeInsets.all(4),
-                              child:AutoSizeText(
-                            sc_theme.ScSplashScreen.text,
-                            style: sc_theme.ScSplashScreen.styleText,
-                          ))),
+                              child: AutoSizeText(
+                                sc_theme.ScSplashScreen.text,
+                                style: sc_theme.ScSplashScreen.styleText,
+                              ))),
                       Padding(
                           padding: EdgeInsets.all(4),
-                          child:Align(alignment: Alignment.topRight,
-                          child:
-
-                              Image.asset(
-                            'assets/img/logo_jamboree_color.png',
-                            height: 70,
-                            fit: BoxFit.fitHeight,
-                          )
-                          ))
+                          child: Align(
+                              alignment: Alignment.topRight,
+                              child: Image.asset(
+                                'assets/img/logo_jamboree_color.png',
+                                height: 70,
+                                fit: BoxFit.fitHeight,
+                              )))
                     ]))
                   ],
                 ))));
   }
 
   Future<Null> init() async {
+
+    try {
+      final result = await InternetAddress.lookup(sc_theme.getServerUpdateInfo());
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('connected to ${sc_theme.getServerUpdateInfo()}');
+        CheckUpdate().check().then(retrived);
+      }else{
+        setTimer();
+      }
+    } on SocketException catch (_) {
+      print('not connected to ${sc_theme.getServerUpdateInfo()}');
+      setTimer();
+    }
+
     final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
     image = await loadImage(new Uint8List.view(data.buffer));
+  }
+
+  // Direcciona donde ir cuando existe o no una actualizacion.
+  retrived(bool changed) {
+    if (changed) {
+      Navigator.pushNamed(context, 'home');
+    } else {
+      Navigator.pushNamed(context, 'home');
+    }
   }
 
   Future<ui.Image> loadImage(List<int> img) async {
@@ -106,6 +125,14 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     return completer.future;
   }
+
+  void setTimer() {
+    print('set Timer');
+    Timer(sc_theme.ScSplashScreen.duration,
+            () => Navigator.pushNamed(context, 'home'));
+
+  }
+
 }
 
 class CurvePainter extends CustomPainter {
