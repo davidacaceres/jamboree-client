@@ -13,11 +13,11 @@ dependencies:
   page_transition: ^1.1.5
   shared_preferences: ^0.5.3
   carousel_pro: ^1.0.0
-  cached_network_image: ^1.1.3
-  flutter_cache_manager: ^1.1.3
+  cached_network_image: ^1.1.3   #Cache para imagenes cuando no hay conexion
+  flutter_cache_manager: ^1.1.3 # Administrador de cache para flutter
   auto_size_text: ^2.1.0
-  splashscreen: ^1.2.0
-  flutter_html: ^0.11.0
+  flutter_html: ^0.11.0  #Conversor de htl para desplegar contenido
+  sembast: ^2.1.1   #Base de datos
 dev_dependencies:
   flutter_test:
     sdk: flutter

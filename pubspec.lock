@@ -214,6 +214,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2+1"
+  sembast:
+    dependency: "direct main"
+    description:
+      name: sembast
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -233,13 +240,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.5"
-  splashscreen:
-    dependency: "direct main"
-    description:
-      name: splashscreen
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.0"
   sqflite:
     dependency: transitive
     description:

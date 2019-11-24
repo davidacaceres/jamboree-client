@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:Pasaporte_2020/routes/routes.dart';
 import 'package:Pasaporte_2020/ui/home/home.dart';
-import 'package:Pasaporte_2020/ui/splash_screen.dart';
 
 void main() => runApp(MyApp());
 

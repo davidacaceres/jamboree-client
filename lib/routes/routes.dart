@@ -2,7 +2,6 @@ import 'package:Pasaporte_2020/ui/content/detail_content.dart';
 import 'package:Pasaporte_2020/ui/home/home.dart';
 import 'package:Pasaporte_2020/ui/init_screen.dart';
 import 'package:Pasaporte_2020/ui/search/search_page.dart';
-import 'package:Pasaporte_2020/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
