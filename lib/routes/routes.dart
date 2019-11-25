@@ -5,7 +5,9 @@ import 'package:Pasaporte_2020/ui/search/search_page.dart';
 import 'package:flutter/material.dart';
 
 final _rutas = <String, WidgetBuilder>{
-  '/': (BuildContext context) => SplashScreen(),
+  '/': (BuildContext context) => SplashScreen(key:new GlobalKey<SplashScreenState>()),
+  'haveupdate': (BuildContext context) => SplashScreen(),
+  'downloadupdate': (BuildContext context) => SplashScreen(),
   'home': (BuildContext context) => HomePage(),
   'search': (BuildContext context) =>SearchPage(),
   'detail': (BuildContext context) =>DetailContent(),

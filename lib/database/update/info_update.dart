@@ -7,13 +7,18 @@
   "descripcion": "Incorporacion datos",
   "urls":[
       {
-        "tipo":"conteindo",
+        "tipo":"contenido",
         "url":"http://contenido",
         "version": 2.1
       },{
         "tipo":"carrusel",
         "url":"http://carrusel",
         "version": 2.1
+      },
+      {
+         "tipo":"ubicaciones",
+        "url":"http://contenido",
+        "version": 0.1
       }
       ]
 }
@@ -21,6 +26,7 @@
 
 import 'package:meta/meta.dart';
 import 'dart:convert';
+
 
 
 class InfoUpdate {
@@ -51,9 +57,26 @@ class InfoUpdate {
   };
 
   @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is InfoUpdate &&
+              runtimeType == other.runtimeType &&
+              fecha == other.fecha &&
+              descripcion == other.descripcion &&
+              urls == other.urls;
+
+  @override
+  int get hashCode =>
+      fecha.hashCode ^
+      descripcion.hashCode ^
+      urls.hashCode;
+
+  @override
   String toString() {
     return 'InfoUpdate{fecha: $fecha, descripcion: $descripcion, urls: $urls}';
   }
+
+
 }
 
 class Url {
@@ -89,11 +112,13 @@ class Url {
           other is Url &&
               runtimeType == other.runtimeType &&
               tipo == other.tipo &&
+              url == other.url &&
               version == other.version;
 
   @override
   int get hashCode =>
       tipo.hashCode ^
+      url.hashCode ^
       version.hashCode;
 
   @override

@@ -2,35 +2,84 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:Pasaporte_2020/database/update/process_update.dart';
+import 'package:Pasaporte_2020/database/update/check_update.dart';
+import 'package:Pasaporte_2020/database/update/download_json.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:ui' as ui;
+import 'package:progress_dialog/progress_dialog.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
+   GlobalKey<SplashScreenState> key;
+
+  SplashScreen({ Key key }) : super(key: key);
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreenState extends State<SplashScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+
   ui.Image image;
   bool isImageloaded = false;
+  bool download=false;
+  ProgressDialog pr;
+
+  DownloadJson downloadProcess;
+  Widget progress= CircularProgressIndicator();
 
   @override
   void initState() {
     super.initState();
 
+
     init();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+    if(download)
+      {
+        print('Download is True');
+        progress=SizedBox.shrink();
+        /*
+        pr = new ProgressDialog(context,type: ProgressDialogType.Download, isDismissible: false, showLogs: true);
+
+        pr.style(
+            message: 'Descargando datos...',
+            borderRadius: 10.0,
+            backgroundColor: Colors.white,
+            progressWidget: CircularProgressIndicator(),
+            elevation: 10.0,
+            insetAnimCurve: Curves.easeInOut,
+            progress: 0.0,
+            maxProgress: 100.0,
+            progressTextStyle: TextStyle(
+                color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
+            messageTextStyle: TextStyle(
+                color: Colors.black, fontSize: 19.0, fontWeight: FontWeight.w600)
+        );
+        downloadProcess=DownloadJson(dialog: pr);
+         pr.show();
+         */
+        DownloadJson(dialog: pr,onInstalled: installed).startDownload();
+      }else{
+      print('Download is False');
+    }
+
+
     return Scaffold(
+        key: scaffoldKey,
         body: Container(
             child: CustomPaint(
                 painter: CurvePainter(image: image),
@@ -46,7 +95,7 @@ class _SplashScreenState extends State<SplashScreen> {
                             data: Theme.of(context).copyWith(
                                 accentColor:
                                     sc_theme.ScSplashScreen.colorIconLoading),
-                            child: new CircularProgressIndicator(),
+                            child: progress,
                           )),
                     ),
                     Expanded(
@@ -88,13 +137,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<Null> init() async {
-
     try {
-      final result = await InternetAddress.lookup(sc_theme.getServerUpdateInfo());
+      final result =
+          await InternetAddress.lookup(sc_theme.getServerUpdateInfo());
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
         print('connected to ${sc_theme.getServerUpdateInfo()}');
         CheckUpdate().check().then(retrived);
-      }else{
+      } else {
         setTimer();
       }
     } on SocketException catch (_) {
@@ -107,11 +156,28 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   // Direcciona donde ir cuando existe o no una actualizacion.
-  retrived(bool changed) {
-    if (changed) {
-      Navigator.pushNamed(context, 'home');
-    } else {
-      Navigator.pushNamed(context, 'home');
+  retrived(bool changed) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String jUpdateLocal =
+        prefs.getString(CheckUpdate.lastUpdateKey) ?? "";
+
+    if (changed && jUpdateLocal != null && jUpdateLocal.isNotEmpty) {
+      //Ha sido cargada data anteriormente
+      print('Ha sido cargada data anteriormente');
+
+
+    } else if (changed && jUpdateLocal == null || jUpdateLocal.isEmpty) {
+      print('Instalacion nueva, se bajaran datos');
+      openDownloadDialog();
+      //Instalacion nueva, hay que bajar datos
+    } else if (!changed && jUpdateLocal == null || jUpdateLocal.isEmpty) {
+      print(
+          'No se puede abrir, hay que bajar datos y no se encuentra conexion a internet o archivo de actualizacion');
+      SystemNavigator.pop();
+      //No se ha instalado nunca y no puede detectar cambios,
+      // se debe cerrar la aplicacion y enviar un mensaje que indique
+      // que no se pude descargar el contenido desde internet
+
     }
   }
 
@@ -129,10 +195,40 @@ class _SplashScreenState extends State<SplashScreen> {
   void setTimer() {
     print('set Timer');
     Timer(sc_theme.ScSplashScreen.duration,
-            () => Navigator.pushNamed(context, 'home'));
-
+        () => Navigator.pushNamed(context, 'home'));
   }
 
+  void openDownloadDialog() {
+    print('Camniando Estado ');
+    setState(() {
+      this.download=true;
+    });
+    print('Camniando Estado final');
+
+
+/*
+    setState(() {
+      visibleList = list[index];
+    });
+
+ */
+    /*
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        download=true;
+      });
+
+    });
+
+     */
+  }
+
+
+
+  installed(bool ) {
+    print('Instalacion finalizada');
+    Navigator.pushNamed(context, 'home');
+  }
 }
 
 class CurvePainter extends CustomPainter {

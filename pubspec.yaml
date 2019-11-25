@@ -19,7 +19,8 @@ dependencies:
   auto_size_text: ^2.1.0
   flutter_html: ^0.11.0  #Conversor de htl para desplegar contenido
   sembast: ^2.1.1   #Base de datos
-  screenshot_share_image: ^0.0.4
+  flutter_platform_widgets: ^0.20.2
+  progress_dialog: ^1.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
