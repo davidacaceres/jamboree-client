@@ -14,6 +14,7 @@ class Content {
   String title;
   String titleList;
   String image;
+  bool root;
   List<int> backgroundPage;
   List<Display> display;
 
@@ -25,6 +26,7 @@ class Content {
     this.image,
     this.backgroundPage,
     this.display,
+    this.root
   });
 
   factory Content.fromMap(Map<String, dynamic> json) => Content(
@@ -33,6 +35,7 @@ class Content {
     title: json["title"],
     titleList: json["titleList"],
     image: json["image"],
+    root:json["root"],
     backgroundPage: List<int>.from(json["background_page"].map((x) => x)),
     display: List<Display>.from(json["display"].map((x) => Display.fromMap(x))),
   );
@@ -45,6 +48,7 @@ class Content {
     "image": image,
     "background_page": List<dynamic>.from(backgroundPage.map((x) => x)),
     "display": List<dynamic>.from(display.map((x) => x.toMap())),
+    "root": root
   };
 }
 
