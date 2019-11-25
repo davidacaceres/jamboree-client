@@ -1,6 +1,7 @@
 {
      "id": "id_1",
       "order": 1,
+      "root": true,
       "title": "Propuesta Educativa Jamboree 2020",
       "titleList": "Propuesta Educativa",
       "image":"http://",
