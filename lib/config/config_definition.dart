@@ -66,7 +66,7 @@ class ScHistorySearch {
 class ScSplashScreen {
   static final Color backgroundAsociacion=Colors.color_7.withOpacity(0.0);
   static final Color background = Colors.color_7;
-  static final Duration duration=Duration(seconds: 2);
+  static final Duration duration=Duration(seconds: 10);
   static final Color  colorText=Colors.color_1;
   static final String text='Jamboree 2020';
   static final Color  colorTextLoading=Colors.color_1;
