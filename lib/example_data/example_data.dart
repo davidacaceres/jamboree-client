@@ -1,9 +1,15 @@
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:Pasaporte_2020/model/Carrousel.dart';
 import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
-final List<Content> _listContent = [
+final List<Content> _listContent =[];
+/*[
   new Content(
     id: "id_1",
+    root:true,
     order: 1,
     title: "Propuesta Educativa Jamboree 2020",
     titleList: "Propuesta Educativa",
@@ -192,6 +198,8 @@ backgroundPage: [
       ]),
 ];
 
+ */
+
 final List<Carrousel> _listCarrousel = [
   new Carrousel(
       order: 1,  image: "https://picsum.photos/id/1/400/180"),
@@ -219,6 +227,12 @@ List<Content> getExampleContent() {
   return _listContent;
 }
 
+List<Content> getExampleRootContent() {
+  return _listContent.where((i) => i.root!=null && i.root==true).toList();;
+}
+
+
+
 List<Carrousel> getExampleCarrousel() {
   return _listCarrousel;
 }
@@ -229,4 +243,25 @@ List<String> getExampleHistory() {
 
 Content findExampleContent(String id){
   return _listContent.singleWhere((e)=> e.id==id);
+}
+
+
+Future<bool> loadContentAsset() async {
+  print('cargando contenido');
+  String jsondata= await rootBundle.loadString('assets/json/data_jme.json');
+  var jStringList = json.decode(jsondata);
+ // print('lista con ${jStringList.length} items');
+  for (int u =0; u < jStringList.length ; u++ ) {
+  //  print('******* cargando: \n  ${jStringList[u]} \n');
+
+   // print('iniciando decodificacion');
+    //var decode = json.decode();
+    //print ('******* decode: \n $decode');
+
+    Content content=Content.fromMap(jStringList[u]);
+    _listContent.add(content);
+
+  }
+  print('Finalizo la carga del contenido');
+  return true;
 }
