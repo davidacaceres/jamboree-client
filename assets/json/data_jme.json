@@ -5,9 +5,9 @@
 		"root": true,
 		"title": "¿Qué es un Jamboree?",
 		"titleList": "¿Qué es un Jamboree?",
-		"image":"assets/img/carpa.jpg",
-		"background_page":[0,0,0],
-		"search" : "debe ir todo en minusculas jamboree jefe campo nacional insignia ",
+		"image":"assets/img/subcampos/futaleufu.jpeg",
+		"background_page":[255,255,255],
+        "search" : "debe ir todo en minusculas jamboree jefe campo nacional insignia ",
 		"display":[
 			{
 				"short_title":"Unico",
@@ -16,9 +16,49 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[0, 0, 255],
+								"text_color":[232, 81, 28],
 								"background_color":[255,255,255],
-								"data":"INSERTAR AQUI EK CONTENIDO"
+								"data":"¡Bienvenidos y bienvenidas al 10° Jamboree Nacional 2020 - Picarquin, Chile!"
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[232, 81, 28],
+								"background_color":[255,255,255],
+								"data":"La palabra Jamboree quiere decir fiesta grande o celebración. Un Jamboree para el movimiento Scout es un gran campamento en que participan jóvenes provenientes de distintos lugares."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[232, 81, 28],
+								"background_color":[255,255,255],
+								"data":"Robert Baden-Powell la eligió porque le gustaba su sonido alegre, jovial y festivo que tenía mucho que ver con los jóvenes, que son siempre los protagonistas de un Jamboree."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[232, 81, 28],
+								"background_color":[255,255,255],
+								"data":"Así fue como esta palabra pasó a denominar al más importante evento del Movimiento Scout: el Jamboree Scout Mundial, una reunión de miles de jóvenes scouts provenientes de más de 150 países que se realiza cada cuatro años, siempre en un país distinto."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[232, 81, 28],
+								"background_color":[255,255,255],
+								"data":"Picarquín, el lugar que ahora es sede de nuestro campamento, fue en 1999 sde del 19° Jamboree Scout Mundial; el primero y único realizado hasta hoy en América Latina."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[232, 81, 28],
+								"background_color":[255,255,255],
+								"data":"Pero esta palabra no solo designa a los campamentos mundiales en que se reúnen jóvenes scouts de todo el mundo. También existe un Jamboree Scout Interamericano, donde se reúnen jóvenes scouts de toda América y Jamborees nacionales que se realizan en cada país y reúnen a los miembros de los Movimientos Scout y Guía de ese país, como en el caso de nuestro evento."
 							}
                     }
                 ],
@@ -52,6 +92,22 @@
 									"background_color":[255,255,255],
 									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
 								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 255],
+									"background_color":[255,255,255],
+									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 255],
+									"background_color":[255,255,255],
+									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
+								}
 						}
 					]
 				}
@@ -61,8 +117,8 @@
 			"id": "1.2",
 			"order": 2,
 			"title": "El 10° Jamboree Nacional",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
+			"image":"assets/img/logo_mono_4.png",
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -71,9 +127,17 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":"INSERTAR AQUI LA DESCRIPCION DEL JAMBOREE"
+									"text_color":[0, 0, 0],
+									"background_color":[248,177,25],
+									"data":"En esta oportunidad la Hacienda Picarquin, en San Francisco de Mostazal, región del Libertador Bernardo O´Higgins, será la sede de la fiesta grande de las guías y los scouts de Chile."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[248,177,25],
+									"data":"Entre el 19 y el 25 de enero de 2019, acamparemos juntos más de mil patrullas provenientes de todo nuestro país y de algunos países vecinos que nos visitarán y serán parte de esta celebración."
 								}
 						}
 					]
