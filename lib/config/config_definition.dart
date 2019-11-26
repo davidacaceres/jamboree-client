@@ -31,18 +31,18 @@ class ScBottomBar {
 
 class ScHomePage {
   ///Color de fondo de la pagina principal
-  static final Color background = Colors.color_2;
+  static final Color background = Colors.color_9;
 
   ///Indica el Color a utilizar para el borde, si BorderStyle.none, no muestra borde
   static final Border cardBorder =
-      Border.all(color: Colors.color_7, width: 0.9, style: BorderStyle.solid);
+      Border.all(color: Colors.color_9, width: 0.9, style: BorderStyle.solid);
 
   ///Indica el gradiente a utilizar para mostrar el fondo del contenido
   static final Gradient cardGradient = LinearGradient(
-      colors: [Colors.color_4, Colors.color_9],
+      colors: [Colors.color_1, Colors.color_1],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
-      stops: [0.8, 0.3],
+      stops: [0.8, 0.7],
       tileMode: TileMode.repeated);
 
   static final TextStyle cardTextStyle = TextStyle(
@@ -54,7 +54,7 @@ class ScHomePage {
 }
 
 class ScHomeSearch {
-  static final Color background = Colors.color_2;
+  static final Color background = Colors.color_4;
   static final Color iconsColor = Colors.color_7;
 }
 
@@ -79,6 +79,13 @@ class ScSplashScreen {
       letterSpacing: 2,
       fontSize: 28.0,
       shadows: <Shadow>[ Shadow(blurRadius: 20.0, color: Colors.color_5)]);
+
+  //static final String assetUrl= 'assets/img/inicial/_DSC7902.jpg';
+  static final String assetUrl= 'assets/img/inicial/IMG_4905.JPG';
+
+  // static final String assetUrl= 'assets/img/inicial/DSC05848.JPG';
+ // static final String assetUrl= 'assets/img/inicial/IMG_0017.jpg';
+  static final BoxFit fill=BoxFit.fitHeight;
 }
 
 class ScContent{
@@ -99,6 +106,8 @@ class ScContent{
 
 
 }
+
+
 
 class ScTextDefault{
   static final String appTitle='Jamboree 2020';

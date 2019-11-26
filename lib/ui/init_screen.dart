@@ -19,7 +19,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
    GlobalKey<SplashScreenState> key;
-
+   DateTime init=DateTime.now();
   SplashScreen({ Key key }) : super(key: key);
 
   @override
@@ -155,7 +155,7 @@ class SplashScreenState extends State<SplashScreen> {
     }
 */
     //final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
-    final ByteData data = await rootBundle.load('assets/img/inicial/_DSC5484.jpg');
+    final ByteData data = await rootBundle.load(sc_theme.ScSplashScreen.assetUrl);
     image = await loadImage(new Uint8List.view(data.buffer));
 
     loadContentUrl().then((result){
@@ -256,8 +256,23 @@ class CurvePainter extends CustomPainter {
     var paint = Paint();
     paint.color = sc_theme.ScSplashScreen.background;
     paint.style = PaintingStyle.fill;
-    if (image != null) canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+    if (image != null) {
+      final Size imageSize = Size(
+          image.width.toDouble(), image.height.toDouble());
+      final FittedSizes sizes = applyBoxFit(sc_theme.ScSplashScreen.fill, imageSize, size);
+      final Rect inputSubrect = Alignment.center.inscribe(
+          sizes.source, Offset.zero & imageSize);
 
+      final Rect outputRect = Rect.fromLTRB(0, 0, size.width, size.height);
+      final Rect outputSubrect = Alignment.center.inscribe(
+          sizes.destination, outputRect);
+      canvas.drawImageRect(image, inputSubrect, outputSubrect, paint);
+      //canvas.drawImageNine(image, center, dst, paint)
+      //canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+
+    //  canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+
+    }
     var path = Path();
     path.moveTo(0, size.height * 0.85);
     path.quadraticBezierTo(
