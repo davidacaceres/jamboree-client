@@ -7,6 +7,7 @@
 		"titleList": "¿Qué es un Jamboree?",
 		"image":"assets/img/carpa.jpg",
 		"background_page":[0,0,0],
+		"search" : "debe ir todo en minusculas jamboree jefe campo nacional insignia ",
 		"display":[
 			{
 				"short_title":"Unico",
@@ -38,6 +39,7 @@
 			"title": "Mensaje del jefe de campo",
 			"image":"assets/img/carpa.jpg",
 			"background_page":[0,0,0],
+			"search" : "debe ir todo en minusculas mensaje jefe campo",
 			"display":[
 				{
 					"short_title":"Info",

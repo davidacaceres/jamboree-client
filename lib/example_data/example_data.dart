@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:ffi';
+import 'dart:io';
+import 'package:http/http.dart' as http;
 
-import 'package:Pasaporte_2020/model/Carrousel.dart';
-import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/model/carrousel.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 final List<Content> _listContent =[];
@@ -231,6 +233,9 @@ List<Content> getExampleRootContent() {
   return _listContent.where((i) => i.root!=null && i.root==true).toList();;
 }
 
+List<Content> getExampleSearchContent(String search) {
+  return _listContent.where((i) => i.search!=null && i.search.contains(search.toLowerCase())).toList();
+}
 
 
 List<Carrousel> getExampleCarrousel() {
@@ -265,3 +270,45 @@ Future<bool> loadContentAsset() async {
   print('Finalizo la carga del contenido');
   return true;
 }
+
+Future<bool> loadContentUrl() async {
+  try {
+    bool connected=false;
+    try {
+      final result = await InternetAddress.lookup("jamboree.cl");
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('connected to parlamento.jamboree.cl');
+        connected=!connected;
+      }
+    } on SocketException catch (_) {
+      print('not connected to parlamento.jamboree.cl');
+    }
+    if(connected) {
+      final response = await http.get(
+          'http://parlamento.jamboree.cl/data_jme.json');
+      if (response.statusCode == 200) {
+        print(
+            "Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");
+        print(response.body);
+        var jStringList = json.decode(response.body);
+        // print('lista con ${jStringList.length} items');
+        for (int u =0; u < jStringList.length ; u++ ) {
+          //  print('******* cargando: \n  ${jStringList[u]} \n');
+
+          // print('iniciando decodificacion');
+          //var decode = json.decode();
+          //print ('******* decode: \n $decode');
+
+          Content content=Content.fromMap(jStringList[u]);
+          _listContent.add(content);
+
+        }
+        print('Finalizo la carga del contenido');
+      }
+    }
+  } catch (e) {
+    print('Error al recibir archivo con informacion de actualizacion');
+  }
+  return null;
+}
+

@@ -1,0 +1,29 @@
+[{
+  "id":"1",
+  "nombre":"Almacen",
+  "latitud":-32.912553,
+  "longitud":-71.494323,
+  "imagen": "assets/img/locations/almacen.png"
+},
+  {
+    "id":"2",
+    "nombre":"Hospital",
+    "latitud":-32.913463,
+    "longitud":-71.496061,
+    "imagen": "assets/img/locations/hospital.png"
+  },
+  {
+    "id":"3",
+    "nombre":"Centro Operacion",
+    "latitud":-32.922462,
+    "longitud":-71.506968,
+    "imagen": "assets/img/locations/operation_center.png"
+  },
+  {
+    "id":"4",
+    "nombre":"Policia",
+    "latitud":-32.920012,
+    "longitud":-71.509200,
+    "imagen": "assets/img/locations/policia.png"
+  }
+]

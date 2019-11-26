@@ -1,5 +1,5 @@
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';

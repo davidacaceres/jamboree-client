@@ -1,4 +1,4 @@
-import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wDisplay.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';

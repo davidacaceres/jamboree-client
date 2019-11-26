@@ -2,9 +2,12 @@ import 'dart:ui';
 
 import 'package:Pasaporte_2020/example_data/example_data.dart';
 import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
+import 'package:Pasaporte_2020/model/location.dart';
+import 'package:Pasaporte_2020/providers/ubicaciones.provider.dart';
 import 'package:Pasaporte_2020/ui/home/widget/carrousel.dart';
 import 'package:Pasaporte_2020/ui/home/widget/content_root.dart';
 import 'package:Pasaporte_2020/ui/home/widget/search_bar.dart';
+import 'package:Pasaporte_2020/ui/map/map.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -84,14 +87,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget makeMap() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 16),
-          child: Text('mapa'),
-        ),
-      ],
+    return FutureBuilder(
+      future: ubicacionesProvider.obtenerListaUbicacionesLocal(),
+      builder:
+          (BuildContext context, AsyncSnapshot<List<UbicacionModel>> snapshot) {
+        if (snapshot.hasData) {
+          return MaterialApp(
+            home: MapsWidget(listaUbicacion: snapshot.data,), /* LLamada al Widget de mapa se le debe entregar lista de ubicaciones */
+          );
+        } else {
+          return Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: Colors.white,
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+      },
     );
   }
 }
