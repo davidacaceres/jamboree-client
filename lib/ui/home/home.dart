@@ -70,10 +70,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 16),
-          child: HomeSearchBar(),
-        ),
+        HomeSearchBar(),
         Flexible(
             child: ListView(
                 shrinkWrap: true,

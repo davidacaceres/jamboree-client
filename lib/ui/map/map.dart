@@ -75,7 +75,7 @@ class _MapsWidgetState extends State<MapsWidget> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Mapa de Ubicaciones'),
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
       ),
       body: _body,
       drawer: _drawer,
