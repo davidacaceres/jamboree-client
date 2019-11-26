@@ -154,10 +154,11 @@ class SplashScreenState extends State<SplashScreen> {
       setTimer();
     }
 */
-    final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
+    //final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
+    final ByteData data = await rootBundle.load('assets/img/inicial/_DSC5484.jpg');
     image = await loadImage(new Uint8List.view(data.buffer));
 
-    loadContentAsset().then((result){
+    loadContentUrl().then((result){
       print('finalizo la carga de archivo json, se direcciona al home');
       Navigator.pushNamed(context, 'home');
     });

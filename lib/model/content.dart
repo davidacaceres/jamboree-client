@@ -17,6 +17,7 @@ class Content {
   bool root;
   List<int> backgroundPage;
   List<Display> display;
+  String search;
 
   Content({
     this.id,
@@ -26,7 +27,8 @@ class Content {
     this.image,
     this.backgroundPage,
     this.display,
-    this.root
+    this.root,
+    this.search,
   });
 
   factory Content.fromMap(Map<String, dynamic> json) => Content(
@@ -38,6 +40,7 @@ class Content {
     root:json["root"],
     backgroundPage: List<int>.from(json["background_page"].map((x) => x)),
     display: List<Display>.from(json["display"].map((x) => Display.fromMap(x))),
+    search:json["search"],
   );
 
   Map<String, dynamic> toMap() => {
@@ -48,7 +51,8 @@ class Content {
     "image": image,
     "background_page": List<dynamic>.from(backgroundPage.map((x) => x)),
     "display": List<dynamic>.from(display.map((x) => x.toMap())),
-    "root": root
+    "root": root,
+    "search": search
   };
 }
 

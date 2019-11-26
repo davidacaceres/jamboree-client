@@ -21,6 +21,8 @@ dependencies:
   sembast: ^2.1.1   #Base de datos
   flutter_platform_widgets: ^0.20.2
   progress_dialog: ^1.2.0
+  google_maps_flutter: ^0.5.21+12  #Biblioteca para desplegar mapas.
+  geolocator: ^5.1.5  #Biblioteca para capturar ubicacion
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -37,6 +39,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/
+    - assets/img/inicial/
+    - assets/img/locations/
     - assets/icon/
     - assets/fonts/
     - assets/json/

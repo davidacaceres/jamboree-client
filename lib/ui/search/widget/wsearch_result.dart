@@ -1,4 +1,4 @@
-import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 
@@ -55,8 +55,8 @@ class SearchResult extends StatelessWidget {
               urlImage: "https://picsum.photos/id/$index/200/300",
               radius: 18.0),
         ),
-        title: Text(
-          content.titleList,
+        title: Text((
+          content.titleList==null?content.title:content.titleList),
           style:  TextStyle(color: Colors.black87,fontFamily: 'Arial',fontSize: 12),
         ),
         trailing:
