@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                 controller: new ScrollController(keepScrollOffset: false),
                 children: <Widget>[
               carrousel,
-              ContentRootWidget(contentRoot: getExampleContent())
+              ContentRootWidget(contentRoot: getExampleRootContent())
             ]))
       ],
     );

@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:Pasaporte_2020/database/update/check_update.dart';
 import 'package:Pasaporte_2020/database/update/download_json.dart';
+import 'package:Pasaporte_2020/example_data/example_data.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -137,6 +138,8 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   Future<Null> init() async {
+
+    /*
     try {
       final result =
           await InternetAddress.lookup(sc_theme.getServerUpdateInfo());
@@ -150,9 +153,16 @@ class SplashScreenState extends State<SplashScreen> {
       print('not connected to ${sc_theme.getServerUpdateInfo()}');
       setTimer();
     }
-
+*/
     final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
     image = await loadImage(new Uint8List.view(data.buffer));
+
+    loadContentAsset().then((result){
+      print('finalizo la carga de archivo json, se direcciona al home');
+      Navigator.pushNamed(context, 'home');
+    });
+
+
   }
 
   // Direcciona donde ir cuando existe o no una actualizacion.
@@ -199,11 +209,13 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   void openDownloadDialog() {
-    print('Camniando Estado ');
+   /* print('Camniando Estado ');
     setState(() {
       this.download=true;
     });
     print('Camniando Estado final');
+
+    */
 
 
 /*

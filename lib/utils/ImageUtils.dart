@@ -35,6 +35,7 @@ CachedNetworkImage getImage(int index) {
 }
 
 CachedNetworkImage getImageUrl(String url, double width, double height) {
+  print('obteniendo imagen: $url');
   return CachedNetworkImage(
     imageUrl: url,
     placeholder: (context, url) => Icon(Icons.cloud_download),
@@ -45,20 +46,28 @@ CachedNetworkImage getImageUrl(String url, double width, double height) {
 }
 
 Image getImageContent({@required String url, @optionalTypeArgs BoxFit fit}) {
+  print('obteniendo imagen: $url');
+  Image imagen;
+  try{
   if (url != null &&
       url.isNotEmpty &&
       (url.startsWith("http://") || url.startsWith("https://"))) {
     if (fit != null) {
-      return Image(image:CachedNetworkImageProvider(url),fit: fit,);
+      imagen= Image(image:CachedNetworkImageProvider(url),fit: fit,);
     }
-    return Image(image:CachedNetworkImageProvider(url));
+    imagen= Image(image:CachedNetworkImageProvider(url));
 
   } else if (url != null && url.isNotEmpty && url.startsWith("assets")) {
     if (fit != null) {
-      return Image.asset(url,fit: fit);
+      imagen= Image.asset(url,fit: fit);
     }
-    return Image.asset(url);
+    imagen= Image.asset(url);
   } else {
-    return Image.asset("assets/img/asociacion.png");
+    imagen= Image.asset("assets/img/asociacion.png");
+  }}catch(ex){
+    print('error al obtener imagen $url');
+    imagen= Image.asset("assets/img/asociacion.png");
+
   }
+  return imagen;
 }
