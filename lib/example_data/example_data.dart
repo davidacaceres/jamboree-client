@@ -255,14 +255,7 @@ Future<bool> loadContentAsset() async {
   print('cargando contenido');
   String jsondata= await rootBundle.loadString('assets/json/data_jme.json');
   var jStringList = json.decode(jsondata);
- // print('lista con ${jStringList.length} items');
   for (int u =0; u < jStringList.length ; u++ ) {
-  //  print('******* cargando: \n  ${jStringList[u]} \n');
-
-   // print('iniciando decodificacion');
-    //var decode = json.decode();
-    //print ('******* decode: \n $decode');
-
     Content content=Content.fromMap(jStringList[u]);
     _listContent.add(content);
 
@@ -284,13 +277,18 @@ Future<bool> loadContentUrl() async {
       print('not connected to parlamento.jamboree.cl');
     }
     if(connected) {
+      Map<String, String> headers = {
+        HttpHeaders.contentTypeHeader: "application/json",
+        HttpHeaders.acceptCharsetHeader:"utf-8"// or whatever
+      };
       final response = await http.get(
-          'http://parlamento.jamboree.cl/data_jme.json');
+          'http://parlamento.jamboree.cl/data_jme.json',headers: headers);
       if (response.statusCode == 200) {
         print(
             "Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");
         print(response.body);
-        var jStringList = json.decode(response.body);
+
+        var jStringList = json.decode(utf8.decode(response.bodyBytes));
         // print('lista con ${jStringList.length} items');
         for (int u =0; u < jStringList.length ; u++ ) {
           //  print('******* cargando: \n  ${jStringList[u]} \n');
