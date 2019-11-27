@@ -50,7 +50,7 @@ class ScHomePage {
       //fontStyle: FontStyle.italic,
       color: Colors.color_5,
       fontWeight: FontWeight.w600,
-      fontSize: 18);
+      fontSize: 16);
 }
 
 class ScHomeSearch {
@@ -105,9 +105,9 @@ class ScContent{
   static final TextStyle childText=TextStyle(
       color: Colors.color_7,
       fontFamily: "Montserrat",
-      fontWeight: FontWeight.w200,
-     // letterSpacing: 0.4,
-      fontSize: 14);
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1,
+      fontSize: 18);
 
 
 

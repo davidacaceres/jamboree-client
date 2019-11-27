@@ -111,13 +111,13 @@ class DisplayWidget extends StatelessWidget {
           onTap: () =>
               Navigator.pushNamed(context, 'detail',
                   arguments: findExampleContent(list[i].id)),
-          child: _subRow(list[i]));
+          child: _subRow(context,list[i]));
       childs.add(child);
     }
     return childs;
   }
 
-  Widget _subRow(Child child) {
+  Widget _subRow(BuildContext context,Child child) {
     TextStyle stText = config.ScContent.childText;
     /*
     if(this.bgColorParent!=null)
@@ -138,14 +138,16 @@ class DisplayWidget extends StatelessWidget {
           children: <Widget>[
             Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                child: AutoSizeText(
+                child: Container(
+                    width: MediaQuery.of(context).size.width*.80,
+                    child:Text(
                   child.title,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
+                  overflow: TextOverflow.visible,
                   style: stText,
-                )),
+                ))),
             Spacer(),
-            Icon(Icons.arrow_forward_ios, color: Colors.black87),
+            Icon(
+                Icons.arrow_forward_ios, color: Colors.black87),
           ],
         ));
   }
