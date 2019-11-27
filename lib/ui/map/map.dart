@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:Pasaporte_2020/model/location.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
 
 class MapsWidget extends StatefulWidget {
   final List<UbicacionModel> listaUbicacion;
@@ -35,10 +37,12 @@ class _MapsWidgetState extends State<MapsWidget> {
   String _msgDetalles = '';
 
   bool _verCargando = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
+    _drawer = _getDrawer();
     _posicionPropia();
   }
 
@@ -70,12 +74,13 @@ class _MapsWidgetState extends State<MapsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    _drawer = _getDrawer(context);
+    
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Mapa de Ubicaciones'),
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
       ),
       body: _body,
       drawer: _drawer,
@@ -96,16 +101,24 @@ class _MapsWidgetState extends State<MapsWidget> {
           onCameraMove: _onGeoChanged,
         ),
         Container(
-          margin: EdgeInsets.only(top: 80.0, right: 10.0),
-          alignment: Alignment.topRight,
+          height: double.infinity,
+          margin: EdgeInsets.only(bottom: Platform.isIOS ? 80.0 : 10.0, right: 10.0),
+          alignment: Alignment.centerRight,
           child: Column(
             children: <Widget>[
+              Expanded(child: SizedBox(),),
               FloatingActionButton(
                 child: Icon(Icons.layers),
                 elevation: 5.0,
                 onPressed: () {
                   _changeMapType();
                 },
+              ),
+              SizedBox(height: 10.0,),
+              FloatingActionButton(
+                child: Icon(Icons.menu),
+                elevation: 5.0,
+                onPressed: () => _scaffoldKey.currentState.openDrawer(),
               ),
             ],
           ),
@@ -194,17 +207,17 @@ class _MapsWidgetState extends State<MapsWidget> {
   }
 
 /* Metodo encargado de Crear el Drawer lateral */
-  Widget _getDrawer(BuildContext context) {
+  Widget _getDrawer() {
     return Drawer(
       elevation: 16.0,
       child: ListView(
-        children: _listaItems(widget.listaUbicacion, context),
+        children: _listaItems(widget.listaUbicacion),
       ),
     );
   }
 
 /* Metodo encargado de crear los items del Drawer */
-  List<Widget> _listaItems(List<UbicacionModel> data, BuildContext context) {
+  List<Widget> _listaItems(List<UbicacionModel> data) {
     final List<Widget> opciones = [];
     opciones.add(Container(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
@@ -215,7 +228,7 @@ class _MapsWidgetState extends State<MapsWidget> {
         ),
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: theme.ScBottomBar.background,
       ),
     ));
 
@@ -269,7 +282,22 @@ class _MapsWidgetState extends State<MapsWidget> {
 
 /* Metodo encargado de navegar mi ubicacion hacia la ubicación */
   _irUbicacionNavegar(UbicacionModel ubicacion) {
-    _cancelaIrUbicacion();
+    // _cancelaIrUbicacion();
+
+    if (timerNavegar != null && timerNavegar.isActive) {
+      timerNavegar.cancel();
+      setState(() {
+      _verCard = false;
+      _msgDistancia = '';
+      _msgNombre = '';
+      _markers.clear();
+      _markers = Set();
+      _polyline.clear();
+      _polyline = Set();
+      latlngList.clear();
+      // _body = _getBody();
+    });
+    }
 
     timerNavegar = Timer.periodic(Duration(seconds: 1), (timer) async {
       Position userLocation = await geolocator.getCurrentPosition(
@@ -340,18 +368,19 @@ class _MapsWidgetState extends State<MapsWidget> {
       _markers.add(Marker(
         markerId: MarkerId('${ubicacion.id}'),
         position: ubicacion.getLatLong(),
-        icon: BitmapDescriptor.fromBytes(
-            Uri.parse(ubicacion.imagen).data.contentAsBytes()),
+        // icon: BitmapDescriptor.fromBytes(
+        //     Uri.parse(ubicacion.imagen).data.contentAsBytes()),
         infoWindow: InfoWindow(
             title: '${ubicacion.nombre}',
             snippet: 'A $distanciaFinal desde mi ubicación.'),
       ));
       _msgDistancia = 'A $distanciaFinal desde mi ubicación.';
 
-      _msgIcon = Image(
-        image: MemoryImage(Uri.parse(ubicacion.imagen).data.contentAsBytes()),
-        height: 40.0,
-      );
+      // _msgIcon = Image(
+      //   image: MemoryImage(Uri.parse(ubicacion.imagen).data.contentAsBytes()),
+      //   height: 40.0,
+      // );
+      _msgIcon = getIconGoogleMap(url:ubicacion.imagen,width:40.0,height: 40.0);
       _msgNombre = ubicacion.nombre;
 
       _verCard = true;
@@ -366,7 +395,7 @@ class _MapsWidgetState extends State<MapsWidget> {
         desiredAccuracy: LocationAccuracy.best);
 
     if (timerNavegar != null && timerNavegar.isActive) {
-      timerNavegar.cancel();
+      timerNavegar.cancel();     
     }
 
     controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
