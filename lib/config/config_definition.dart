@@ -80,11 +80,7 @@ class ScSplashScreen {
       fontSize: 28.0,
       shadows: <Shadow>[ Shadow(blurRadius: 20.0, color: Colors.color_5)]);
 
-  //static final String assetUrl= 'assets/img/inicial/_DSC7902.jpg';
   static final String assetUrl= 'assets/img/inicial/IMG_4905.JPG';
-
-  // static final String assetUrl= 'assets/img/inicial/DSC05848.JPG';
- // static final String assetUrl= 'assets/img/inicial/IMG_0017.jpg';
   static final BoxFit fill=BoxFit.fitHeight;
 }
 
