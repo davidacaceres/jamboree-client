@@ -106,3 +106,25 @@ Image getIconGoogleMap(
   }
   return imagen;
 }
+
+
+
+ImageProvider getImageCarousel({@required String url}) {
+  print('obteniendo imagen: $url');
+  ImageProvider imagen;
+  try {
+    if (url != null &&
+        url.isNotEmpty &&
+        (url.startsWith("http://") || url.startsWith("https://"))) {
+        imagen = CachedNetworkImageProvider(url);
+    } else if (url != null && url.isNotEmpty && url.startsWith("assets")) {
+      imagen = ExactAssetImage(url);
+    } else {
+      imagen = ExactAssetImage("assets/img/asociacion.png");
+    }
+  } catch (ex) {
+    print('error al obtener imagen $url');
+    imagen = ExactAssetImage("assets/img/asociacion.png");
+  }
+  return imagen;
+}

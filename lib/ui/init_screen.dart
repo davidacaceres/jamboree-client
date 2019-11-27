@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
+import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:Pasaporte_2020/database/update/check_update.dart';
 import 'package:Pasaporte_2020/database/update/download_json.dart';
 import 'package:Pasaporte_2020/example_data/example_data.dart';
@@ -9,12 +10,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:flutter/services.dart' show rootBundle;
-import 'dart:ui' as ui;
+import 'package:flutter/widgets.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {

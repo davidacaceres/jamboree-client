@@ -1,8 +1,10 @@
+import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
 import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -10,18 +12,19 @@ class DisplayWidget extends StatelessWidget {
   final Display display;
   final String parentId;
   final int index;
+  final Color bgColorParent;
 
   const DisplayWidget(
-      {@required this.parentId, @required this.display, @required this.index});
+      {@required this.parentId, @required this.display, @required this.index,@required this.bgColorParent});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: _getContents(context, display),
-    ));
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: _getContents(context, display),
+        ));
   }
 
   List<Widget> _getContents(BuildContext context, Display display) {
@@ -43,7 +46,7 @@ class DisplayWidget extends StatelessWidget {
       }
     }
     if (display.childs != null && display.childs.length > 0) {
-      result.add(_getList(context, display.childs));
+      result.add(_getList(context, display.childs, null));
     }
 
     return result;
@@ -58,11 +61,11 @@ class DisplayWidget extends StatelessWidget {
         color: bgColor);
   }
 
-  Widget _getParagraph(
-      BuildContext context, ParagraphConf paragraph, bool initial) {
+  Widget _getParagraph(BuildContext context, ParagraphConf paragraph,
+      bool initial) {
     Color bgColor = getBackgroundColor(context, paragraph.backgroundColor);
     Color txtColor = getTextColor(context, paragraph.textColor);
-     Html html=Html(
+    Html html = Html(
       data: paragraph.data,
       padding: EdgeInsets.all(8.0),
       //backgroundColor: bgColor,
@@ -81,21 +84,23 @@ class DisplayWidget extends StatelessWidget {
       showImages: true,
       useRichText: true,
     );
-    if(initial) {
+    if (initial) {
       return Container(
           decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10))),
           child: html);
-    }else{
+    } else {
       return html;
     }
   }
 
-  Widget _getList(BuildContext context, List<Child> childs) {
+  Widget _getList(BuildContext context, List<Child> childs, Color colorCard) {
+    if (colorCard == null) {
+      colorCard = config.ScContent.bgCard;
+    }
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: _getChild(context, childs));
   }
 
@@ -103,8 +108,9 @@ class DisplayWidget extends StatelessWidget {
     List<Widget> childs = [];
     for (var i = 0; i < list.length; i++) {
       Widget child = GestureDetector(
-          onTap: () => Navigator.pushNamed(context, 'detail',
-              arguments: findExampleContent(list[i].id)),
+          onTap: () =>
+              Navigator.pushNamed(context, 'detail',
+                  arguments: findExampleContent(list[i].id)),
           child: _subRow(list[i]));
       childs.add(child);
     }
@@ -112,40 +118,35 @@ class DisplayWidget extends StatelessWidget {
   }
 
   Widget _subRow(Child child) {
-    return Column(
-      children: <Widget>[
-        Divider(
-          height: 0,
-        ),
-        Container(
-          height: 50,
-          color: Colors.white,
-          padding: EdgeInsets.only(left: 16, right: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Text(
-                    child.title,
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  Spacer(),
-                  Text(
-                    'Ver',
-                    style: TextStyle(fontSize: 14, color: Colors.black87),
-                  ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black87),
-                ],
-              ),
-            ],
+    TextStyle stText = config.ScContent.childText;
+    /*
+    if(this.bgColorParent!=null)
+      {
+         stText = config.ScContent.childText.apply(color: this.bgColorParent.);
+      }*/
+    return Card(
+        elevation: 10,
+        margin: EdgeInsets.all(5),
+        color: bgColorParent,
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(5.0),
           ),
         ),
-        Divider(
-          height: 0,
-        ),
-      ],
-    );
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Padding(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                child: AutoSizeText(
+                  child.title,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: stText,
+                )),
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, color: Colors.black87),
+          ],
+        ));
   }
 }
