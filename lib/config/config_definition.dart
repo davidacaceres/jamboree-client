@@ -100,6 +100,17 @@ class ScContent{
   letterSpacing: 1,
   fontSize: 20);
 
+  //Card con lista de childs
+  static final Color bgCard= Colors.color_4;
+  static final TextStyle childText=TextStyle(
+      color: Colors.color_7,
+      fontFamily: "Montserrat",
+      fontWeight: FontWeight.w200,
+     // letterSpacing: 0.4,
+      fontSize: 14);
+
+
+
 
 }
 

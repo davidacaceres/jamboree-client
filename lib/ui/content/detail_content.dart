@@ -89,7 +89,7 @@ class DetailContent extends StatelessWidget {
     print('Mostrando solo un Display');
     Display display = content.display[0];
     return Expanded(
-        child: DisplayWidget(display: display, parentId: content.id, index: 1));
+        child: DisplayWidget(display: display, parentId: content.id, index: 1,bgColorParent: getBackgroundColor(context,content.backgroundPage),));
   }
 
   Widget getMultiDisplay(
