@@ -21,7 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return SafeArea(child:DefaultTabController(
         length: 2,
         child: Theme(
             isMaterialAppTheme: true,
@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
              backgroundColor: theme.ScHomePage.background,
               body: Flex(direction: Axis.vertical, children: <Widget>[
                 Expanded(
-                    child: TabBarView(children: [makeHome(context), makeMap()]))
+                    child: TabBarView(
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [makeHome(context), makeMap()]))
               ]),
               bottomNavigationBar: Container(
                   height: 60,
@@ -52,20 +54,11 @@ class _HomePageState extends State<HomePage> {
                       labelColor: theme.ScBottomBar.selected,//Colors.indigo,
                       indicatorColor: theme.ScBottomBar.indicatorColor,
                       indicatorWeight: 2)),
-            )));
+            ))));
   }
 
   Widget makeHome(BuildContext context) {
-    var size = window.physicalSize;
 
-    var carrousel;
-    if (size.height > 800) {
-      carrousel = CarrouselWidget(
-        list: getExampleCarrousel(),
-      );
-    } else {
-      carrousel = SizedBox.shrink();
-    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,11 +69,24 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 controller: new ScrollController(keepScrollOffset: false),
                 children: <Widget>[
-              carrousel,
+              getCarrusel(),
               ContentRootWidget(contentRoot: getExampleRootContent())
             ]))
       ],
     );
+  }
+
+  Widget getCarrusel(){
+    var size = window.physicalSize;
+    if (size.height > 800 && size.height>size.width) {
+      print('con carrusel');
+      return  CarrouselWidget(
+        list: getExampleCarrousel(),
+      );
+    } else {
+      print('sin carrusel');
+      return SizedBox.shrink();
+    }
   }
 
   Widget makeMap() {
