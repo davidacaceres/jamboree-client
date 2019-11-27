@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:io';
-import 'package:http/http.dart' as http;
 
 import 'package:Pasaporte_2020/model/carrousel.dart';
 import 'package:Pasaporte_2020/model/content.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:http/http.dart' as http;
 
 final List<Content> _listContent =[];
 /*[
@@ -204,12 +203,18 @@ backgroundPage: [
 
 final List<Carrousel> _listCarrousel = [
   new Carrousel(
-      order: 1,  image: "https://picsum.photos/id/1/400/180"),
+      order: 1,  image: "assets/img/carousel/imagen_1.jpg"),
   new Carrousel(
-      order: 2,  image: "https://picsum.photos/id/2/400/180"),
+      order: 2,  image: "assets/img/carousel/imagen_2.jpg"),
   new Carrousel(
-      order: 3,  image: "https://picsum.photos/id/3/400/180"),
-];
+      order: 3,  image: "assets/img/carousel/imagen_3.jpg"),
+  new Carrousel(
+      order: 4,  image: "assets/img/carousel/imagen_4.jpg"),
+  new Carrousel(
+      order: 5,  image: "assets/img/carousel/imagen_5.jpg"),
+  new Carrousel(
+      order: 6,  image: "assets/img/carousel/imagen_6.jpg")];
+
 
 final List<String> _listHistory = [
   "jamboree",
@@ -230,7 +235,7 @@ List<Content> getExampleContent() {
 }
 
 List<Content> getExampleRootContent() {
-  return _listContent.where((i) => i.root!=null && i.root==true).toList();;
+  return _listContent.where((i) => i.root!=null && i.root==true).toList();
 }
 
 List<Content> getExampleSearchContent(String search) {
