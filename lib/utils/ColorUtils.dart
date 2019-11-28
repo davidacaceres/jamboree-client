@@ -20,7 +20,7 @@ Color getBackgroundColor(BuildContext context, List<int> rgb) {
 Color getTextColor(BuildContext context, List<int> rgb) {
   Color color;
   try {
-    color = Color.fromRGBO(rgb[0], rgb[1], rgb[2],1);
+    color = Color.fromRGBO(rgb[0], rgb[1], rgb[2], 1);
   } catch (ex) {
     print('Error al convertir color ${rgb.toString()}');
     color = Colors.black87;

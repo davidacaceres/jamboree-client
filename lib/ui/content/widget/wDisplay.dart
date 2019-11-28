@@ -70,7 +70,7 @@ class DisplayWidget extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       //backgroundColor: bgColor,
       defaultTextStyle:
-      TextStyle(fontFamily: 'Arial', fontSize: 16, color: txtColor),
+      TextStyle(fontFamily: fontFamily, fontSize: fontSize, color: txtColor),
       linkStyle: const TextStyle(
         color: Colors.blueAccent,
       ),
