@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:Pasaporte_2020/model/location.dart';
+import 'package:Pasaporte_2020/ui/map/alert_util.dart' as alertUtil;
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -41,8 +42,17 @@ class _MapsWidgetState extends State<MapsWidget> {
   @override
   void initState() {
     super.initState();
+    _validaGPS();
     _drawer = _getDrawer();
     _posicionPropia();
+  }
+
+  _validaGPS() async {
+    bool result = await geolocator.isLocationServiceEnabled();
+    if (!result) {
+      alertUtil.showAlertNotGps(
+          context, 'Ubicación GPS no activada.', Icons.error);
+    }
   }
 
   @override
