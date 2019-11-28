@@ -17,7 +17,6 @@ class MapsWidget extends StatefulWidget {
 }
 
 class _MapsWidgetState extends State<MapsWidget> {
-  Widget _body;
   Timer timerNavegar;
   Completer<GoogleMapController> _controller = Completer();
   MapType _defaultMapType = MapType.normal;
@@ -27,7 +26,8 @@ class _MapsWidgetState extends State<MapsWidget> {
   Set<Polyline> _polyline = Set();
   List<LatLng> latlngList = List();
   Geolocator geolocator = Geolocator();
-  CameraPosition _initialPosition;
+  CameraPosition _initialPosition =
+      CameraPosition(target: LatLng(-33.959853, -70.628015), zoom: 16);
   Drawer _drawer;
 
   bool _verCard = false;
@@ -36,7 +36,6 @@ class _MapsWidgetState extends State<MapsWidget> {
   Image _msgIcon;
   String _msgDetalles = '';
 
-  bool _verCargando = false;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -46,35 +45,25 @@ class _MapsWidgetState extends State<MapsWidget> {
     _posicionPropia();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
 /* Metodo encargado de obtener la ubicacion actual del dispositivo para desplegar el mapa */
   _posicionPropia() async {
-    _body = _load();
     Position userLocation = await geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.best);
 
-    setState(() {
-      _initialPosition = CameraPosition(
-          target: LatLng(userLocation.latitude, userLocation.longitude),
-          zoom: _zoom);
-      _body = _getBody();
-    });
-  }
+    GoogleMapController controller = await _controller.future;
 
-/* Metodo que entrega un container de carga */
-  Widget _load() {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.white,
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+        target: LatLng(userLocation.latitude, userLocation.longitude),
+        zoom: _zoom)));
   }
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -82,7 +71,7 @@ class _MapsWidgetState extends State<MapsWidget> {
         title: Text('Mapa de Ubicaciones'),
         automaticallyImplyLeading: false,
       ),
-      body: _body,
+      body: _getBody(),
       drawer: _drawer,
     );
   }
@@ -102,19 +91,21 @@ class _MapsWidgetState extends State<MapsWidget> {
         ),
         Container(
           height: double.infinity,
-          margin: EdgeInsets.only(bottom: Platform.isIOS ? 80.0 : 10.0, right: 10.0),
+          margin: EdgeInsets.only(
+              bottom: Platform.isIOS ? 80.0 : 10.0, right: 10.0),
           alignment: Alignment.centerRight,
           child: Column(
             children: <Widget>[
-              Expanded(child: SizedBox(),),
-              FloatingActionButton(
-                child: Icon(Icons.layers),
-                elevation: 5.0,
-                onPressed: () {
-                  _changeMapType();
-                },
+              Expanded(
+                child: SizedBox(),
               ),
-              SizedBox(height: 10.0,),
+              FloatingActionButton(
+                child: _popUpLayer(),
+                onPressed: () {},
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
               FloatingActionButton(
                 child: Icon(Icons.menu),
                 elevation: 5.0,
@@ -124,12 +115,14 @@ class _MapsWidgetState extends State<MapsWidget> {
           ),
         ),
         _creaCardDistancia(),
-        _creaLoading(),
         Container(
           height: double.infinity,
           padding: EdgeInsets.only(left: 10.0),
           alignment: Alignment.centerLeft,
-          child: Icon(Icons.arrow_forward_ios, color: Colors.grey,),
+          child: Icon(
+            Icons.arrow_forward_ios,
+            color: Colors.grey,
+          ),
         )
       ],
     );
@@ -139,62 +132,50 @@ class _MapsWidgetState extends State<MapsWidget> {
   Widget _creaCardDistancia() {
     return _verCard
         ? Container(
-      padding: EdgeInsets.only(bottom: 10.0),
-      alignment: Alignment.bottomCenter,
-      child: Card(
-        color: Colors.white70,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0)),
-        child: Container(
-          padding: EdgeInsets.only(
-              left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
-          child: SizedBox(
-            height: 160.0,
-            child: Column(
-              children: <Widget>[
-                _msgIcon != null ? _msgIcon : Container(),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  _msgNombre,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Text(_msgDistancia),
-                SizedBox(
-                  height: 10.0,
-                ),
-                FloatingActionButton(
-                  child: Text(
-                    'Detener',
-                    style: TextStyle(fontSize: 12.0),
+            padding: EdgeInsets.only(bottom: 10.0),
+            alignment: Alignment.bottomCenter,
+            child: Card(
+              color: Colors.white70,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              child: Container(
+                padding: EdgeInsets.only(
+                    left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
+                child: SizedBox(
+                  height: 160.0,
+                  child: Column(
+                    children: <Widget>[
+                      _msgIcon != null ? _msgIcon : Container(),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        _msgNombre,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(_msgDistancia),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      FloatingActionButton(
+                        child: Text(
+                          'Detener',
+                          style: TextStyle(fontSize: 12.0),
+                        ),
+                        elevation: 5.0,
+                        onPressed: () {
+                          _cancelaIrUbicacion();
+                        },
+                      )
+                    ],
                   ),
-                  elevation: 5.0,
-                  onPressed: () {
-
-                    _cancelaIrUbicacion();
-                  },
-                )
-              ],
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
-    )
-        : Container();
-  }
-
-  /*Metodo que crea el efecto de cargando */
-  Widget _creaLoading() {
-    return _verCargando
-        ? Container(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    )
+          )
         : Container();
   }
 
@@ -247,13 +228,10 @@ class _MapsWidgetState extends State<MapsWidget> {
       Widget widgetTemp = ListTile(
         key: Key(ubicacion.id.toString()),
         title: Text(ubicacion.nombre),
-        leading: getIconGoogleMap(url:ubicacion.imagen,width:40.0,height: 40.0)
-        ,
+        leading:
+            getIconGoogleMap(url: ubicacion.imagen, width: 40.0, height: 40.0),
         trailing: Icon(Icons.arrow_forward_ios),
         onTap: () {
-          setState(() {
-            _verCargando = true;
-          });
           _irUbicacionNavegar(ubicacion);
           Navigator.pop(context);
         },
@@ -269,17 +247,6 @@ class _MapsWidgetState extends State<MapsWidget> {
     _controller.complete(controller);
   }
 
-/* Metodo encargado de cambiar el tipo de mapa */
-  void _changeMapType() {
-    setState(() {
-      _defaultMapType = _defaultMapType == MapType.normal
-          ? MapType.satellite
-          : MapType.normal;
-
-      _body = _getBody();
-    });
-  }
-
 /* Metodo encargado de navegar mi ubicacion hacia la ubicación */
   _irUbicacionNavegar(UbicacionModel ubicacion) {
     // _cancelaIrUbicacion();
@@ -287,29 +254,30 @@ class _MapsWidgetState extends State<MapsWidget> {
     if (timerNavegar != null && timerNavegar.isActive) {
       timerNavegar.cancel();
       setState(() {
-      _verCard = false;
-      _msgDistancia = '';
-      _msgNombre = '';
-      _markers.clear();
-      _markers = Set();
-      _polyline.clear();
-      _polyline = Set();
-      latlngList.clear();
-      // _body = _getBody();
-    });
-    }
+        _verCard = false;
+        _msgDistancia = '';
+        _msgNombre = '';
+        _markers.clear();
+        _markers = Set();
+        _polyline.clear();
+        _polyline = Set();
+        latlngList.clear();
+      });
+    } else {
+      timerNavegar = Timer.periodic(Duration(seconds: 2), (timer) async {
+        Position userLocation = await geolocator.getCurrentPosition(
+            desiredAccuracy: LocationAccuracy.best);
 
-    timerNavegar = Timer.periodic(Duration(seconds: 1), (timer) async {
-      Position userLocation = await geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.best);
-      if (userLocation != null) {
-        print(ubicacion.nombre);
-        _irUbicacion(ubicacion, userLocation);
-      }
-    });
-    setState(() {
-      _verCargando = false;
-    });
+        if (userLocation != null) {
+          if (timerNavegar != null && timerNavegar.isActive) {
+            print(ubicacion.nombre);
+            _irUbicacion(ubicacion, userLocation);
+          } else {
+            _cancelaIrUbicacion();
+          }
+        }
+      });
+    }
   }
 
 /* Metodo encargado de demarcar linea de distancia entre puntos. */
@@ -318,7 +286,6 @@ class _MapsWidgetState extends State<MapsWidget> {
     GoogleMapController controller = await _controller.future;
 
     setState(() {
-      _verCargando = true;
       // _msgDetalles = 'speed: ${userLocation.speed} - speedCurrent: ${userLocation.speedAccuracy} - bearing: ${userLocation.heading}';
       if (userLocation.speed > 1) {
         _bearing = userLocation.heading;
@@ -375,17 +342,10 @@ class _MapsWidgetState extends State<MapsWidget> {
             snippet: 'A $distanciaFinal desde mi ubicación.'),
       ));
       _msgDistancia = 'A $distanciaFinal desde mi ubicación.';
-
-      // _msgIcon = Image(
-      //   image: MemoryImage(Uri.parse(ubicacion.imagen).data.contentAsBytes()),
-      //   height: 40.0,
-      // );
-      _msgIcon = getIconGoogleMap(url:ubicacion.imagen,width:40.0,height: 40.0);
+      _msgIcon =
+          getIconGoogleMap(url: ubicacion.imagen, width: 40.0, height: 40.0);
       _msgNombre = ubicacion.nombre;
-
       _verCard = true;
-      _verCargando = false;
-      _body = _getBody();
     });
   }
 
@@ -395,7 +355,17 @@ class _MapsWidgetState extends State<MapsWidget> {
         desiredAccuracy: LocationAccuracy.best);
 
     if (timerNavegar != null && timerNavegar.isActive) {
-      timerNavegar.cancel();     
+      timerNavegar.cancel();
+      setState(() {
+        _verCard = false;
+        _msgDistancia = '';
+        _msgNombre = '';
+        _markers.clear();
+        _markers = Set();
+        _polyline.clear();
+        _polyline = Set();
+        latlngList.clear();
+      });
     }
 
     controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
@@ -412,7 +382,6 @@ class _MapsWidgetState extends State<MapsWidget> {
       _polyline.clear();
       _polyline = Set();
       latlngList.clear();
-      _body = _getBody();
     });
   }
 
@@ -422,5 +391,57 @@ class _MapsWidgetState extends State<MapsWidget> {
     if (timerNavegar != null && timerNavegar.isActive) {
       timerNavegar.cancel();
     }
+  }
+
+/* Metodo encargado de cambiar el tipo de mapa */
+  Widget _popUpLayer() {
+    return PopupMenuButton<MapType>(
+      icon: Icon(Icons.layers),
+      onSelected: (MapType result) {
+        setState(() {
+          _defaultMapType = result;
+        });
+      },
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<MapType>>[
+        PopupMenuItem<MapType>(
+          value: MapType.normal,
+          child: _creaTextoBoton(MapType.normal, 'Normal'),
+        ),
+        PopupMenuDivider(),
+        PopupMenuItem<MapType>(
+          value: MapType.satellite,
+          child: _creaTextoBoton(MapType.satellite, 'Satélite'),
+        ),
+        PopupMenuDivider(),
+        PopupMenuItem<MapType>(
+          value: MapType.terrain,
+          child: _creaTextoBoton(MapType.terrain, 'Terreno'),
+        ),
+      ],
+    );
+  }
+
+  _creaTextoBoton(MapType mapTipo, String texto) {
+    return Row(
+      children: <Widget>[
+        Checkbox(
+          value: mapTipo == _defaultMapType,
+          onChanged: (valor) {
+            if (valor) {
+              setState(() {
+                _defaultMapType = mapTipo;
+                Navigator.pop(context);
+              });
+            }
+          },
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        Text(
+          texto,
+        ),
+      ],
+    );
   }
 }
