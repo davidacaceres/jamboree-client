@@ -41,7 +41,8 @@ class DetailContent extends StatelessWidget {
   Padding getTitle(BuildContext context, Content content) {
     Color titleColor = getTextColor(
         context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
-    TextStyle txtStyle = sc_theme.ScContent.titleContent.copyWith(color: titleColor);
+    TextStyle txtStyle =
+        sc_theme.ScContent.titleContent.copyWith(color: titleColor);
     if (content.font != null && content.font.isNotEmpty) {
       txtStyle = txtStyle.copyWith(fontFamily: content.font);
     }
@@ -129,7 +130,6 @@ class DetailContent extends StatelessWidget {
                       border: Border.all(
                           color: sc_theme.ScContent.selectedColorBackgroundTab),
                       color: sc_theme.ScContent.unSelectedColorBackgroundTab,
-                      //color: Colors.red,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TabBar(
@@ -164,8 +164,16 @@ class DetailContent extends StatelessWidget {
     for (var i = 0; i < displays.length; i++) {
       final Display dsp = displays[i];
       final tab = Tab(
-          child:
-              Align(alignment: Alignment.center, child: Text(dsp.shortTitle)));
+          child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                dsp.shortTitle,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.visible,
+                maxLines: 2,
+              ))));
       tabs.add(tab);
     }
     return tabs;
