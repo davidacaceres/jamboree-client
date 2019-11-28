@@ -22,12 +22,6 @@ class DetailContent extends StatelessWidget {
       backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: sc_theme.ScContent.barTopColor,
-        /*actions: <Widget>[IconButton(
-          icon: Icon(Icons.share),
-          onPressed: () {
-            print('compartir');
-          },
-        )],*/
       ),
       body: Column(
         children: <Widget>[
@@ -45,6 +39,16 @@ class DetailContent extends StatelessWidget {
   }
 
   Padding getTitle(BuildContext context, Content content) {
+    Color titleColor = getTextColor(
+        context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
+    TextStyle txtStyle = sc_theme.ScContent.titleContent.copyWith(color: titleColor);
+    if (content.font != null && content.font.isNotEmpty) {
+      txtStyle = txtStyle.copyWith(fontFamily: content.font);
+    }
+    if (content.fontSize != null && content.fontSize > 0) {
+      txtStyle = txtStyle.copyWith(fontSize: content.fontSize);
+    }
+
     return Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
@@ -65,7 +69,7 @@ class DetailContent extends StatelessWidget {
                       textAlign: TextAlign.center,
                       softWrap: true,
                       maxLines: 3,
-                      style: sc_theme.ScContent.titleContent,
+                      style: txtStyle,
                     )))
           ],
         ));
@@ -89,7 +93,12 @@ class DetailContent extends StatelessWidget {
     print('Mostrando solo un Display');
     Display display = content.display[0];
     return Expanded(
-        child: DisplayWidget(display: display, parentId: content.id, index: 1,bgColorParent: getBackgroundColor(context,content.backgroundPage),));
+        child: DisplayWidget(
+      display: display,
+      parentId: content.id,
+      index: 1,
+      bgColorParent: getBackgroundColor(context, content.backgroundPage),
+    ));
   }
 
   Widget getMultiDisplay(
@@ -104,27 +113,6 @@ class DetailContent extends StatelessWidget {
     BoxDecoration decoration = BoxDecoration(
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10), topRight: Radius.circular(10)));
-/*
-    if (sc_theme.ScContent.titleGradient && content.display.length>1) {
-
-      Color colorEnd;
-      try {
-        List<int> colorChild =
-            content.display[0].content[0].paragraphConf.backgroundColor;
-        colorEnd = getBackgroundColor(context, colorChild);
-      } catch (ex) {
-        print('No se encontro contenido inicial');
-        colorEnd = baseColor;
-      }
-      print('Color inicial: ${baseColor} color final ${colorEnd}');
-      decoration= BoxDecoration(gradient:  LinearGradient(
-              colors: [baseColor, colorEnd],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.7, 0.95],
-              tileMode: TileMode.repeated));
-
-    }*/
 
     return Expanded(
         flex: 5,
