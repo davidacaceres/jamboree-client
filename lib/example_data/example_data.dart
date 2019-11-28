@@ -258,9 +258,11 @@ Content findExampleContent(String id){
 
 Future<bool> loadContentAsset() async {
   print('cargando contenido');
-  String jsondata= await rootBundle.loadString('assets/json/data_jme.json');
+  String jsondata= await rootBundle.loadString('assets/json/data_test.json');
+
   var jStringList = json.decode(jsondata);
   for (int u =0; u < jStringList.length ; u++ ) {
+    print('cargando elemento $u \n ${jStringList[u]}');
     Content content=Content.fromMap(jStringList[u]);
     _listContent.add(content);
 
@@ -270,6 +272,8 @@ Future<bool> loadContentAsset() async {
 }
 
 Future<bool> loadContentUrl() async {
+  //loadContentAsset();
+  //return true;
   try {
     bool connected=false;
     try {

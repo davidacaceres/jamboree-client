@@ -54,7 +54,8 @@ class DisplayWidget extends StatelessWidget {
 
   Widget _getPicture(BuildContext context, ImageConf conf) {
     Alignment align = getAlignment(conf.align);
-    Color bgColor = getBackgroundColor(context, conf.backgroundColor);
+    Color bgColor = getBackgroundColor(context, conf.backgroundColor,bgColorParent);
+    print('Color foto: ${bgColor.toString()}');
     return Container(
         alignment: align,
         child: getImageContent(url: conf.source),
@@ -63,12 +64,15 @@ class DisplayWidget extends StatelessWidget {
 
   Widget _getParagraph(BuildContext context, ParagraphConf paragraph,
       bool initial) {
-    Color bgColor = getBackgroundColor(context, paragraph.backgroundColor);
-    Color txtColor = getTextColor(context, paragraph.textColor);
+    Color bgColor = getBackgroundColor(context, paragraph.backgroundColor,bgColorParent);
+    Color txtColor = getTextColor(context, paragraph.textColor, config.ScContent.textColorparagrapfDefault);
+    String fontFamily= paragraph.font==null || paragraph.font.isEmpty?'Arial':paragraph.font;
+    double fontSize=  paragraph.fontSize==null || paragraph.fontSize<=0?16.0:paragraph.fontSize;
+
     Html html = Html(
       data: paragraph.data,
       padding: EdgeInsets.all(8.0),
-      //backgroundColor: bgColor,
+      backgroundColor: bgColor,
       defaultTextStyle:
       TextStyle(fontFamily: fontFamily, fontSize: fontSize, color: txtColor),
       linkStyle: const TextStyle(
