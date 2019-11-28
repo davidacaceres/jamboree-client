@@ -19,7 +19,7 @@ void showAlertNotGps(BuildContext context, String mensaje, IconData icono) {
         content: Text(mensaje),
         actions: <Widget>[
           FlatButton(
-            child: Text('Configuración'),
+            child: Platform.isAndroid ? Text('Configuración') : Text('Cerrar'),
             onPressed: () {
               if (Platform.isAndroid) {
                 final AndroidIntent intent = new AndroidIntent(
