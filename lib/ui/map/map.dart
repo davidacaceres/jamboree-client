@@ -107,7 +107,7 @@ class _MapsWidgetState extends State<MapsWidget> {
                 height: 10.0,
               ),
               FloatingActionButton(
-                child: Icon(Icons.menu),
+                child: Icon(Icons.list),
                 elevation: 5.0,
                 onPressed: () => _scaffoldKey.currentState.openDrawer(),
               ),
