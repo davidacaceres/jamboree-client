@@ -40,7 +40,7 @@ flutter:
   assets:
     - assets/img/
     - assets/img/inicial/
-   # - assets/img/locations/
+    - assets/img/locations/
     - assets/img/subcampos/
     - assets/icon/
     - assets/fonts/
