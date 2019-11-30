@@ -21,6 +21,10 @@ class Content {
   String search;
   String font;
   double fontSize;
+  List<int> tabPrimaryColor;
+  List<int> tabSecondaryColor;
+  List<int> tabTextColor;
+
 
   Content(
       {this.id,
@@ -32,7 +36,12 @@ class Content {
       this.display,
       this.root,
       this.search,
-      this.titleColor,this.font,this.fontSize});
+      this.titleColor,
+      this.font,
+      this.fontSize,
+      this.tabPrimaryColor,
+      this.tabSecondaryColor,
+      this.tabTextColor});
 
   factory Content.fromMap(Map<String, dynamic> json) => Content(
         id: json["id"],
@@ -50,6 +59,15 @@ class Content {
             : List<int>.from(json["titleColor"].map((x) => x)),
         font: json["font"],
         fontSize: json["fontSize"],
+    tabPrimaryColor: json["tabPrimaryColor"] == null
+        ? null
+        : List<int>.from(json["tabPrimaryColor"].map((x) => x)),
+    tabSecondaryColor: json["tabSecondaryColor"] == null
+        ? null
+        : List<int>.from(json["tabSecondaryColor"].map((x) => x)),
+    tabTextColor: json["tabTextColor"] == null
+        ? null
+        : List<int>.from(json["tabTextColor"].map((x) => x)),
       );
 
   Map<String, dynamic> toMap() => {
@@ -67,7 +85,10 @@ class Content {
             : List<dynamic>.from(titleColor.map((x) => x)),
         "font": font,
         "fontSize": fontSize,
-      };
+        "tabPrimaryColor": tabPrimaryColor==null?null:List<dynamic>.from(tabPrimaryColor.map((x) => x)),
+        "tabSecondaryColor": tabSecondaryColor==null?null:List<dynamic>.from(tabSecondaryColor.map((x) => x)),
+        "tabTextColor": tabTextColor==null?null:List<dynamic>.from(tabTextColor.map((x) => x)),
+  };
 }
 
 class Display {
@@ -161,7 +182,7 @@ class ImageConf {
   factory ImageConf.fromMap(Map<String, dynamic> json) => ImageConf(
         source: json["source"],
         align: json["align"],
-        backgroundColor: List<int>.from(json["background_color"].map((x) => x)),
+        backgroundColor: json["background_color"]==null?null:List<int>.from(json["background_color"].map((x) => x)),
       );
 
   Map<String, dynamic> toMap() => {

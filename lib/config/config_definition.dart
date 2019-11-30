@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 
 class Colors {
   static const Color color_1 = Color(0xFFFFFFFF);
@@ -89,11 +90,13 @@ class ScContent {
   static final Color barTopColor = Colors.color_4;
   static final Color colorIconBack = Colors.color_7;
   static final Color defaultColor = Colors.color_9;
-  static final Color selectedColorBackgroundTab = Colors.color_2;
+  static final Color tabPrimaryColor = Colors.color_3;
+  static final Color tabSecondaryColor = Colors.color_4;
+  static final Color tabTextColor = Colors.color_9;
+
   static final Color selectedColorTextTab = Colors.color_3;
-  static final Color unSelectedColorBackgroundTab = Colors.color_9;
   static final Color unSelectedColorTextTab = Colors.color_2;
-  static final Color defaultTitleColor = Colors.color_2;
+  static final Color defaultTitleColor = Colors.color_7;
 
   static final Color textColorparagrapfDefault = Colors.color_2;
   static final TextStyle titleContent = TextStyle(

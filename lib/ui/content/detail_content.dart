@@ -104,6 +104,10 @@ class DetailContent extends StatelessWidget {
 
   Widget getMultiDisplay(
       BuildContext context, Content content, Color baseColor) {
+    final  primaryColor= getBackgroundColor(context, content.tabPrimaryColor,getBackgroundColor(context,content.backgroundPage,sc_theme.ScContent.tabPrimaryColor));
+    final  secondaryColor= getBackgroundColor(context, content.tabSecondaryColor,sc_theme.ScContent.tabSecondaryColor);
+    final  textColor= getBackgroundColor(context, content.tabTextColor,sc_theme.ScContent.tabTextColor);
+
     List<Display> displays = content.display;
     if (content.display == null ||
         content.display.isEmpty ||
@@ -124,41 +128,40 @@ class DetailContent extends StatelessWidget {
               length: countTabs,
               child: Column(children: <Widget>[
                 Container(
-                    height: 40,
+                    height: 50,
                     margin: EdgeInsets.only(left: 5, right: 5, bottom: 10),
                     decoration: BoxDecoration(
                       border: Border.all(
-                          color: sc_theme.ScContent.selectedColorBackgroundTab),
-                      color: sc_theme.ScContent.unSelectedColorBackgroundTab,
+                          color: primaryColor),
+                      color: secondaryColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TabBar(
                         isScrollable: false,
-                        unselectedLabelColor:
-                            sc_theme.ScContent.unSelectedColorTextTab,
+//                        unselectedLabelColor:
+//                            secondaryColor.withAlpha(80),
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicator: BoxDecoration(
                             boxShadow: <BoxShadow>[
                               BoxShadow(
                                   color: Colors.black12,
-                                  offset: Offset(3, 3),
-                                  blurRadius: 6)
+                                 // offset: Offset(3, 3),
+                                  blurRadius: 20)
                             ],
-                            color:
-                                sc_theme.ScContent.selectedColorBackgroundTab,
-                            borderRadius: BorderRadius.circular(6)),
-                        tabs: getTabsTitle(displays))),
+                            color:primaryColor,
+                            borderRadius: BorderRadius.circular(10)),
+                        tabs: getTabsTitle(context,displays,textColor))),
                 Expanded(
                     child: Container(
                         decoration: decoration,
                         child: TabBarView(
-                          children: getTabViews(content.id, displays),
+                          children: getTabViews(content.id, displays,getBackgroundColor(context, content.backgroundPage)),
                         )))
               ])),
         ));
   }
 
-  List<Tab> getTabsTitle(List<Display> displays) {
+  List<Tab> getTabsTitle(BuildContext context, List<Display> displays,Color textColor) {
     final List<Tab> tabs = [];
 
     for (var i = 0; i < displays.length; i++) {
@@ -170,6 +173,7 @@ class DetailContent extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                 dsp.shortTitle,
+                style: TextStyle(color:textColor,fontSize: 14),
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.visible,
                 maxLines: 2,
@@ -179,7 +183,7 @@ class DetailContent extends StatelessWidget {
     return tabs;
   }
 
-  List<Widget> getTabViews(String parentId, List<Display> displays) {
+  List<Widget> getTabViews(String parentId, List<Display> displays,Color bgParent) {
     List<Widget> tabViews = [];
 
     for (var i = 0; i < displays.length; i++) {
@@ -188,6 +192,7 @@ class DetailContent extends StatelessWidget {
         display: display,
         parentId: parentId,
         index: i,
+        bgColorParent: bgParent,
       );
       tabViews.add(dw);
     }
