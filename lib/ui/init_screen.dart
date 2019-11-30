@@ -16,8 +16,6 @@ import 'package:progress_dialog/progress_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
-   GlobalKey<SplashScreenState> key;
-   DateTime init=DateTime.now();
   SplashScreen({ Key key }) : super(key: key);
 
   @override
@@ -158,7 +156,7 @@ class SplashScreenState extends State<SplashScreen> {
 
     loadContentUrl().then((result){
       print('finalizo la carga de archivo json, se direcciona al home');
-      Navigator.pushNamed(context, 'home');
+      Navigator.pushReplacementNamed(context, 'home');
     });
 
 
