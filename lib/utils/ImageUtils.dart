@@ -5,16 +5,23 @@ CircleAvatar getAvatar({String urlImage, double radius}) {
 
   var image;
   try {
-  image=getImageUrl(urlImage, 40, 40);
-  if(image==null)
-    {
-      image = Image.asset('assets/img/logo_asoc_chile.png');
+    if(urlImage!=null && urlImage.isNotEmpty) {
+      image = getImageUrl(urlImage, 40, 40);
     }
   } catch (ex) {
     print(
         "Error al obtener imagen desde url, se utilizara imagen x defecto, error: $ex");
-    image = Image.asset('assets/img/logo_asoc_chile.png');
+
   }
+  if(image==null )
+    {
+      try {
+        image = AssetImage('assets/img/asociacion.png');
+      }catch(ex)
+  {
+    print('Error al obtener imagen x defecto $ex [assets/img/asociacion.png]');
+  }
+    }
 
   return CircleAvatar(
     radius: radius,
@@ -44,7 +51,7 @@ CachedNetworkImage getImageUrl(String url, double width, double height) {
   return CachedNetworkImage(
     imageUrl: url,
     placeholder: (context, url) => Icon(Icons.cloud_download),
-    errorWidget: (context, url, error) => Icon(Icons.error),
+    errorWidget: (context, url, error) => Image.asset("assets/img/asociacion_mini.png"),
     width: width,
     height: height,
   );
@@ -128,3 +135,4 @@ ImageProvider getImageCarousel({@required String url}) {
   }
   return imagen;
 }
+

@@ -9,10 +9,12 @@ Color getBackgroundColor(BuildContext context, List<int> rgb,
   try {
     color = Color.fromRGBO(rgb[0], rgb[1], rgb[2], 1);
   } catch (ex) {
-    print('Error al convertir color ${rgb.toString()}');
-    if (bgDefaultColor == null)
+    print('Error al convertir color ${rgb.toString()}, se usara color por defecto para background');
+    if (bgDefaultColor == null) {
+      print('Usando blanco');
       color = Colors.white;
-    else
+    }else
+      print('Usando color pasado por parametro');
       color = bgDefaultColor;
   }
   return color;

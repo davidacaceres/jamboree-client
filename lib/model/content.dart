@@ -25,7 +25,6 @@ class Content {
   List<int> tabSecondaryColor;
   List<int> tabTextColor;
 
-
   Content(
       {this.id,
       this.order,
@@ -59,15 +58,15 @@ class Content {
             : List<int>.from(json["titleColor"].map((x) => x)),
         font: json["font"],
         fontSize: json["fontSize"],
-    tabPrimaryColor: json["tabPrimaryColor"] == null
-        ? null
-        : List<int>.from(json["tabPrimaryColor"].map((x) => x)),
-    tabSecondaryColor: json["tabSecondaryColor"] == null
-        ? null
-        : List<int>.from(json["tabSecondaryColor"].map((x) => x)),
-    tabTextColor: json["tabTextColor"] == null
-        ? null
-        : List<int>.from(json["tabTextColor"].map((x) => x)),
+        tabPrimaryColor: json["tabPrimaryColor"] == null
+            ? null
+            : List<int>.from(json["tabPrimaryColor"].map((x) => x)),
+        tabSecondaryColor: json["tabSecondaryColor"] == null
+            ? null
+            : List<int>.from(json["tabSecondaryColor"].map((x) => x)),
+        tabTextColor: json["tabTextColor"] == null
+            ? null
+            : List<int>.from(json["tabTextColor"].map((x) => x)),
       );
 
   Map<String, dynamic> toMap() => {
@@ -76,7 +75,9 @@ class Content {
         "title": title,
         "titleList": titleList,
         "image": image,
-        "background_page": List<dynamic>.from(backgroundPage.map((x) => x)),
+        "background_page": backgroundPage == null
+            ? null
+            : List<dynamic>.from(backgroundPage.map((x) => x)),
         "display": List<dynamic>.from(display.map((x) => x.toMap())),
         "root": root,
         "search": search,
@@ -85,10 +86,16 @@ class Content {
             : List<dynamic>.from(titleColor.map((x) => x)),
         "font": font,
         "fontSize": fontSize,
-        "tabPrimaryColor": tabPrimaryColor==null?null:List<dynamic>.from(tabPrimaryColor.map((x) => x)),
-        "tabSecondaryColor": tabSecondaryColor==null?null:List<dynamic>.from(tabSecondaryColor.map((x) => x)),
-        "tabTextColor": tabTextColor==null?null:List<dynamic>.from(tabTextColor.map((x) => x)),
-  };
+        "tabPrimaryColor": tabPrimaryColor == null
+            ? null
+            : List<dynamic>.from(tabPrimaryColor.map((x) => x)),
+        "tabSecondaryColor": tabSecondaryColor == null
+            ? null
+            : List<dynamic>.from(tabSecondaryColor.map((x) => x)),
+        "tabTextColor": tabTextColor == null
+            ? null
+            : List<dynamic>.from(tabTextColor.map((x) => x)),
+      };
 }
 
 class Display {
@@ -124,23 +131,38 @@ class Child {
   String id;
   int order;
   String title;
+  List<int> backgroundColor;
+  List<int> textColor;
+  String image;
 
-  Child({
-    this.id,
-    this.order,
-    this.title,
-  });
+  Child(
+      {this.id, this.order, this.title, this.backgroundColor, this.textColor,this.image});
 
   factory Child.fromMap(Map<String, dynamic> json) => Child(
         id: json["id"],
         order: json["order"],
         title: json["title"],
-      );
+        backgroundColor: json["backgroundColor"] == null
+            ? null
+            : List<int>.from(json["backgroundColor"].map((x) => x)),
+        textColor: json["textColor"] == null
+            ? null
+            : List<int>.from(json["textColor"].map((x) => x)),
+        image: json["image"],
+
+  );
 
   Map<String, dynamic> toMap() => {
         "id": id,
         "order": order,
         "title": title,
+        "backgroundColor": backgroundColor == null
+            ? null
+            : List<dynamic>.from(backgroundColor.map((x) => x)),
+        "textColor": textColor == null
+            ? null
+            : List<dynamic>.from(textColor.map((x) => x)),
+        "image": image,
       };
 }
 
@@ -182,7 +204,9 @@ class ImageConf {
   factory ImageConf.fromMap(Map<String, dynamic> json) => ImageConf(
         source: json["source"],
         align: json["align"],
-        backgroundColor: json["background_color"]==null?null:List<int>.from(json["background_color"].map((x) => x)),
+        backgroundColor: json["background_color"] == null
+            ? null
+            : List<int>.from(json["background_color"].map((x) => x)),
       );
 
   Map<String, dynamic> toMap() => {
@@ -199,13 +223,12 @@ class ParagraphConf {
   double fontSize;
   String font;
 
-  ParagraphConf({
-    this.textColor,
-    this.backgroundColor,
-    this.data,
-    this.font,
-    this.fontSize
-  });
+  ParagraphConf(
+      {this.textColor,
+      this.backgroundColor,
+      this.data,
+      this.font,
+      this.fontSize});
 
   factory ParagraphConf.fromMap(Map<String, dynamic> json) => ParagraphConf(
         textColor: json["text_color"] == null
@@ -215,7 +238,7 @@ class ParagraphConf {
             ? null
             : List<int>.from(json["background_color"].map((x) => x)),
         data: json["data"],
-        fontSize: json["fontSize"] ==null ?0:json["fontSize"],
+        fontSize: json["fontSize"] == null ? 0 : json["fontSize"],
         font: json["font"],
       );
 

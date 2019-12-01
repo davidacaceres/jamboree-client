@@ -18,6 +18,9 @@ class DetailContent extends StatelessWidget {
       bgColor = getBackgroundColor(context, content.backgroundPage);
     }
 
+    Color txtColor = getTextColor(context, content.titleColor,sc_theme.ScContent.defaultTitleColor);
+
+
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
@@ -25,24 +28,25 @@ class DetailContent extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          _logoContent(context, content, bgColor),
-          getDisplayComponent(context, content, bgColor),
+          _logoContent(context, content, bgColor,txtColor),
+          getDisplayComponent(context, content, bgColor,txtColor),
         ],
       ),
     );
   }
 
-  Widget _logoContent(BuildContext context, Content content, Color color) {
+  Widget _logoContent(BuildContext context, Content content, Color color, Color txtColor) {
     return Container(
         height: MediaQuery.of(context).size.height * 0.15,
-        child: getTitle(context, content));
+        child: getTitle(context, content,txtColor));
   }
 
-  Padding getTitle(BuildContext context, Content content) {
-    Color titleColor = getTextColor(
-        context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
+  Padding getTitle(BuildContext context, Content content,Color txtColor) {
+    //Color titleColor = getTextColor(
+    //    context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
+
     TextStyle txtStyle =
-        sc_theme.ScContent.titleContent.copyWith(color: titleColor);
+        sc_theme.ScContent.titleContent.copyWith(color: txtColor);
     if (content.font != null && content.font.isNotEmpty) {
       txtStyle = txtStyle.copyWith(fontFamily: content.font);
     }
@@ -77,20 +81,20 @@ class DetailContent extends StatelessWidget {
   }
 
   Widget getDisplayComponent(
-      BuildContext context, Content content, Color baseColor) {
+      BuildContext context, Content content, Color baseColor,Color txtColor) {
     if (content.display == null ||
         content.display.isEmpty ||
         content.display.length <= 0) {
       return SizedBox(width: 5);
     } else if (content.display.length == 1) {
-      return getOneDisplay(context, content);
+      return getOneDisplay(context, content,txtColor);
     } else if (content.display.length > 1) {
-      return getMultiDisplay(context, content, baseColor);
+      return getMultiDisplay(context, content, baseColor,txtColor);
     }
     return SizedBox(width: 5);
   }
 
-  Widget getOneDisplay(BuildContext context, Content content) {
+  Widget getOneDisplay(BuildContext context, Content content, Color txtColor) {
     print('Mostrando solo un Display');
     Display display = content.display[0];
     return Expanded(
@@ -99,14 +103,15 @@ class DetailContent extends StatelessWidget {
       parentId: content.id,
       index: 1,
       bgColorParent: getBackgroundColor(context, content.backgroundPage),
+          txtColorParent: txtColor,
     ));
   }
 
   Widget getMultiDisplay(
-      BuildContext context, Content content, Color baseColor) {
+      BuildContext context, Content content, Color baseColor,Color txtColor) {
     final  primaryColor= getBackgroundColor(context, content.tabPrimaryColor,getBackgroundColor(context,content.backgroundPage,sc_theme.ScContent.tabPrimaryColor));
     final  secondaryColor= getBackgroundColor(context, content.tabSecondaryColor,sc_theme.ScContent.tabSecondaryColor);
-    final  textColor= getBackgroundColor(context, content.tabTextColor,sc_theme.ScContent.tabTextColor);
+    final  textColor= getBackgroundColor(context, content.tabTextColor,txtColor);
 
     List<Display> displays = content.display;
     if (content.display == null ||
@@ -155,7 +160,7 @@ class DetailContent extends StatelessWidget {
                     child: Container(
                         decoration: decoration,
                         child: TabBarView(
-                          children: getTabViews(content.id, displays,getBackgroundColor(context, content.backgroundPage)),
+                          children: getTabViews(content.id, displays,getBackgroundColor(context, content.backgroundPage),txtColor),
                         )))
               ])),
         ));
@@ -183,7 +188,7 @@ class DetailContent extends StatelessWidget {
     return tabs;
   }
 
-  List<Widget> getTabViews(String parentId, List<Display> displays,Color bgParent) {
+  List<Widget> getTabViews(String parentId, List<Display> displays,Color bgParent, Color txtParent) {
     List<Widget> tabViews = [];
 
     for (var i = 0; i < displays.length; i++) {
@@ -193,6 +198,8 @@ class DetailContent extends StatelessWidget {
         parentId: parentId,
         index: i,
         bgColorParent: bgParent,
+        txtColorParent: txtParent,
+
       );
       tabViews.add(dw);
     }
