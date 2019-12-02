@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
+import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:Pasaporte_2020/database/update/check_update.dart';
 import 'package:Pasaporte_2020/database/update/download_json.dart';
 import 'package:Pasaporte_2020/example_data/example_data.dart';
@@ -9,17 +10,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 import 'package:flutter/services.dart' show rootBundle;
-import 'dart:ui' as ui;
+import 'package:flutter/widgets.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
-   GlobalKey<SplashScreenState> key;
-
   SplashScreen({ Key key }) : super(key: key);
 
   @override
@@ -154,12 +150,13 @@ class SplashScreenState extends State<SplashScreen> {
       setTimer();
     }
 */
-    final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
+    //final ByteData data = await rootBundle.load('assets/img/fondo_inicial.png');
+    final ByteData data = await rootBundle.load(sc_theme.ScSplashScreen.assetUrl);
     image = await loadImage(new Uint8List.view(data.buffer));
 
-    loadContentAsset().then((result){
+    loadContentUrl().then((result){
       print('finalizo la carga de archivo json, se direcciona al home');
-      Navigator.pushNamed(context, 'home');
+      Navigator.pushReplacementNamed(context, 'home');
     });
 
 
@@ -255,8 +252,23 @@ class CurvePainter extends CustomPainter {
     var paint = Paint();
     paint.color = sc_theme.ScSplashScreen.background;
     paint.style = PaintingStyle.fill;
-    if (image != null) canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+    if (image != null) {
+      final Size imageSize = Size(
+          image.width.toDouble(), image.height.toDouble());
+      final FittedSizes sizes = applyBoxFit(sc_theme.ScSplashScreen.fill, imageSize, size);
+      final Rect inputSubrect = Alignment.center.inscribe(
+          sizes.source, Offset.zero & imageSize);
 
+      final Rect outputRect = Rect.fromLTRB(0, 0, size.width, size.height);
+      final Rect outputSubrect = Alignment.center.inscribe(
+          sizes.destination, outputRect);
+      canvas.drawImageRect(image, inputSubrect, outputSubrect, paint);
+      //canvas.drawImageNine(image, center, dst, paint)
+      //canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+
+    //  canvas.drawImage(image, new Offset(0.0, 0.0), paint);
+
+    }
     var path = Path();
     path.moveTo(0, size.height * 0.85);
     path.quadraticBezierTo(

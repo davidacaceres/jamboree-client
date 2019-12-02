@@ -1,4 +1,4 @@
-import 'package:Pasaporte_2020/model/Carrousel.dart';
+import 'package:Pasaporte_2020/model/carrousel.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
@@ -10,35 +10,63 @@ class CarrouselWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height*0.2,
-      width: MediaQuery.of(context).size.width * 1 - 32,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Carousel(
-            radius: Radius.circular(30),
-            images: getImages(list),
-            //animationCurve: Curves.easeInCirc,
-            dotSize: 4.0,
-            dotSpacing: 15.0,
-            dotIncreasedColor: Colors.white,
-            dotColor: Colors.white.withOpacity(0.5),
-            indicatorBgPadding: 5.0,
-            dotBgColor: Colors.black.withOpacity(0.1),
-             boxFit: BoxFit.cover,
-            borderRadius: false,
-            dotHorizontalPadding: 10,
+
+    return Card(
+        elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(5.0),
           ),
+        ),
+        margin: EdgeInsets.symmetric(horizontal: 15),
+       // borderOnForeground: true,
+        //padding: EdgeInsets.symmetric(horizontal: 15),
+        //decoration: BoxDecoration(),
+        child:SizedBox(
+        height: MediaQuery.of(context).size.height * 0.2,
+        width: MediaQuery.of(context).size.width*0.5,
+        child: buildCarousel()));
+  }
+
+  Carousel buildCarousel() {
+    return Carousel(
+
+      radius: Radius.circular(5),
+      images: getImages(list),
+      animationDuration: Duration(milliseconds: 600),
+      autoplayDuration: Duration(seconds: 30),
+     // overlayShadow: true,
+
+      //animationCurve: Curves.elasticIn,
+      dotSize: 7.0,
+      dotSpacing: 15.0,
+      dotIncreasedColor: Colors.white,
+      dotColor: Colors.white.withOpacity(0.5),
+      indicatorBgPadding: 2.0,
+      dotBgColor: Colors.black.withOpacity(0),
+       boxFit: BoxFit.fill,
+     borderRadius: true,
+      dotHorizontalPadding: 20,
+
     );
   }
 
-  List<Widget> getImages(List<Carrousel> lista) {
-    List<Image> images = [];
+  List<ImageProvider> getImages(List<Carrousel> lista)  {
+    /*
+    return  [
+      ExactAssetImage("assets/img/carousel/imagen_1.jpg"),
+      ExactAssetImage("assets/img/carousel/imagen_2.jpg"),
+      ExactAssetImage("assets/img/carousel/imagen_3.jpg"),
+      ExactAssetImage("assets/img/carousel/imagen_4.jpg"),
+      ExactAssetImage("assets/img/carousel/imagen_5.jpg"),
+      ExactAssetImage("assets/img/carousel/imagen_6.jpg")];
+*/
+
+    List<ImageProvider> images=[];
     for (var i = 0; i < lista.length; i++) {
-      images.add(getImageContent(url: lista[i].image,fit:BoxFit.fill));
+      images.add(getImageCarousel(url: lista[i].image));
     }
     return images;
-  }
 
+  }
 }

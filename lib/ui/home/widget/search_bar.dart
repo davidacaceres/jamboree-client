@@ -1,3 +1,4 @@
+import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -5,8 +6,11 @@ class HomeSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: EdgeInsets.only(top:10),
+        color: config.ScHomeSearch.background,
+        child:Container(
         height: 45,
-        margin: EdgeInsets.all(16.0),
+        margin: EdgeInsets.all(10.0),
         padding: EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           //backgroundBlendMode: BlendMode.,
@@ -21,7 +25,7 @@ class HomeSearchBar extends StatelessWidget {
           color: Colors.white,
         ),
         child: getSearchField(context)
-    );
+    ));
   }
 
   Widget getSearchField(BuildContext context) {

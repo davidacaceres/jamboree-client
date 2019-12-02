@@ -1,4 +1,4 @@
-import 'package:Pasaporte_2020/model/Content.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wDisplay.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
@@ -18,33 +18,42 @@ class DetailContent extends StatelessWidget {
       bgColor = getBackgroundColor(context, content.backgroundPage);
     }
 
+    Color txtColor = getTextColor(context, content.titleColor,sc_theme.ScContent.defaultTitleColor);
+
+
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: sc_theme.ScContent.barTopColor,
-        /*actions: <Widget>[IconButton(
-          icon: Icon(Icons.share),
-          onPressed: () {
-            print('compartir');
-          },
-        )],*/
       ),
       body: Column(
         children: <Widget>[
-          _logoContent(context, content, bgColor),
-          getDisplayComponent(context, content, bgColor),
+          _logoContent(context, content, bgColor,txtColor),
+          getDisplayComponent(context, content, bgColor,txtColor),
         ],
       ),
     );
   }
 
-  Widget _logoContent(BuildContext context, Content content, Color color) {
+  Widget _logoContent(BuildContext context, Content content, Color color, Color txtColor) {
     return Container(
         height: MediaQuery.of(context).size.height * 0.15,
-        child: getTitle(context, content));
+        child: getTitle(context, content,txtColor));
   }
 
-  Padding getTitle(BuildContext context, Content content) {
+  Padding getTitle(BuildContext context, Content content,Color txtColor) {
+    //Color titleColor = getTextColor(
+    //    context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
+
+    TextStyle txtStyle =
+        sc_theme.ScContent.titleContent.copyWith(color: txtColor);
+    if (content.font != null && content.font.isNotEmpty) {
+      txtStyle = txtStyle.copyWith(fontFamily: content.font);
+    }
+    if (content.fontSize != null && content.fontSize > 0) {
+      txtStyle = txtStyle.copyWith(fontSize: content.fontSize);
+    }
+
     return Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
@@ -65,35 +74,45 @@ class DetailContent extends StatelessWidget {
                       textAlign: TextAlign.center,
                       softWrap: true,
                       maxLines: 3,
-                      style: sc_theme.ScContent.titleContent,
+                      style: txtStyle,
                     )))
           ],
         ));
   }
 
   Widget getDisplayComponent(
-      BuildContext context, Content content, Color baseColor) {
+      BuildContext context, Content content, Color baseColor,Color txtColor) {
     if (content.display == null ||
         content.display.isEmpty ||
         content.display.length <= 0) {
       return SizedBox(width: 5);
     } else if (content.display.length == 1) {
-      return getOneDisplay(context, content);
+      return getOneDisplay(context, content,txtColor);
     } else if (content.display.length > 1) {
-      return getMultiDisplay(context, content, baseColor);
+      return getMultiDisplay(context, content, baseColor,txtColor);
     }
     return SizedBox(width: 5);
   }
 
-  Widget getOneDisplay(BuildContext context, Content content) {
+  Widget getOneDisplay(BuildContext context, Content content, Color txtColor) {
     print('Mostrando solo un Display');
     Display display = content.display[0];
     return Expanded(
-        child: DisplayWidget(display: display, parentId: content.id, index: 1));
+        child: DisplayWidget(
+      display: display,
+      parentId: content.id,
+      index: 1,
+      bgColorParent: getBackgroundColor(context, content.backgroundPage),
+          txtColorParent: txtColor,
+    ));
   }
 
   Widget getMultiDisplay(
-      BuildContext context, Content content, Color baseColor) {
+      BuildContext context, Content content, Color baseColor,Color txtColor) {
+    final  primaryColor= getBackgroundColor(context, content.tabPrimaryColor,getBackgroundColor(context,content.backgroundPage,sc_theme.ScContent.tabPrimaryColor));
+    final  secondaryColor= getBackgroundColor(context, content.tabSecondaryColor,sc_theme.ScContent.tabSecondaryColor);
+    final  textColor= getBackgroundColor(context, content.tabTextColor,txtColor);
+
     List<Display> displays = content.display;
     if (content.display == null ||
         content.display.isEmpty ||
@@ -104,27 +123,6 @@ class DetailContent extends StatelessWidget {
     BoxDecoration decoration = BoxDecoration(
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10), topRight: Radius.circular(10)));
-/*
-    if (sc_theme.ScContent.titleGradient && content.display.length>1) {
-
-      Color colorEnd;
-      try {
-        List<int> colorChild =
-            content.display[0].content[0].paragraphConf.backgroundColor;
-        colorEnd = getBackgroundColor(context, colorChild);
-      } catch (ex) {
-        print('No se encontro contenido inicial');
-        colorEnd = baseColor;
-      }
-      print('Color inicial: ${baseColor} color final ${colorEnd}');
-      decoration= BoxDecoration(gradient:  LinearGradient(
-              colors: [baseColor, colorEnd],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.7, 0.95],
-              tileMode: TileMode.repeated));
-
-    }*/
 
     return Expanded(
         flex: 5,
@@ -135,55 +133,62 @@ class DetailContent extends StatelessWidget {
               length: countTabs,
               child: Column(children: <Widget>[
                 Container(
-                    height: 40,
+                    height: 50,
                     margin: EdgeInsets.only(left: 5, right: 5, bottom: 10),
                     decoration: BoxDecoration(
                       border: Border.all(
-                          color: sc_theme.ScContent.selectedColorBackgroundTab),
-                      color: sc_theme.ScContent.unSelectedColorBackgroundTab,
-                      //color: Colors.red,
+                          color: primaryColor),
+                      color: secondaryColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TabBar(
                         isScrollable: false,
-                        unselectedLabelColor:
-                            sc_theme.ScContent.unSelectedColorTextTab,
+//                        unselectedLabelColor:
+//                            secondaryColor.withAlpha(80),
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicator: BoxDecoration(
                             boxShadow: <BoxShadow>[
                               BoxShadow(
                                   color: Colors.black12,
-                                  offset: Offset(3, 3),
-                                  blurRadius: 6)
+                                 // offset: Offset(3, 3),
+                                  blurRadius: 20)
                             ],
-                            color:
-                                sc_theme.ScContent.selectedColorBackgroundTab,
-                            borderRadius: BorderRadius.circular(6)),
-                        tabs: getTabsTitle(displays))),
+                            color:primaryColor,
+                            borderRadius: BorderRadius.circular(10)),
+                        tabs: getTabsTitle(context,displays,textColor))),
                 Expanded(
                     child: Container(
                         decoration: decoration,
                         child: TabBarView(
-                          children: getTabViews(content.id, displays),
+                          children: getTabViews(content.id, displays,getBackgroundColor(context, content.backgroundPage),txtColor),
                         )))
               ])),
         ));
   }
 
-  List<Tab> getTabsTitle(List<Display> displays) {
+  List<Tab> getTabsTitle(BuildContext context, List<Display> displays,Color textColor) {
     final List<Tab> tabs = [];
 
     for (var i = 0; i < displays.length; i++) {
       final Display dsp = displays[i];
       final tab = Tab(
-          child:
-              Align(alignment: Alignment.center, child: Text(dsp.shortTitle)));
+          child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                dsp.shortTitle,
+                style: TextStyle(color:textColor,fontSize: 14),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.visible,
+                maxLines: 2,
+              ))));
       tabs.add(tab);
     }
     return tabs;
   }
 
-  List<Widget> getTabViews(String parentId, List<Display> displays) {
+  List<Widget> getTabViews(String parentId, List<Display> displays,Color bgParent, Color txtParent) {
     List<Widget> tabViews = [];
 
     for (var i = 0; i < displays.length; i++) {
@@ -192,6 +197,9 @@ class DetailContent extends StatelessWidget {
         display: display,
         parentId: parentId,
         index: i,
+        bgColorParent: bgParent,
+        txtColorParent: txtParent,
+
       );
       tabViews.add(dw);
     }

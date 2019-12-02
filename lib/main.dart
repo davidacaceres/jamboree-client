@@ -1,9 +1,7 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
-import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:flutter/material.dart';
-
 import 'package:Pasaporte_2020/routes/routes.dart';
 import 'package:Pasaporte_2020/ui/home/home.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 

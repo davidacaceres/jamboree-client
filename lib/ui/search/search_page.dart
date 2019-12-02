@@ -1,5 +1,4 @@
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/model/Content.dart';
 import 'package:Pasaporte_2020/ui/search/widget/wsearch_field.dart';
 import 'package:Pasaporte_2020/ui/search/widget/wsearch_history.dart';
 import 'package:Pasaporte_2020/ui/search/widget/wsearch_result.dart';
@@ -16,7 +15,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  final List<Content> resultado=getExampleContent();
+ // final List<Content> resultado=getExampleContent();
   SearchFieldWidget searchBar;
   final historyList = HistoryListWidget(historia: getExampleHistory());
 
@@ -52,7 +51,9 @@ class _SearchPageState extends State<SearchPage> {
   Widget getList(){
     if(widget.searchText!=null && widget.searchText.isNotEmpty){
       print('Generando Listado de Resultado');
-      return SearchResult(listado: resultado);
+      var result = getExampleSearchContent(widget.searchText);
+      print('Resultado de la busqueda: ${result.length}');
+      return SearchResult(listado: result );
     }else{
       print('Generando Listado de Historia');
       return historyList;

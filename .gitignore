@@ -71,3 +71,8 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+/assets/img/locations/operation_center.png
+/assets/img/locations/hospital.png
+/assets/img/locations/almacen.png
+/assets/img/locations/policia.png
