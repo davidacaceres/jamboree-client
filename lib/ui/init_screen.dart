@@ -156,8 +156,17 @@ class SplashScreenState extends State<SplashScreen> {
 
     loadContentUrl().then((result){
       print('finalizo la carga de archivo json, se direcciona al home');
-      Navigator.pushReplacementNamed(context, 'home');
+      loadLocationsUrl().then((onResult){
+        if(onResult){
+          print('No se encontro archivo de ubicaciones');
+        }else{
+          print('Archivo de ubicaciones cargado');
+        }
+        Navigator.pushReplacementNamed(context, 'home');
+      });
+
     });
+
 
 
   }

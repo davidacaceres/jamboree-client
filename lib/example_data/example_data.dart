@@ -3,10 +3,12 @@ import 'dart:io';
 
 import 'package:Pasaporte_2020/model/carrousel.dart';
 import 'package:Pasaporte_2020/model/content.dart';
+import 'package:Pasaporte_2020/model/location.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
 
 final List<Content> _listContent =[];
+final List<UbicacionModel> _listLocations =[];
 
 final List<Carrousel> _listCarrousel = [
   new Carrousel(
@@ -102,7 +104,7 @@ Future<bool> loadContentUrl() async {
       if (response.statusCode == 200) {
         print(
             "Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");
-        print(response.body);
+       // print(response.body);
 
         var jStringList = json.decode(utf8.decode(response.bodyBytes));
         // print('lista con ${jStringList.length} items');
@@ -126,3 +128,53 @@ Future<bool> loadContentUrl() async {
   return null;
 }
 
+
+Future<bool> loadLocationsUrl() async {
+
+  try {
+    bool connected=false;
+    try {
+      final result = await InternetAddress.lookup("jamboree.cl");
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('connected to parlamento.jamboree.cl to download content');
+        connected=!connected;
+      }
+    } on SocketException catch (_) {
+      print('not connected to parlamento.jamboree.cl');
+    }
+    if(connected) {
+      print('get Locations from url');
+      Map<String, String> headers = {
+        HttpHeaders.contentTypeHeader: "application/json",
+        HttpHeaders.acceptCharsetHeader:"utf-8"// or whatever
+      };
+      final response = await http.get(
+          'http://parlamento.jamboree.cl/locations_jme.json',headers: headers);
+      if (response.statusCode == 200) {
+        print(
+            "Se encontro archivo de ubicaciones en parlamento.jamboree.cl");
+
+        var jStringList = json.decode(utf8.decode(response.bodyBytes));
+        for (int u =0; u < jStringList.length ; u++ ) {
+
+
+          UbicacionModel content=UbicacionModel.fromJson(jStringList[u]);
+          _listLocations.add(content);
+
+        }
+        print('Finalizo la carga de la ubicaciones con ${jStringList.length}');
+        return true;
+      }else{
+        print('Server respondio ${response.statusCode}  sin archivo de ubicaciones');
+        return false;
+      }
+    }
+  } catch (e) {
+    print('Error al recibir archivo con ubicaciones $e');
+  }
+  return false;
+}
+
+List<UbicacionModel> getLocations() {
+  return _listLocations;
+}

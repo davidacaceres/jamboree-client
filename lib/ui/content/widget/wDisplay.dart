@@ -1,6 +1,7 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
 import 'package:Pasaporte_2020/model/content.dart';
+import 'package:Pasaporte_2020/ui/content/widget/wItemRow.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
@@ -48,10 +49,13 @@ class DisplayWidget extends StatelessWidget {
       } else if (c.paragraphConf != null) {
         print('es parrafo');
         result.add(_getParagraph(context, c.paragraphConf, initial));
+      } else if (c.listConf!=null){
+        print('Es Lista');
+        result.add(_getList(context,c));
       }
     }
     if (display.childs != null && display.childs.length > 0) {
-      result.add(_getList(context, display.childs, null));
+      result.add(_getChilds(context, display.childs, null));
     }
 
     return result;
@@ -112,7 +116,7 @@ class DisplayWidget extends StatelessWidget {
     }
   }
 
-  Widget _getList(BuildContext context, List<Child> childs, Color colorCard) {
+  Widget _getChilds(BuildContext context, List<Child> childs, Color colorCard) {
     return Column(children: _getChild(context, childs));
   }
 
@@ -128,37 +132,7 @@ class DisplayWidget extends StatelessWidget {
     return childs;
   }
 
-  Widget _makeChild(BuildContext context, Child child) {
-    Color bgColor =
-        getBackgroundColor(context, child.backgroundColor, bgColorParent);
-    TextStyle stText = config.ScContent.childText;
 
-    return Card(
-        elevation: 10,
-        margin: EdgeInsets.all(5),
-        color: bgColor.withBlue(200),
-        shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(5.0),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                child: Container(
-                    width: MediaQuery.of(context).size.width * .80,
-                    child: Text(
-                      child.title,
-                      overflow: TextOverflow.visible,
-                      style: stText,
-                    ))),
-            Spacer(),
-            Icon(Icons.arrow_forward_ios, color: Colors.black87),
-          ],
-        ));
-  }
 
   Widget _makeChild2(BuildContext context, Child child) {
     Color bgColor =
@@ -169,7 +143,8 @@ class DisplayWidget extends StatelessWidget {
     if (txtColor.value == bgColor.value) {
       print('Es el mismo color');
       txtColor =
-          TinyColor.fromRGB(r: bgColor.red, g: bgColor.green, b: bgColor.blue)
+          TinyColor
+              .fromRGB(r: bgColor.red, g: bgColor.green, b: bgColor.blue)
               .darken(100)
               .color;
     }
@@ -183,7 +158,7 @@ class DisplayWidget extends StatelessWidget {
             child: ListTile(
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
-                leading: Container(
+                leading: child.image==null || child.image.isEmpty?null:Container(
                   padding: EdgeInsets.only(right: 12.0),
                   decoration: new BoxDecoration(
                       border: new Border(
@@ -193,10 +168,32 @@ class DisplayWidget extends StatelessWidget {
                 title: Text(
                   child.title,
                   style:
-                      TextStyle(color: txtColor, fontWeight: FontWeight.w700),
+                      TextStyle(color: txtColor, fontWeight: FontWeight.w500),
                 ),
                 // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
                 trailing: Icon(Icons.keyboard_arrow_right,
                     color: txtColor, size: 30.0))));
   }
+
+  Widget _getList(BuildContext context, ContentElement c) {
+     ListConf l=c.listConf;
+     //valores por defecto
+       Color bgDColor=getBackgroundColor(context, l.backgroundColor);
+       TextStyle txtStyle=TextStyle(color:getTextColor(context, l.textColor),fontSize: l.fontSize, fontFamily: l.fontFamily);
+
+     return Column(children: _getListItems(context, l.items,bgDColor,txtStyle, l.heigth));
+
+
+
+
+  }
+
+  List<Widget> _getListItems(BuildContext context, List<Item> items, Color bgDColor, TextStyle txtStyle,double height) {
+    List<Widget> itemsW = [];
+    for (var i = 0; i < items.length; i++) {
+      itemsW.add(ItemRow(items[i],bgDColor,txtStyle,height));
+    }
+    return itemsW;
+  }
+
 }

@@ -136,3 +136,24 @@ ImageProvider getImageCarousel({@required String url}) {
   return imagen;
 }
 
+Image getImageItem({@required String url,@required double h,double w}) {
+  print('obteniendo imagen: $url');
+  Image imagen;
+  try {
+    if (url != null &&
+        url.isNotEmpty &&
+        (url.startsWith("http://") || url.startsWith("https://"))) {
+      imagen = Image(
+          image: CachedNetworkImageProvider(url), width: w, height: h);
+    } else if (url != null && url.isNotEmpty && url.startsWith("assets")) {
+      imagen = Image.asset(url,width: w,height: h,);
+    } else {
+      imagen = Image.asset(url,width: w,height: h,);
+    }
+  } catch (ex) {
+    print('error al obtener imagen $url');
+    return null;
+  }
+  return imagen;
+}
+
