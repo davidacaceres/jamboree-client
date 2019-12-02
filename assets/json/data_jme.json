@@ -5,60 +5,19 @@
 		"root": true,
 		"title": "¿Qué es un Jamboree?",
 		"titleList": "¿Qué es un Jamboree?",
-		"image":"assets/img/subcampos/futaleufu.jpeg",
-		"background_page":[255,255,255],
-        "search" : "debe ir todo en minusculas jamboree jefe campo nacional insignia ",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[248,177,25],
 		"display":[
 			{
-				"short_title":"Unico",
+				"short_title":"Contenidos",
 				"content":
 				[
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
 								"data":"¡Bienvenidos y bienvenidas al 10° Jamboree Nacional 2020 - Picarquin, Chile!"
-							}
-                    },
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
-								"data":"La palabra Jamboree quiere decir fiesta grande o celebración. Un Jamboree para el movimiento Scout es un gran campamento en que participan jóvenes provenientes de distintos lugares."
-							}
-                    },
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
-								"data":"Robert Baden-Powell la eligió porque le gustaba su sonido alegre, jovial y festivo que tenía mucho que ver con los jóvenes, que son siempre los protagonistas de un Jamboree."
-							}
-                    },
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
-								"data":"Así fue como esta palabra pasó a denominar al más importante evento del Movimiento Scout: el Jamboree Scout Mundial, una reunión de miles de jóvenes scouts provenientes de más de 150 países que se realiza cada cuatro años, siempre en un país distinto."
-							}
-                    },
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
-								"data":"Picarquín, el lugar que ahora es sede de nuestro campamento, fue en 1999 sde del 19° Jamboree Scout Mundial; el primero y único realizado hasta hoy en América Latina."
-							}
-                    },
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[232, 81, 28],
-								"background_color":[255,255,255],
-								"data":"Pero esta palabra no solo designa a los campamentos mundiales en que se reúnen jóvenes scouts de todo el mundo. También existe un Jamboree Scout Interamericano, donde se reúnen jóvenes scouts de toda América y Jamborees nacionales que se realizan en cada país y reúnen a los miembros de los Movimientos Scout y Guía de ese país, como en el caso de nuestro evento."
 							}
                     }
                 ],
@@ -67,9 +26,54 @@
 					{"id":"1.2","order":2,"title":"El 10° Jamboree Nacional"},
 					{"id":"1.3","order":3,"title":"Jamborees Nacionales"},
 					{"id":"1.4","order":4,"title":"El lema del 10° Jamboree"},
-					{"id":"1.5","order":5,"title":"El logo-Insignia de nuestro Jamboree"},
-					{"id":"1.6","order":6,"title":"Canciones del 10° Jamboree Nacional"}
+					{"id":"1.5","order":5,"title":"El logo-Insignia de nuestro Jamboree"}
 					]
+			},
+			{
+				"short_title":"¿Que significa Jamboree?",
+				"content":
+				[
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
+								"data":"La palabra Jamboree quiere decir fiesta grande o celebración. Un Jamboree para el movimiento Scout es un gran campamento en que participan jóvenes provenientes de distintos lugares."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
+								"data":"Robert Baden-Powell la eligió porque le gustaba su sonido alegre, jovial y festivo que tenía mucho que ver con los jóvenes, que son siempre los protagonistas de un Jamboree."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
+								"data":"Así fue como esta palabra pasó a denominar al más importante evento del Movimiento Scout: el Jamboree Scout Mundial, una reunión de miles de jóvenes scouts provenientes de más de 150 países que se realiza cada cuatro años, siempre en un país distinto."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
+								"data":"Picarquín, el lugar que ahora es sede de nuestro campamento, fue en 1999 sde del 19° Jamboree Scout Mundial; el primero y único realizado hasta hoy en América Latina."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[248,177,25],
+								"data":"Pero esta palabra no solo designa a los campamentos mundiales en que se reúnen jóvenes scouts de todo el mundo. También existe un Jamboree Scout Interamericano, donde se reúnen jóvenes scouts de toda América y Jamborees nacionales que se realizan en cada país y reúnen a los miembros de los Movimientos Scout y Guía de ese país, como en el caso de nuestro evento."
+							}
+                    }
+                ]			
 			}
 		]
 	},
@@ -77,9 +81,8 @@
 			"id": "1.1",
 			"order": 1,
 			"title": "Mensaje del jefe de campo",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
-			"search" : "debe ir todo en minusculas mensaje jefe campo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -88,26 +91,18 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
+									"text_color":[0, 0, 0],
 									"background_color":[255,255,255],
-									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
+									"data":"A las guias y Scouts <br\/> Quiero aprovechar este mensaje de bienvenida para agradecerles la gran oportunidad que cada uno de ustedes ma ha dado: seguir cumpliendo uno de mis grandes sueños de niño y poder participar de un Jamboree"
 								}
 						},
 						{
-							"paragraph_conf":
-								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
-								}
-						},
-						{
-							"paragraph_conf":
-								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":"INSERTAR TEXTO DEL MENSAJE DEL JEFE DE CAMPO"
-								}
+							"image_conf":
+								{
+									"source":"http://parlamento.jamboree.cl/pp.jpg",
+									"align":"center",
+									"background_color":[255,255,255]
+								} 
 						}
 					]
 				}
@@ -118,7 +113,7 @@
 			"order": 2,
 			"title": "El 10° Jamboree Nacional",
 			"image":"assets/img/logo_mono_4.png",
-			"background_page":[255,255,255],
+			"background_page":[248,177,25],
 			"display":[
 				{
 					"short_title":"Info",
@@ -148,8 +143,8 @@
 			"id": "1.3",
 			"order": 3,
 			"title": "Jamborees Nacionales",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
+			"image":"assets/img/asociacion.png",
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -158,10 +153,58 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":
-									"- 1° Jamboree \n - 2° Jamboree \n- etc."
+									"text_color":[0, 0, 0],
+									"data":"Nuestra Asociación ya ha realizado 9 eventos nacionales para guías y scouts."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"data":"<ul><li>1976: Quebrada de Macul<\/li><li>1982: Lago Peñuelas<\/li><li>1986: Panguipulli<\/li><li>1992: Los Lagos<\/li><li>1996: Parral<\/li><li>2002: Picarquín<\/li><li>2009: Picarquín<\/li><li>2013: Picarquín<\/li><li>2016: Picarquín<\/li><\/ul>"
+								}
+						},
+						{
+							"list_conf":
+							{
+								"backgroundColor":[255,255,255],
+								"textColor":[0,0,0],
+								"fontSize":13.0,
+								"fontFamily": "Arial",
+								"items":
+								[
+								{
+									"backgroundColor":[248,177,25],
+									"image": "http://parlamento.jamboree.cl/logo_jam2016.jpg",
+									"title": "<b>1976<\/b>",
+									"titleColor":[255,255,255],
+									"titleFontSize": 13.2,
+									"titleFontFamiy": "Arial",
+									"subtitle":"Quebrada de Macul",
+									"subtitleColor":[100,100,100],
+									"subtitleFontSize": 13.2,
+									"subtitleFontFamiy": "Arial"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/logo_jam2013.png",
+									"title": "2013",
+									"subtitle":"Picarquín"
+								}    
+							 ]
+							}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"data":"Además, tuvimos el honor de ser los organizadores y anfitriones de los eventos scouts internacionales:"
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"data":"<ul><li>6° Jamboree Scout Panamericano, Villarica, 1989<\/li><li>19° Jamboree Scout Mundial, Picarquín, 1999<\/li><\/ul>"
 								}
 						}
 					]
@@ -172,8 +215,8 @@
 			"id": "1.4",
 			"order": 4,
 			"title": "El lema del 10° Jamboree",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
+			"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+			"background_page":[224,0,122],
 			"display":[
 				{
 					"short_title":"Info",
@@ -182,9 +225,25 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":"INSERTAR AQUI EL LEMA"
+									"text_color":[255, 255, 255],
+									"background_color":[224,0,122],
+									"data":"El lema de un evento es una idea fuerza que se pretende instalar en las mentes de quienes participan de él."
+								}
+						},
+						{
+							"paragraph_conf":
+								{
+									"font": "Gingerline DEMO Regular",
+									"fontSize": 14.0,
+									"text_color":[255, 255, 255],
+									"data":"<h1><center>EL CAMBIO ES AHORA<\/center><\/h1>"
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[255, 255, 255],
+									"data":"es el lema de nuestro 10° Jamboree Nacional."
 								}
 						}
 					]
@@ -195,8 +254,8 @@
 			"id": "1.5",
 			"order": 5,
 			"title": "El logo-Insignia de nuestro Jamboree",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
+			"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+			"background_page":[224,0,122],
 			"display":[
 				{
 					"short_title":"Info",
@@ -205,30 +264,178 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
-									"background_color":[255,255,255],
-									"data":"TEXTO DEL LOGO"
+									"text_color":[255, 255, 255],
+									"data":"Este es logo oficial del 10° Jamboree Nacional 2020."
 								}
 						},
 						{
 							"image_conf":
 								{
-									"source":"assets/img/mowgli.gif",
+									"source":"assets/img/logo_jamboree_color.png",
+									"align":"center",
+									"background_color":[224,0,122]
+								} 
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[255, 255, 255],
+									"data":"<center><b>¿Qué significado tiene los diferentes elementos de la insignia del Xº Jamboree Nacional?<\/b><\/center>"
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[255, 255, 255],
+									"background_color":[224,0,122],
+									"data":"El desarrollo de la insignia conmemorativa del 10º Jamboree Nacional que organiza nuestra Asociación surge de la inspiración de la propuesta de “Favia” miembro beneficiario de nuestra institución y que a través del llamado que hiciéramos a través de las redes sociales envío su propuesta gráfica. En ella se aprecian dos manos tomadas, este gesto normalmente se utiliza para graficar la unión de dos personas, un saludo espontáneo o cómo símbolo de fuerza conjunta."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[255, 255, 255],
+									"background_color":[224,0,122],
+									"data":"En atención al lema <b>\"El Cambio es Ahora\"<\/b>, descrito por los mismos beneficiarios en diferentes instancias de participación en las que fueron consultados, busca ser un llamado a la acción; acción cotidiana de cada uno de nuestras guías y scouts en su contexto personal, sea este familiar, escolar o al interior de su patrulla, unidad o grupo, en definitiva reconocernos como agentes de cambio hoy, con las capacidades y conocimientos que hoy contamos, con la fuerza que nos da la juventud y con el entusiasmo y optimismo propios de nuestro movimiento."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[224,0,122],
+									"background_color":[255,255,255],
+									"data":"Hoy hacemos un guiño al Jamboree Mundial que organizamos como Asociación hace ya 20 años atrás, es por esto que integramos elementos gráficos de esa imagen para conmemorar la importancia de este evento en nuestra historia como institución."
+								}
+						},
+						{
+							"image_conf":
+								{
+									"source":"http://parlamento.jamboree.cl/baseLogoMundial_small.png",
 									"align":"center",
 									"background_color":[255,255,255]
 								} 
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[224,0,122],
+									"background_color":[255,255,255],
+									"data":"Finalmente, en cuanto a los colores seleccionados, estos corresponden tanto a los colores institucionales como a algunos de los que representan objetivos sustentables que propone la ONU y que hemos hecho nuestros para avanzar en el trabajo de un mundo mejor."
+								}
+						}
+					]
+				}
+			]
+		},	
+	{
+		"id": "2",
+		"order": 2,
+		"root": true,
+		"title": "Código de Conducta del 10° Jamboree Nacional",
+		"titleList": "Código de Conducta",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[224,0,122],
+		"titleColor":[255,255,255],
+		"display":[
+			{
+				"short_title":"Contenidos",
+				"content":
+				[
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[224,0,122],
+								"data":"El Jamboree es una fiesta de encuentro, de intercambio y de amistad enmarcado en los valores de la Promesa y la Ley. Por eso te invitamos a disfrutar este encuentro respetando el código de convivencia, cuidando tu higiene y salud y protegiendo el medio ambiente."
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[255,255,255],
+								"background_color":[224,0,122],
+								"data":"Lee, reflexiona y comprométete a hacer todo lo que de ti dependa para que esta experiencia sea inolvidable para ti y para cada una de las personas que compartirán contigo estos días de aventura."
+							}
+                    }
+                ],
+				"childs":[
+					{"id":"2.1","order":1,"title":"Nuestra Ley y Promesa"},
+					{"id":"2.2","order":2,"title":"Nuestro uniforme"},
+					{"id":"2.3","order":3,"title":"Pertenencias personales"},
+					{"id":"2.4","order":4,"title":"Advertencia respecto de daños"},
+					{"id":"2.5","order":5,"title":"Consumo de alcohol y tabaco"},
+					{"id":"2.6","order":5,"title":"Relaciones interpersonales"},
+					{"id":"2.7","order":5,"title":"¿Como ayudar?"},
+					{"id":"2.8","order":5,"title":"Higiene y salud"}
+					]
+			},
+			{
+				"short_title":"Código de conducta",
+				"content":
+				[
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[224,0,122],
+								"background_color":[255,255,255],
+								"data":"Como Guía o Scout, participante del 10° Jamboree Nacional, comprometo a:"
+							}
+                    },
+					{
+						"paragraph_conf":
+							{ 
+								"text_color":[224,0,122],
+								"background_color":[255,255,255],
+								"data":"<ul><li>Respetar la Ley y la Promesa Scout.<\/li><li>Respetar las leyes y normas del pa&iacute;s.<\/li><li>Ser considerado y respetuoso con los dem&aacute;s.<\/li><li>No utilizar lenguaje ofensivo ni realizar acciones que puedan serlo.<\/li><li>No consumir ni facilitar alcohol, tabaco o drogas a otras personas.<\/li><li>Ser respetuoso de la propiedad privada y cuidadoso con las instalaciones del evento.<\/li><li>Cuidar mi salud e higiene personal, as&iacute; como cuidar de los otros<\/li><li>Cuidar y respetar el medio ambiente.<\/li><li>Respetar las indicaciones de los equipos de Subcampo y de las personas a cargo de las actividades y los m&oacute;dulos.<\/li><\/ul>"
+							}
+                    }
+                ]
+			}
+		]
+	},
+		{
+			"id": "2.1",
+			"order": 1,
+			"title": "Nuestra Ley y Promesa",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Ley Guía y Scout",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"<ol><li>La gu&iacute;a y el scout es digna y digno de confianza<\/li>\r\n<li>La gu&iacute;a y el scout es leal<\/li>\r\n<li>La gu&iacute;a y el scout sirve sin esperar recompensa<\/li>\r\n<li>La gu&iacute;a y el scout comparte con todos<\/li>\r\n<li>La gu&iacute;a y el scout es alegre y cordial<\/li>\r\n<li>La gu&iacute;a y el scout protege la vida y la naturaleza<\/li>\r\n<li>La gu&iacute;a y el scout es responsable y nada hace a medias<\/li>\r\n<li>La gu&iacute;a y el scout es optimista<\/li>\r\n<li>La gu&iacute;a y el scout cuida las cosas y valora el trabajo<\/li>\r\n<li>La gu&iacute;a y el scout es coherente en pensamiento, palabra y acci&oacute;n<\/li>\r\n<\/ol>"
+								}
+						}
+					]
+				},
+				{
+					"short_title":"Promesa Guía y Scout",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"<center>Por mi honor prometo<br\/>hacer cuanto de m&iacute; dependa<br\/>para buscar a Dios,<br\/>amar a mi familia,<br\/>ayudar a los dem&aacute;s<br\/>servir a mi pa&iacute;s,<br\/>trabajar por la paz<br\/>y vivir la Ley Guía \/ Scout<br\/><\/center>"
+								}
 						}
 					]
 				}
 			]
 		},
 		{
-			"id": "1.6",
-			"order": 6,
-			"title": "Canciones del 10° Jamboree Nacional",
-			"titleList": "",
-			"image":"assets/img/carpa.jpg",
-			"background_page":[0,0,0],
+			"id": "2.2",
+			"order": 2,
+			"title": "Nuestro uniforme",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -237,51 +444,161 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[0, 0, 255],
+									"text_color":[0, 0, 0],
 									"background_color":[255,255,255],
-									"data":"TEXTO DE LA CANCION"
+									"data":"TEXTO"
 								}
 						}
 					]
 				}
 			]
 		},
-	
-	{
-		"id": "2",
-		"order": 2,
-		"root": true,
-		"title": "Código de Conducta del 10° Jamboree Nacional",
-		"titleList": "Conducta",
-		"image":"assets/img/carpa.jpg",
-		"background_page":[0,0,0],
-		"display":[
-			{
-				"short_title":"Unico",
-				"content":
-				[
-					{
-						"paragraph_conf":
-							{ 
-								"text_color":[0, 0, 255],
-								"background_color":[255,255,255],
-								"data":"INSERTAR AQUI EK CONTENIDO"
-							}
-                    }
-                ],
-				"childs":[
+		{
+			"id": "2.3",
+			"order": 3,
+			"title": "Pertenencias personales",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
 					]
-			}
-		]
-	},
+				}
+			]
+		},
+		{
+			"id": "2.4",
+			"order": 4,
+			"title": "Advertencia respecto de daños",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2.5",
+			"order": 5,
+			"title": "Consumo de alcohol y tabaco",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2.6",
+			"order": 6,
+			"title": "Relaciones interpersonales",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2.7",
+			"order": 7,
+			"title": "¿Como ayudar?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2.8",
+			"order": 8,
+			"title": "Higiene y salud",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
 	{
 		"id": "3",
 		"order": 3,
 		"root": true,
 		"title": "Planes de acción para nuestra seguridad",
-		"titleList": "Planes",
-		"image":"http://",
-		"background_page":[0,0,0],
+		"titleList": "Planes de acción y seguridad",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[255,255,255],
 		"display":[
 			{
 				"short_title":"Unico",
@@ -290,25 +607,145 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[0, 0, 255],
+								"text_color":[0, 0, 0],
 								"background_color":[255,255,255],
-								"data":"INSERTAR AQUI EK CONTENIDO"
+								"data":"INSERTAR AQUI EL CONTENIDO"
 							}
                     }
                 ],
 				"childs":[
+					{"id":"3.1","order":1,"title":"¿Qué hacer en caso de incendio en el campo?"},
+					{"id":"3.2","order":2,"title":"¿Qué hacer en caso de un sismo?"},
+					{"id":"3.3","order":3,"title":"¿Qué hacer en caso de requerirse la evacuación del campo?"},
+					{"id":"3.4","order":4,"title":"¿Qué hacer en caso de encontrar una persona en peligro?"},
+					{"id":"3.5","order":5,"title":"¿Qué hacer en caso de encontrar una persona en problemas?"}
 					]
 			}
 		]
 	},
+		{
+			"id": "3.1",
+			"order": 1,
+			"title": "¿Qué hacer en caso de incendio en el campo?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "3.2",
+			"order": 2,
+			"title": "¿Qué hacer en caso de un sismo?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "3.3",
+			"order": 3,
+			"title": "¿Qué hacer en caso de requerirse la evacuación del campo?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "3.4",
+			"order": 4,
+			"title": "¿Qué hacer en caso de encontrar una persona en peligro?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "3.5",
+			"order": 5,
+			"title": "¿Qué hacer en caso de encontrar una persona en problemas?",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
 	{
 		"id": "4",
 		"order": 4,
 		"root": true,
-		"title": "Servicios",
-		"titleList": "",
-		"image":"assets/img/carpa.jpg",
-		"background_page":[0,0,0],
+		"title": "Los Servicios Generales",
+		"titleList": "Servicios Generales",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[255,255,255],
 		"display":[
 			{
 				"short_title":"Unico",
@@ -317,25 +754,169 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[0, 0, 255],
+								"text_color":[0, 0, 0],
 								"background_color":[255,255,255],
-								"data":"INSERTAR AQUI EK CONTENIDO"
+								"data":"INSERTAR AQUI EL CONTENIDO"
 							}
                     }
                 ],
 				"childs":[
+					{"id":"4.1","order":1,"title":"Seguridad"},
+					{"id":"4.2","order":2,"title":"Camping Scout"},
+					{"id":"4.3","order":3,"title":"Hospital y postas"},
+					{"id":"4.4","order":4,"title":"Supermercado y alimentación"},
+					{"id":"4.5","order":5,"title":"Residuos y basura"},
+					{"id":"4.6","order":6,"title":"Identificación en el Jamboree"}
 					]
 			}
 		]
 	},
+		{
+			"id": "4.1",
+			"order": 1,
+			"title": "Seguridad",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "4.2",
+			"order": 2,
+			"title": "Camping Scout",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "4.3",
+			"order": 3,
+			"title": "Hospital y postas",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "4.4",
+			"order": 4,
+			"title": "Supermercado y alimentación",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "4.5",
+			"order": 5,
+			"title": "Residuos y basura",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "4.6",
+			"order": 6,
+			"title": "Identificación en el Jamboree",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
 	{
 		"id": "5",
 		"order": 5,
 		"root": true,
-		"title": "Subcampos",
-		"titleList": "",
-		"image":"assets/img/carpa.jpg",
-		"background_page":[0,0,0],
+		"title": "Los Subcampos del Jamboree",
+		"titleList": "Subcampos",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[255,255,255],
 		"display":[
 			{
 				"short_title":"Unico",
@@ -344,25 +925,267 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[0, 0, 255],
+								"text_color":[0, 0, 0],
 								"background_color":[255,255,255],
-								"data":"INSERTAR AQUI EK CONTENIDO"
+								"data":"INSERTAR AQUI EL CONTENIDO"
 							}
                     }
                 ],
 				"childs":[
+					{"id":"5.1","order":1,"title":"Servicios básicos del subcampo"},
+					{"id":"5.2","order":2,"title":"Actividades cotidianas del subcampo"},
+					{"id":"5.3","order":3,"title":"Actividades internas de subcampo"},
+					{"id":"5.4","order":4,"title":"Nombre de los subcampos"},
+					{"id":"5.5","order":5,"title":"Recetas y tips de cocina"}
 					]
 			}
 		]
 	},
+		{
+			"id": "5.1",
+			"order": 1,
+			"title": "Servicios básicos del subcampo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "5.2",
+			"order": 2,
+			"title": "Actividades cotidianas del subcampo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "5.3",
+			"order": 3,
+			"title": "Actividades internas de subcampo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					],
+				"childs":[
+					{"id":"5.3.1","order":1,"title":"Encuentros territoriales"},
+					{"id":"5.3.2","order":2,"title":"Bienvenida"},
+					{"id":"5.3.3","order":3,"title":"Despedida"},
+					{"id":"5.3.4","order":3,"title":"Ejecución de actividades"},
+					{"id":"5.3.5","order":3,"title":"Celebración en el subcampo"}
+					]	
+				}
+			]
+		},
+			{
+				"id": "5.3.1",
+				"order": 1,
+				"title": "Encuentros territoriales",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "5.3.2",
+				"order": 2,
+				"title": "Bienvenida",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "5.3.3",
+				"order": 3,
+				"title": "Despedida",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "5.3.4",
+				"order": 4,
+				"title": "Ejecución de actividades",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "5.3.5",
+				"order": 5,
+				"title": "Celebración en el subcampo",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+		{
+			"id": "5.4",
+			"order": 4,
+			"title": "Nombre de los subcampos",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "5.5",
+			"order": 5,
+			"title": "Recetas y tips de cocina",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
 	{
 		"id": "6",
 		"order": 6,
 		"root": true,
 		"title": "Módulos de programa",
-		"titleList": "",
-		"image":"assets/img/carpa.jpg",
-		"background_page":[0,0,0],
+		"titleList": "Programa",
+		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
+		"background_page":[255,255,255],
 		"display":[
 			{
 				"short_title":"Unico",
@@ -371,15 +1194,379 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[0, 0, 255],
+								"text_color":[0, 0, 0],
 								"background_color":[255,255,255],
 								"data":"INSERTAR AQUI EK CONTENIDO"
 							}
                     }
                 ],
 				"childs":[
+					{"id":"6.1","order":1,"title":"Expo"},
+					{"id":"6.2","order":1,"title":"Especialidades"},
+					{"id":"6.3","order":1,"title":"Torneo"},
+					{"id":"6.4","order":1,"title":"Foros"},
+					{"id":"6.5","order":1,"title":"Deportes"},
+					{"id":"6.6","order":1,"title":"Eventos Masivos"}
 					]
 			}
 		]
-	}
+	},
+		{
+			"id": "6.1",
+			"order": 1,
+			"title": "Expo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					],
+					"childs":[
+						{"id":"6.1.1","order":1,"title":"Senderos"},
+						{"id":"6.1.2","order":1,"title":"Rutas patrimoniales"},
+						{"id":"6.1.3","order":1,"title":"Juegos al paso"},
+						{"id":"6.1.4","order":1,"title":"La feria"},
+						{"id":"6.1.5","order":1,"title":"Evaluación"}
+						]
+				}
+			]
+		},
+			{
+				"id": "6.1.1",
+				"order": 1,
+				"title": "Senderos",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.1.2",
+				"order": 2,
+				"title": "Rutas patrimoniales",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.1.3",
+				"order": 3,
+				"title": "Juegos al paso",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.1.4",
+				"order": 4,
+				"title": "La feria",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.1.5",
+				"order": 5,
+				"title": "Evaluación",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+		{
+			"id": "6.2",
+			"order": 2,
+			"title": "Especialidades",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "6.3",
+			"order": 3,
+			"title": "Torneo",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "6.4",
+			"order": 4,
+			"title": "Foros",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "6.5",
+			"order": 5,
+			"title": "Deportes",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "6.6",
+			"order": 6,
+			"title": "Eventos Masivos",
+			"image":"assets/img/logo_jamboree_color.png",
+			"background_page":[255,255,255],
+			"display":[
+				{
+					"short_title":"Info",
+					"content":
+					[
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"TEXTO"
+								}
+						}
+					],
+					"childs":[
+						{"id":"6.6.1","order":1,"title":"Ceremonia de Inauguración"},
+						{"id":"6.6.2","order":1,"title":"Ceremonia de Clausura"},
+						{"id":"6.6.3","order":1,"title":"Velada"},
+						{"id":"6.6.4","order":1,"title":"Animación religiosa"}
+						]
+				}
+			]
+		},
+			{
+				"id": "6.6.1",
+				"order": 1,
+				"title": "Ceremonia de Inauguración",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.6.2",
+				"order": 2,
+				"title": "Ceremonia de Clausura",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.6.3",
+				"order": 3,
+				"title": "Velada",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "6.6.4",
+				"order": 4,
+				"title": "Animación religiosa",
+				"image":"assets/img/logo_jamboree_color.png",
+				"background_page":[255,255,255],
+				"display":[
+					{
+						"short_title":"Info",
+						"content":
+						[
+							{
+								"paragraph_conf":
+									{ 
+										"text_color":[0, 0, 0],
+										"background_color":[255,255,255],
+										"data":"TEXTO"
+									}
+							}
+						]
+					}
+				]
+			}
 ]
