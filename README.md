@@ -17,7 +17,7 @@ https://rxlabz.github.io/panache
 "list_conf":{
     "backgroundColor":[255,255,255],
     "textColor":[255,255,255],
-    "fontSize":13.0,
+    "fontSize":13.0,  
     "fontFamily": "Arial",
     "items":
     [
@@ -26,11 +26,11 @@ https://rxlabz.github.io/panache
         "image": "http://www.gooogle.cl",
         "title": "titulo",
         "titleColor":[255,255,255],
-        "titleFontSize": 13.2,
+        "titleFontSize": 13.0,
         "titleFontFamiy": "Arial",
         "subtitle":"subtitulo",
         "subtitleColor":[255,255,255],
-        "subtitleFontSize": 13.2,
+        "subtitleFontSize": 13.0,
         "subtitleFontFamiy": "Arial"
     },
     {
