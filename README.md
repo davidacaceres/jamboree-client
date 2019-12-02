@@ -13,6 +13,7 @@ https://rxlabz.github.io/panache
 
 
 ## Json para definir contenido del tipo lista
+```
 {
     "textColor":[255,255,255],
     "fontSize":13.0,
@@ -39,3 +40,4 @@ https://rxlabz.github.io/panache
  ]
     
 }
+```
