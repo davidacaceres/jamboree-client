@@ -14,7 +14,8 @@ https://rxlabz.github.io/panache
 
 ## Json para definir contenido del tipo lista
 ```
-{
+"list_conf":{
+    "backgroundColor":[255,255,255],
     "textColor":[255,255,255],
     "fontSize":13.0,
     "fontFamily": "Arial",
