@@ -42,3 +42,32 @@ https://rxlabz.github.io/panache
     
 }
 ```
+
+## Json para definir contenido del tipo linea de tiempo
+```
+"list_conf":{
+    "date":"2020-01-05",
+    "textColor":[255,255,255],
+    "fontSize":13.0,
+    "fontFamily": "Arial",
+    "line":
+    [
+        {
+            "backgroundColor":[255,255,255],
+            "image": "http://www.gooogle.cl",
+            "title": "titulo",
+            "titleColor":[255,255,255],
+            "titleFontSize": 13.2,
+            "titleFontFamiy": "Arial",
+            "time":"",
+            "timeColor":[255,255,255],
+            "timeFontSize": 13.2,
+            "timeFontFamily": "Arial"
+        },
+        {
+            "image": "http://www.gooogle.cl",
+            "title": "titulo",
+            "time":"subtitulo"
+        }    
+     ]   
+}
