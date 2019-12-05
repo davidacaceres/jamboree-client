@@ -1,6 +1,10 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/model/content.dart';
+import 'package:Pasaporte_2020/model/content/content_element.dart';
+import 'package:Pasaporte_2020/model/content/display.dart';
+import 'package:Pasaporte_2020/model/content/image_conf.dart';
+import 'package:Pasaporte_2020/model/content/list_conf.dart';
+import 'package:Pasaporte_2020/model/content/paragraph_conf.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wItemRow.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';

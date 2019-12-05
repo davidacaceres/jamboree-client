@@ -25,7 +25,7 @@ dependencies:
   geolocator: ^5.1.5  #Biblioteca para capturar ubicacion
   android_intent: ^0.3.4+7
   tinycolor: ^1.0.2 # Permite manejar los colores para oscurecerlos o aclararlos.
-
+  timeline_list: ^0.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
