@@ -22,7 +22,7 @@ class ParagraphConf {
         ? null
         : List<int>.from(json["background_color"].map((x) => x)),
     data: json["data"],
-    fontSize: json["fontSize"] == null ? 0 : json["fontSize"],
+    fontSize: json["fontSize"] == null ? 0.0 : json["fontSize"],
     font: json["font"],
   );
 

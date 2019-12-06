@@ -45,29 +45,41 @@ https://rxlabz.github.io/panache
 
 ## Json para definir contenido del tipo linea de tiempo
 ```
-"list_conf":{
-    "date":"2020-01-05",
-    "textColor":[255,255,255],
-    "fontSize":13.0,
+"time_line_conf": {
+    "textColor": [255,0,255],
+    "fontSize": 13.0,
     "fontFamily": "Arial",
-    "line":
-    [
+    "linePosition": "left",
+    "lineColor": [251,0,0],
+    "lines": [
         {
-            "backgroundColor":[255,255,255],
-            "image": "http://www.gooogle.cl",
-            "title": "titulo",
-            "titleColor":[255,255,255],
-            "titleFontSize": 13.2,
-            "titleFontFamiy": "Arial",
-            "time":"",
-            "timeColor":[255,255,255],
-            "timeFontSize": 13.2,
-            "timeFontFamily": "Arial"
+            "position": "left",
+            "backgroundColor": [0,255,255],
+            "image": "https://picsum.photos/id/23/100/100",
+            "title": "Inicio Jornada",
+            "titleColor": [0,0,0],
+            "titleFontSize": 13.0,
+            "titleFontFamily": "Arial",
+            "time": "08:30",
+            "timeColor": [0,100,0],
+            "timeFontSize": 10.0,
+            "timeFontFamily": "Montserrat"
         },
         {
-            "image": "http://www.gooogle.cl",
-            "title": "titulo",
-            "time":"subtitulo"
-        }    
-     ]   
+            "position": "right",
+            "image": "https://picsum.photos/id/237/100/100",
+            "title": "Almuerzo con cada patrulla para recuperar energias",
+            "time": "13:30"
+        },
+        {
+            "position": "left",
+            "title": "Almuerzo con todos los integrantes del jamboree",
+            "time": "13:30"
+        },
+        {
+            "position": "left",
+            "title": "Jugar en la piscina",
+            "time": "13:30"
+        }
+    ]
 }

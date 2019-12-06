@@ -1,11 +1,14 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/model/content/content_element.dart';
 import 'package:Pasaporte_2020/model/content/display.dart';
 import 'package:Pasaporte_2020/model/content/image_conf.dart';
 import 'package:Pasaporte_2020/model/content/list_conf.dart';
 import 'package:Pasaporte_2020/model/content/paragraph_conf.dart';
+import 'package:Pasaporte_2020/model/content/time_line_conf.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wItemRow.dart';
+import 'package:Pasaporte_2020/ui/content/widget/wTimeLine.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
@@ -56,6 +59,9 @@ class DisplayWidget extends StatelessWidget {
       } else if (c.listConf!=null){
         print('Es Lista');
         result.add(_getList(context,c));
+      } else if (c.timeLineConf!=null){
+        print('Es linea de tiempo');
+        result.add(_getTimeLine(context,bgColorParent,display,c.timeLineConf));
       }
     }
     if (display.childs != null && display.childs.length > 0) {
@@ -198,6 +204,11 @@ class DisplayWidget extends StatelessWidget {
       itemsW.add(ItemRow(items[i],bgDColor,txtStyle,height));
     }
     return itemsW;
+  }
+
+  Widget _getTimeLine(BuildContext context,Color bgcolor, Display d, TimeLineConf timeLineConf) {
+    return WTimeline(display:d,bgColorParent: bgcolor ,timeLineConf: timeLineConf,lines: timeLineConf.lines,title: display.shortTitle,);
+
   }
 
 }

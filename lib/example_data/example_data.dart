@@ -66,23 +66,24 @@ Content findExampleContent(String id){
 
 
 Future<bool> loadContentAsset() async {
-  print('cargando contenido');
-  String jsondata= await rootBundle.loadString('assets/json/data_test.json');
+  print('cargando contenido desde archivo local');
+  String jsondata= await rootBundle.loadString('assets/json/data_jme.json');
 
   var jStringList = json.decode(jsondata);
   for (int u =0; u < jStringList.length ; u++ ) {
-    print('cargando elemento $u \n ${jStringList[u]}');
+   // print('cargando elemento $u \n ${jStringList[u]}');
     Content content=Content.fromMap(jStringList[u]);
     _listContent.add(content);
 
   }
-  print('Finalizo la carga del contenido');
+  print('Finalizo la carga del contenido desde archivo local');
   return true;
 }
 
 Future<bool> loadContentUrl() async {
-  //loadContentAsset();
-  //return true;
+  await loadContentAsset();
+  return true;
+  /*
   try {
     bool connected=false;
     try {
@@ -125,7 +126,7 @@ Future<bool> loadContentUrl() async {
   } catch (e) {
     print('Error al recibir archivo con informacion de actualizacion');
   }
-  return null;
+  return null;*/
 }
 
 

@@ -10,10 +10,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: sc_theme.ScTextDefault.appTitle,
-/*      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),*/
-
       initialRoute: "/",
       routes: getApplicationRoutes(),
       onGenerateRoute: (RouteSettings settings){

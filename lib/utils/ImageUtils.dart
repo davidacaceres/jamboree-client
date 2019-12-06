@@ -50,7 +50,7 @@ CachedNetworkImage getImageUrl(String url, double width, double height) {
   print('obteniendo imagen: $url');
   return CachedNetworkImage(
     imageUrl: url,
-    placeholder: (context, url) => Icon(Icons.cloud_download),
+ //   placeholder: (context, url) => Icon(Icons.cloud_download),
     errorWidget: (context, url, error) => Image.asset("assets/img/asociacion_mini.png"),
     width: width,
     height: height,
