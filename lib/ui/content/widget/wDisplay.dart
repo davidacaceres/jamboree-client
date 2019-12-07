@@ -7,6 +7,7 @@ import 'package:Pasaporte_2020/model/content/image_conf.dart';
 import 'package:Pasaporte_2020/model/content/list_conf.dart';
 import 'package:Pasaporte_2020/model/content/paragraph_conf.dart';
 import 'package:Pasaporte_2020/model/content/time_line_conf.dart';
+import 'package:Pasaporte_2020/ui/content/widget/wImage.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wItemRow.dart';
 import 'package:Pasaporte_2020/ui/content/widget/wTimeLine.dart';
 import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
@@ -72,6 +73,8 @@ class DisplayWidget extends StatelessWidget {
   }
 
   Widget _getPicture(BuildContext context, ImageConf conf) {
+    return ImageWidget(bgColorParent: bgColorParent,conf: conf,);
+    /*
     Alignment align = getAlignment(conf.align);
     Color bgColor =
         getBackgroundColor(context, conf.backgroundColor, bgColorParent);
@@ -79,7 +82,7 @@ class DisplayWidget extends StatelessWidget {
     return Container(
         alignment: align,
         child: getImageContent(url: conf.source),
-        color: bgColor);
+        color: bgColor);*/
   }
 
   Widget _getParagraph(

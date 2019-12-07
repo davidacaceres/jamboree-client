@@ -57,6 +57,25 @@ CachedNetworkImage getImageUrl(String url, double width, double height) {
   );
 }
 
+ImageProvider getImageProvider({@required String url}){
+  ImageProvider image;
+  try {
+    if (url != null &&
+        url.isNotEmpty &&
+        (url.startsWith("http://") || url.startsWith("https://"))) {
+        image = CachedNetworkImageProvider(url);
+    } else if (url != null && url.isNotEmpty && url.startsWith("assets")) {
+      image = AssetImage(url);
+    } else {
+      image = AssetImage("assets/img/asociacion.png");
+    }
+  } catch (ex) {
+    print('error al obtener imagen $url');
+    image = AssetImage("assets/img/asociacion.png");
+  }
+  return image;
+}
+
 Image getImageContent({@required String url, @optionalTypeArgs BoxFit fit}) {
   print('obteniendo imagen: $url');
   Image imagen;

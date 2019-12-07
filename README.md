@@ -83,3 +83,17 @@ https://rxlabz.github.io/panache
         }
     ]
 }
+```
+## Json para definir contenido del tipo imagen
+```
+{
+    "image_conf":
+        {
+            "source":"http://parlamento.jamboree.cl/pp.jpg",
+            "align":"center",
+            "background_color":[255,255,255],
+            "ownViewer": true   #true, evento ontap despliega ventana para hacer zoom a la imagen
+        } 
+}
+```
+
