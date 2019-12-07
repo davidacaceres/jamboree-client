@@ -81,9 +81,8 @@ Future<bool> loadContentAsset() async {
 }
 
 Future<bool> loadContentUrl() async {
-  await loadContentAsset();
-  return true;
-  /*
+//  await loadContentAsset();
+//  return true;
   try {
     bool connected=false;
     try {
@@ -126,7 +125,7 @@ Future<bool> loadContentUrl() async {
   } catch (e) {
     print('Error al recibir archivo con informacion de actualizacion');
   }
-  return null;*/
+  return null;
 }
 
 
