@@ -48,7 +48,7 @@ List<Content> getExampleRootContent() {
 }
 
 List<Content> getExampleSearchContent(String search) {
-  return _listContent.where((i) => i.search!=null && i.search.contains(search.toLowerCase())).toList();
+  return _listContent.where((i) => i.search!=null && i.search.toLowerCase().contains(search.toLowerCase())).toList();
 }
 
 

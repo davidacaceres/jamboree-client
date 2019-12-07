@@ -19,7 +19,7 @@ class MapsWidget extends StatefulWidget {
 
 class _MapsWidgetState extends State<MapsWidget> {
   Timer timerNavegar;
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   MapType _defaultMapType = MapType.normal;
   double _zoom = 16;
   double _bearing = 0.0;
@@ -35,7 +35,7 @@ class _MapsWidgetState extends State<MapsWidget> {
   String _msgDistancia = '';
   String _msgNombre = '';
   Image _msgIcon;
-  String _msgDetalles = '';
+  //String _msgDetalles = '';
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -76,11 +76,7 @@ class _MapsWidgetState extends State<MapsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Mapa de Ubicaciones'),
-        automaticallyImplyLeading: false,
-      ),
+
       body: _getBody(),
       drawer: _drawer,
     );
@@ -110,6 +106,8 @@ class _MapsWidgetState extends State<MapsWidget> {
                 child: SizedBox(),
               ),
               FloatingActionButton(
+                backgroundColor: theme.ScMapButtons.background,
+                elevation: 10.0,
                 child: _popUpLayer(),
                 onPressed: () {},
               ),
@@ -118,7 +116,8 @@ class _MapsWidgetState extends State<MapsWidget> {
               ),
               FloatingActionButton(
                 child: Icon(Icons.list),
-                elevation: 5.0,
+                backgroundColor: theme.ScMapButtons.background,
+                elevation: 10.0,
                 onPressed: () => _scaffoldKey.currentState.openDrawer(),
               ),
             ],
@@ -215,11 +214,11 @@ class _MapsWidgetState extends State<MapsWidget> {
       child: Center(
         child: Text(
           'Ubicaciones',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: theme.ScMapTitleLocations.text, fontWeight: FontWeight.bold),
         ),
       ),
       decoration: BoxDecoration(
-        color: theme.ScBottomBar.background,
+        color: theme.ScMapTitleLocations.background,
       ),
     ));
 
@@ -435,6 +434,8 @@ class _MapsWidgetState extends State<MapsWidget> {
     return Row(
       children: <Widget>[
         Checkbox(
+          checkColor: theme.ScMapSelectedCheckbox.checkColor,
+          activeColor: theme.ScMapSelectedCheckbox.activeColor,
           value: mapTipo == _defaultMapType,
           onChanged: (valor) {
             if (valor) {

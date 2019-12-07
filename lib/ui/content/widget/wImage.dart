@@ -3,7 +3,6 @@ import 'package:Pasaporte_2020/utils/AlignmentUtils.dart';
 import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
 
 class ImageWidget extends StatelessWidget {
   final ImageConf conf;

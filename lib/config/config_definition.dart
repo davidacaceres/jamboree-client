@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 
 class Colors {
   static const Color color_1 = Color(0xFFFFFFFF);
@@ -118,6 +117,23 @@ class ScContent {
 class ScTextDefault {
   static final String appTitle = 'Jamboree 2020';
 }
+
+class ScMapButtons{
+  static final Color background=Colors.color_2;
+}
+
+class ScMapSelectedCheckbox{
+  static final Color activeColor=Colors.color_9;
+  static final Color checkColor=Colors.color_2;
+
+}
+
+class ScMapTitleLocations{
+  static final Color background=Colors.color_9;
+  static final Color text=Colors.color_2;
+
+}
+
 
 ThemeData _base = ThemeData();
 
