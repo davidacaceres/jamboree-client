@@ -102,7 +102,7 @@ https://rxlabz.github.io/panache
 ```
 Las imagenes deben estar contenidas en el proyecto, google map, no soporta imagenes desde una url, solamente directo del directorio assets.
 
-
+```
 [{
   "id":"1",
   "nombre":"Almacén",
@@ -132,3 +132,4 @@ Las imagenes deben estar contenidas en el proyecto, google map, no soporta image
     "imagen": "assets/img/locations/police.png"
   }
 ]
+```
