@@ -95,11 +95,11 @@ https://rxlabz.github.io/panache
             "ownViewer": true   #true, evento ontap despliega ventana para hacer zoom a la imagen
         } 
 }
-```
 
 ```
-## Json para definir lista de ubicaciones para el google map.
-```
+## Json para definir contenido del tipo imagen
+
+
 Las imagenes deben estar contenidas en el proyecto, google map, no soporta imagenes desde una url, solamente directo del directorio assets.
 
 ```
