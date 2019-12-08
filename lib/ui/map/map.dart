@@ -26,8 +26,8 @@ class _MapsWidgetState extends State<MapsWidget> {
   Set<Marker> _markers = Set();
   Set<Polyline> _polyline = Set();
   List<LatLng> latlngList = List();
-  Geolocator geolocator = Geolocator();
-  CameraPosition _initialPosition =
+  final Geolocator geolocator = Geolocator();
+  final CameraPosition _initialPosition =
       CameraPosition(target: LatLng(-33.959853, -70.628015), zoom: 16);
   Drawer _drawer;
 

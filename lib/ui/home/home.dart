@@ -8,7 +8,7 @@ import 'package:Pasaporte_2020/providers/ubicaciones.provider.dart';
 import 'package:Pasaporte_2020/ui/home/widget/carrousel.dart';
 import 'package:Pasaporte_2020/ui/home/widget/content_root.dart';
 import 'package:Pasaporte_2020/ui/home/widget/search_bar.dart';
-import 'package:Pasaporte_2020/ui/map/map.dart';
+import 'package:Pasaporte_2020/ui/map/map_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,9 +20,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<MapWidgetState> mapKey = new GlobalKey<MapWidgetState>();
+
+  Widget maps;
+  Widget carrusel;
+  Widget home;
+
+  @override
+  void initState() {
+    super.initState();
+
+
+    if(carrusel==null)
+      {
+        print('[HOME] initState => creando carrusel');
+        carrusel=_getCarrusel();
+
+      }else print("[HOME] carrusel ya existe");
+
+    if(home==null){
+      print('[HOME] initState => creando home');
+      home=_getHome(context);
+    }else print("[HOME] home ya existe");
+  }
 
   @override
   Widget build(BuildContext context) {
+    if(maps==null) {
+      print('[HOME] initState => creando mapa');
+      maps = makeMap();
+    }
     return WillPopScope(
       child: DefaultTabController(
           length: 2,
@@ -36,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                       child: TabBarView(
                           physics: NeverScrollableScrollPhysics(),
-                          children: [makeHome(context), makeMap()]))
+                          children: [home, maps]))
                 ]),
                 bottomNavigationBar: Container(
                     height: 60,
@@ -54,7 +81,6 @@ class _HomePageState extends State<HomePage> {
                         ],
                         unselectedLabelColor: theme.ScBottomBar.unSelect,
                         labelColor: theme.ScBottomBar.selected,
-                        //Colors.indigo,
                         indicatorColor: theme.ScBottomBar.indicatorColor,
                         indicatorWeight: 2)),
               ))),
@@ -99,7 +125,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget makeHome(BuildContext context) {
+  Widget _getHome(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -109,14 +135,14 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 controller: new ScrollController(keepScrollOffset: false),
                 children: <Widget>[
-              getCarrusel(),
+              carrusel,
               ContentRootWidget(contentRoot: getExampleRootContent())
             ]))
       ],
     );
   }
 
-  Widget getCarrusel() {
+  Widget _getCarrusel() {
     var size = window.physicalSize;
     if (size.height > 800 && size.height > size.width) {
       print('con carrusel');
@@ -136,7 +162,7 @@ class _HomePageState extends State<HomePage> {
           (BuildContext context, AsyncSnapshot<List<UbicacionModel>> snapshot) {
         if (snapshot.hasData) {
           return MaterialApp(
-            home: MapsWidget(
+            home: MapWidget(key: mapKey,
               listaUbicacion: snapshot.data,
             ), /* LLamada al Widget de mapa se le debe entregar lista de ubicaciones */
           );
