@@ -19,6 +19,7 @@ class MapWidget extends StatefulWidget {
 }
 
 class MapWidgetState extends State<MapWidget> {
+  final Duration timeOutGps = Duration(seconds: 5);
   MapType _defaultMapType = MapType.normal;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -30,10 +31,16 @@ class MapWidgetState extends State<MapWidget> {
   final Completer<GoogleMapController> _controller = Completer();
   UbicacionModel selected;
   String distance;
+  Geolocator geo = Geolocator();
+
+  bool gpsEnabled;
+
+  bool loading = false;
 
   @override
   void initState() {
     super.initState();
+    checkGPS();
   }
 
   @override
@@ -104,6 +111,7 @@ class MapWidgetState extends State<MapWidget> {
           ),
         ),
         _creaCardDistancia(),
+        getLoading(),
         Container(
           height: double.infinity,
           padding: EdgeInsets.only(left: 10.0),
@@ -125,7 +133,8 @@ class MapWidgetState extends State<MapWidget> {
           _defaultMapType = result;
         });
       },
-      itemBuilder: (BuildContext context) => <PopupMenuEntry<MapType>>[
+      itemBuilder: (BuildContext context) =>
+      <PopupMenuEntry<MapType>>[
         PopupMenuItem<MapType>(
           value: MapType.normal,
           child: _creaTextoBoton(MapType.normal, 'Normal'),
@@ -171,12 +180,8 @@ class MapWidgetState extends State<MapWidget> {
   }
 
   setPosition(UbicacionModel location) async {
+    await loadDataSelected(location);
     print('Posicion nueva de camara ${location.nombre}');
-    GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newLatLng(location.getLatLong()));
-    setState(() {
-      selected = location;
-    });
   }
 
   Future<Set<Marker>> getLocations() async {
@@ -188,14 +193,12 @@ class MapWidgetState extends State<MapWidget> {
       UbicacionModel f = widget.listaUbicacion[i];
       var image;
       if (Platform.isIOS) {
-        print('Es ios');
         image = await BitmapDescriptor.fromAssetImage(
           ImageConfiguration(
               size: Size(20.0, 30.0), platform: TargetPlatform.iOS),
           f.imagen,
         );
       } else {
-        print('Es android');
         image = await BitmapDescriptor.fromAssetImage(
           ImageConfiguration(
             size: Size(40.0, 60.0),
@@ -209,14 +212,10 @@ class MapWidgetState extends State<MapWidget> {
           icon: image,
           position: f.getLatLong(),
           infoWindow: InfoWindow(title: '${f.nombre}'),
-          onTap: () {
-            getDistance(f).then((j){
-            setState(() {
-              selected = f;
-              distance=j;
+          onTap: () => loadDataSelected(f)
 
-            });});
-          }));
+
+      ));
     }
 
     return markers;
@@ -233,111 +232,236 @@ class MapWidgetState extends State<MapWidget> {
   }
 
   void _setCurrentLocation() async {
+    setState(() {
+      loading = true;
+    });
     print('Esperando posicion');
-    GoogleMapController controller = await _controller.future;
-    Position current = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.medium);
-    print('Encontrada posicion ${current.toString()}');
+    try {
+      GoogleMapController controller = await _controller.future;
+      gpsEnabled = await geo.isLocationServiceEnabled().timeout(timeOutGps);
+      if (!gpsEnabled) {
+        setState(() {
+          loading = false;
+        });
+        return;
+      }
 
-    LatLng ll = LatLng(current.latitude, current.longitude);
-    controller.animateCamera(CameraUpdate.newLatLng(ll));
+      Position current = await geo
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.medium).timeout(
+          timeOutGps);
+      print('Encontrada posicion ${current.toString()}');
+
+      LatLng ll = LatLng(current.latitude, current.longitude);
+      controller.animateCamera(CameraUpdate.newLatLng(ll));
+    } catch (ex) {
+      print('Error al centrar posicion $ex');
+    }
+    setState(() {
+      loading = false;
+    });
   }
 
   Future<String> getDistance(UbicacionModel m) async {
-    var geo=Geolocator();
-    bool enable=await geo.isLocationServiceEnabled();
-    if(!enable) return "Sin GPS";
+    gpsEnabled = await geo.isLocationServiceEnabled().timeout(timeOutGps);
+    if (!gpsEnabled) {
+      return '';
+    }
     String distanciaFinal = '';
 
     print('Esperando posicion');
     try {
       Position current = await geo
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(
+          timeOutGps);
 
-      double distanciaMts = await Geolocator().distanceBetween(
+      double distanciaMts = await geo.distanceBetween(
           current.latitude,
           current.longitude,
-          m.getLatLong().latitude,
-          m.getLatLong().longitude);
+          m
+              .getLatLong()
+              .latitude,
+          m
+              .getLatLong()
+              .longitude);
 
       if (distanciaMts >= 1000) {
-        distanciaFinal = (distanciaMts / 1000).toStringAsFixed(1) + ' kms';
+        distanciaFinal =
+            'a ' + (distanciaMts / 1000).toStringAsFixed(1) + ' kms';
       } else {
-        distanciaFinal = distanciaMts.toStringAsFixed(0) + ' mts';
+        distanciaFinal = 'a ' + distanciaMts.toStringAsFixed(0) + ' mts';
       }
       print('distancia calculada $distanciaFinal');
-    }catch (ex){
+    } catch (ex) {
       print('Error al calcular distancia $ex');
     }
     return distanciaFinal;
+  }
 
+  Widget getLoading() {
+    Color circleColor=theme.LoadingCircle.circleColor;
+    if (loading) {
+      return Center(
+          child:CircularProgressIndicator(
+          strokeWidth: 5.0,
+          semanticsLabel: 'Calculando distancia',
+          valueColor:AlwaysStoppedAnimation<Color>(circleColor)));
 
+    /*
+        return new Container(
+          color: Colors.grey[300],
+          width: 70.0,
+          height: 70.0,
+          child: new Padding(padding: const EdgeInsets.all(5.0),child: new Center(child: new CircularProgressIndicator())),
+        );
+
+         */
+    }
+    else{
+    return Container();
+    }
   }
 
   Widget _creaCardDistancia() {
-    return selected != null
-        ? Container(
-            padding: EdgeInsets.only(bottom: 10.0),
-            alignment: Alignment.bottomCenter,
-            child: Card(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0)),
-              child: Container(
-                padding: EdgeInsets.only(
-                    left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
-                child: SizedBox(
-                    height: MediaQuery.of(context).size.height * .30,
-                    width: MediaQuery.of(context).size.width * .50,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: <Widget>[
-                        GestureDetector(
-                            child: Container(
-                          alignment: Alignment.topRight,
-                          child: Icon(Icons.clear),
-                        ),onTap: (){setState(() {
-                          selected=null;
-                          distance=null;
-                        });},),
-                        Column(
-                          children: <Widget>[
-                            getIconGoogleMap(
-                                url: selected.imagen, width: 40, height: 40),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                                child: Text(
-                              selected.nombre,
-                              overflow: TextOverflow.visible,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("a ${distance}"),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            FloatingActionButton(
-                              child: Text(
-                                'IR',
-                                style: TextStyle(fontSize: 12.0),
-                              ),
-                              elevation: 5.0,
-                              onPressed: () {
-                                //_cancelaIrUbicacion();
-                              },
-                            )
-                          ],
-                        )
-                      ],
-                    )),
-              ),
+    print('valor de loading $loading');
+    if (selected == null) {
+      return Container();
+    }
+    return selected != null ?
+    Container(
+      padding: EdgeInsets.only(bottom: 10.0),
+      alignment: Alignment.bottomCenter,
+      child: Card(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0)),
+        child: Container(
+          padding: EdgeInsets.only(
+              left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
+          child: SizedBox(
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height * (gpsEnabled?0.30:0.15),
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * .50,
+              child: Stack(
+                alignment: Alignment.center,
+                children: <Widget>[
+                  GestureDetector(
+                    child: Container(
+                      alignment: Alignment.topRight,
+                      child: Icon(Icons.clear),
+                    ), onTap: () {
+                    setState(() {
+                      selected = null;
+                      distance = null;
+                    });
+                  },),
+                  Column(
+                    children: <Widget>[
+                      getIconGoogleMap(
+                          url: selected.imagen, width: 40, height: 40),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Container(
+                          child: Text(
+                            selected.nombre,
+                            overflow: TextOverflow.visible,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      (distance != null && distance.isNotEmpty ? Text(
+                          "${distance}") : Container()),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      (gpsEnabled?FloatingActionButton(
+                        backgroundColor: theme.ScMapButtons.background,
+                        child: Text(
+                          'IR',
+                          style: TextStyle(fontSize: 12.0),
+                        ),
+                        elevation: 5.0,
+                        onPressed: () {
+                          //_cancelaIrUbicacion();
+                        },
+                      ):Container())
+                    ],
+                  )
+                ],
+              )),
+        ),
+      ),
+    ) : Container();
+  }
+
+  void _showDialogGps(String message) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("GPS"),
+          content: new Text(message),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text("Cerrar"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
-          )
-        : Container();
+          ],
+        );
+      },
+    );
+  }
+
+  void checkGPS() async {
+    //status=await geo.isLocationServiceEnabled();
+    try {
+      var status = await geo.checkGeolocationPermissionStatus().timeout(
+          timeOutGps);
+      if (status == GeolocationStatus.denied)
+        _showDialogGps("Acceso bloqueado a GPS, debe otorgar permisos");
+      else if (status == GeolocationStatus.disabled)
+        _showDialogGps("GPS deshabilitado");
+      else if (status == GeolocationStatus.restricted)
+        _showDialogGps("Gps restringido");
+      else if (status == GeolocationStatus.unknown)
+        _showDialogGps("Gps desconocido");
+      else if (status == GeolocationStatus.granted) {
+        setState(() {
+          gpsEnabled = true;
+        });
+      }
+    } catch (ex) {
+      print('error al ejecutar checkGPS ex');
+      setState(() {
+        gpsEnabled = false;
+      });
+    }
+  }
+
+  loadDataSelected(UbicacionModel f) async {
+    GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newLatLng(f.getLatLong()));
+    setState(() {
+      loading = true;
+    });
+    String d = await getDistance(f);
+
+    setState(() {
+      selected = f;
+      distance = d;
+      gpsEnabled=!(d==null||d.isEmpty);
+      loading = false;
+    });
   }
 }

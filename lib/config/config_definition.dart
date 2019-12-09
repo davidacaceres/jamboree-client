@@ -128,6 +128,11 @@ class ScMapSelectedCheckbox{
 
 }
 
+class LoadingCircle{
+  static final Color circleColor=Colors.color_2;
+}
+
+
 class ScMapTitleLocations{
   static final Color background=Colors.color_9;
   static final Color text=Colors.color_2;
