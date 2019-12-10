@@ -20,6 +20,7 @@ class MapWidget extends StatefulWidget {
 
 class MapWidgetState extends State<MapWidget> {
   final Duration timeOutGps = Duration(seconds: 5);
+  StreamSubscription<Position> posStream;
   MapType _defaultMapType = MapType.normal;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -29,18 +30,41 @@ class MapWidgetState extends State<MapWidget> {
   Widget mapWidget;
   Set<Marker> _markers = Set();
   final Completer<GoogleMapController> _controller = Completer();
-  UbicacionModel selected;
-  String distance;
+  UbicacionModel selectedLocation;
+  Image selectedImage;
+  String selectedDistance;
   Geolocator geo = Geolocator();
 
   bool gpsEnabled;
 
   bool loading = false;
 
+  Set<Polyline> _routeNavigator = Set();
+
+  bool isNavigation = false;
+
+  UbicacionModel previewLocation;
+  String previewDistance;
+  Image previewImage;
+
+  double lastHeading;
+
   @override
   void initState() {
     super.initState();
     checkGPS();
+  }
+
+  @override
+  void dispose() {
+    print('limpiando con dispose');
+    posStream.cancel();
+    isNavigation = false;
+    _routeNavigator.clear();
+    selectedLocation = null;
+    selectedDistance = null;
+    selectedImage = null;
+    super.dispose();
   }
 
   @override
@@ -59,7 +83,7 @@ class MapWidgetState extends State<MapWidget> {
     return Stack(
       children: <Widget>[
         GoogleMap(
-//          polylines: _polyline,
+          polylines: _routeNavigator,
           markers: _markers,
           mapType: _defaultMapType,
           myLocationEnabled: true,
@@ -94,7 +118,9 @@ class MapWidgetState extends State<MapWidget> {
                 child: Icon(Icons.list),
                 backgroundColor: theme.ScMapButtons.background,
                 elevation: 10.0,
-                onPressed: () => _scaffoldKey.currentState.openDrawer(),
+                onPressed: () {
+                  _scaffoldKey.currentState.openDrawer();
+                },
               ),
               SizedBox(
                 height: 10.0,
@@ -110,11 +136,13 @@ class MapWidgetState extends State<MapWidget> {
             ],
           ),
         ),
-        _creaCardDistancia(),
+        (isNavigation!= null && isNavigation
+            ? _makeCardNavigation():Container()),
+        (previewLocation!=null?_showCardPreview():Container()),
         getLoading(),
         Container(
           height: double.infinity,
-          padding: EdgeInsets.only(left: 10.0),
+          padding: EdgeInsets.only(left: 5.0),
           alignment: Alignment.centerLeft,
           child: Icon(
             Icons.arrow_forward_ios,
@@ -133,8 +161,7 @@ class MapWidgetState extends State<MapWidget> {
           _defaultMapType = result;
         });
       },
-      itemBuilder: (BuildContext context) =>
-      <PopupMenuEntry<MapType>>[
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<MapType>>[
         PopupMenuItem<MapType>(
           value: MapType.normal,
           child: _creaTextoBoton(MapType.normal, 'Normal'),
@@ -143,11 +170,6 @@ class MapWidgetState extends State<MapWidget> {
         PopupMenuItem<MapType>(
           value: MapType.satellite,
           child: _creaTextoBoton(MapType.satellite, 'Satélite'),
-        ),
-        PopupMenuDivider(),
-        PopupMenuItem<MapType>(
-          value: MapType.terrain,
-          child: _creaTextoBoton(MapType.terrain, 'Terreno'),
         ),
       ],
     );
@@ -180,7 +202,7 @@ class MapWidgetState extends State<MapWidget> {
   }
 
   setPosition(UbicacionModel location) async {
-    await loadDataSelected(location);
+    await loadDataPreview(location);
     print('Posicion nueva de camara ${location.nombre}');
   }
 
@@ -212,16 +234,19 @@ class MapWidgetState extends State<MapWidget> {
           icon: image,
           position: f.getLatLong(),
           infoWindow: InfoWindow(title: '${f.nombre}'),
-          onTap: () => loadDataSelected(f)
-
-
-      ));
+          onTap: () => loadDataPreview(f)));
     }
 
     return markers;
   }
 
-  void _onGeoChanged(CameraPosition cam) {}
+  void _onGeoChanged(CameraPosition cam) {
+    //  print('Cambiando Posicion');
+
+    setState(() {
+      zoom = cam.zoom;
+    });
+  }
 
   void onMapCreate(GoogleMapController controller) async {
     _controller.complete(controller);
@@ -247,12 +272,18 @@ class MapWidgetState extends State<MapWidget> {
       }
 
       Position current = await geo
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.medium).timeout(
-          timeOutGps);
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.medium)
+          .timeout(timeOutGps);
       print('Encontrada posicion ${current.toString()}');
 
       LatLng ll = LatLng(current.latitude, current.longitude);
-      controller.animateCamera(CameraUpdate.newLatLng(ll));
+      if (isNavigation) {
+        controller.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(
+            target: ll, tilt: 55.0, zoom: zoom, bearing: current.heading)));
+      } else {
+        controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+            target: ll, tilt: 0.0, zoom: zoom, bearing: current.heading)));
+      }
     } catch (ex) {
       print('Error al centrar posicion $ex');
     }
@@ -271,18 +302,11 @@ class MapWidgetState extends State<MapWidget> {
     print('Esperando posicion');
     try {
       Position current = await geo
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(
-          timeOutGps);
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
+          .timeout(timeOutGps);
 
-      double distanciaMts = await geo.distanceBetween(
-          current.latitude,
-          current.longitude,
-          m
-              .getLatLong()
-              .latitude,
-          m
-              .getLatLong()
-              .longitude);
+      double distanciaMts = await geo.distanceBetween(current.latitude,
+          current.longitude, m.getLatLong().latitude, m.getLatLong().longitude);
 
       if (distanciaMts >= 1000) {
         distanciaFinal =
@@ -298,15 +322,15 @@ class MapWidgetState extends State<MapWidget> {
   }
 
   Widget getLoading() {
-    Color circleColor=theme.LoadingCircle.circleColor;
+    Color circleColor = theme.LoadingCircle.circleColor;
     if (loading) {
       return Center(
-          child:CircularProgressIndicator(
-          strokeWidth: 5.0,
-          semanticsLabel: 'Calculando distancia',
-          valueColor:AlwaysStoppedAnimation<Color>(circleColor)));
+          child: CircularProgressIndicator(
+              strokeWidth: 5.0,
+              semanticsLabel: 'Calculando distancia',
+              valueColor: AlwaysStoppedAnimation<Color>(circleColor)));
 
-    /*
+      /*
         return new Container(
           color: Colors.grey[300],
           width: 70.0,
@@ -315,37 +339,30 @@ class MapWidgetState extends State<MapWidget> {
         );
 
          */
-    }
-    else{
-    return Container();
+    } else {
+      return Container();
     }
   }
 
-  Widget _creaCardDistancia() {
-    print('valor de loading $loading');
-    if (selected == null) {
+  Widget _showCardPreview() {
+    // print('valor de loading $loading');
+    if (previewLocation == null) {
       return Container();
     }
-    return selected != null ?
-    Container(
+    return Container(
       padding: EdgeInsets.only(bottom: 10.0),
       alignment: Alignment.bottomCenter,
       child: Card(
         color: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         child: Container(
-          padding: EdgeInsets.only(
-              left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
+          padding:
+              EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0, bottom: 5.0),
           child: SizedBox(
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height * (gpsEnabled?0.30:0.15),
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width * .50,
+              height: MediaQuery.of(context).size.height *
+                  (gpsEnabled ? 0.30 : 0.15),
+              width: MediaQuery.of(context).size.width * .50,
               child: Stack(
                 alignment: Alignment.center,
                 children: <Widget>[
@@ -353,52 +370,125 @@ class MapWidgetState extends State<MapWidget> {
                     child: Container(
                       alignment: Alignment.topRight,
                       child: Icon(Icons.clear),
-                    ), onTap: () {
-                    setState(() {
-                      selected = null;
-                      distance = null;
-                    });
-                  },),
+                    ),
+                    onTap: () {
+                      closePreview();
+                    },
+                  ),
                   Column(
                     children: <Widget>[
-                      getIconGoogleMap(
-                          url: selected.imagen, width: 40, height: 40),
+                      previewImage,
                       SizedBox(
                         height: 10.0,
                       ),
                       Container(
                           child: Text(
-                            selected.nombre,
-                            overflow: TextOverflow.visible,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
+                        previewLocation.nombre,
+                        overflow: TextOverflow.visible,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
                       SizedBox(
                         height: 5.0,
                       ),
-                      (distance != null && distance.isNotEmpty ? Text(
-                          "${distance}") : Container()),
+                      (previewDistance != null && previewDistance.isNotEmpty
+                          ? Text("${previewDistance}")
+                          : Container()),
                       SizedBox(
                         height: 10.0,
                       ),
-                      (gpsEnabled?FloatingActionButton(
-                        backgroundColor: theme.ScMapButtons.background,
-                        child: Text(
-                          'IR',
-                          style: TextStyle(fontSize: 12.0),
-                        ),
-                        elevation: 5.0,
-                        onPressed: () {
-                          //_cancelaIrUbicacion();
-                        },
-                      ):Container())
+                      (gpsEnabled
+                          ? FloatingActionButton(
+                              backgroundColor: theme.ScMapButtons.background,
+                              child: Text(
+                                'IR',
+                                style: TextStyle(fontSize: 12.0),
+                              ),
+                              elevation: 5.0,
+                              onPressed: () => startNavigation(previewLocation),
+                            )
+                          : Container())
                     ],
                   )
                 ],
               )),
         ),
       ),
-    ) : Container();
+    );
+  }
+
+  Widget _makeCardNavigation() {
+    // print('valor de loading $loading');
+    if (isNavigation == null || !isNavigation) {
+      return Container();
+    }
+    return Container(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15)),
+                color: Colors.black54),
+            alignment: Alignment.bottomCenter,
+            height: 75.0,
+            child: Row(
+              children: <Widget>[
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.15,
+                    padding:
+                        EdgeInsets.only(left: 5, top: 0, right: 5, bottom: 2),
+                    child:
+                        (selectedImage == null ? SizedBox() : selectedImage)),
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.70,
+                          padding: EdgeInsets.only(top: 0.0),
+                          child: Text(
+                            selectedLocation.nombre,
+                            overflow: TextOverflow.visible,
+                            softWrap: true,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                fontFamily: "Arial",
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16),
+                          )),
+                      (selectedDistance != null && selectedDistance.isNotEmpty
+                          ? Container(
+                              padding: EdgeInsets.only(top: 4.0),
+                              child: Text(
+                                "$selectedDistance",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "Arial",
+                                    fontSize: 24),
+                              ))
+                          : Container()),
+                    ]),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.15,
+                  alignment: Alignment.centerRight,
+                  child: GestureDetector(
+                    child: Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.white,
+                          size: 40,
+                        )),
+                    onTap: () {
+                      detenerNavegacion();
+                    },
+                  ),
+                )
+              ],
+            )));
   }
 
   void _showDialogGps(String message) {
@@ -426,8 +516,8 @@ class MapWidgetState extends State<MapWidget> {
   void checkGPS() async {
     //status=await geo.isLocationServiceEnabled();
     try {
-      var status = await geo.checkGeolocationPermissionStatus().timeout(
-          timeOutGps);
+      var status =
+          await geo.checkGeolocationPermissionStatus().timeout(timeOutGps);
       if (status == GeolocationStatus.denied)
         _showDialogGps("Acceso bloqueado a GPS, debe otorgar permisos");
       else if (status == GeolocationStatus.disabled)
@@ -449,19 +539,171 @@ class MapWidgetState extends State<MapWidget> {
     }
   }
 
-  loadDataSelected(UbicacionModel f) async {
-    GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newLatLng(f.getLatLong()));
+  loadDataPreview(UbicacionModel f) async {
+    /*
+    bool cont=true;
+    if(isNavigation)
+      {
+        await showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            // return object of type Dialog
+            return AlertDialog(
+              title: new Text("Navegación"),
+              content: new Text("Se detendra la ruta actual,\n ¿esta Seguro?"),
+              actions: <Widget>[
+                // usually buttons at the bottom of the dialog
+                new FlatButton(
+                  child: new Text("Si"),
+                  onPressed: () {
+                    cont=false;
+                    Navigator.of(context).pop();
+                    detenerNavegacion();
+
+                  },
+                ),
+                new FlatButton(
+                  child: new Text("No"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            );
+          },
+        );
+      }
+    if(cont) return;
+    print('paso igual');
+
+     */
     setState(() {
       loading = true;
     });
-    String d = await getDistance(f);
+    if(posStream!=null)
+     posStream.pause();
+    GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newLatLng(f.getLatLong()));
+    Image image = getIconGoogleMap(url: f.imagen, width: 40, height: 40);
 
+    String d = await getDistance(f);
+    print('Cargando preview');
     setState(() {
-      selected = f;
-      distance = d;
-      gpsEnabled=!(d==null||d.isEmpty);
+      previewLocation = f;
+      previewDistance = d;
+      previewImage = image;
       loading = false;
     });
+  }
+
+  startNavigation(UbicacionModel u) async {
+    print('Iniciar Navegacion');
+
+    var locationOptions =
+        LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 10,timeInterval: 5);
+
+    GoogleMapController controller = await _controller.future;
+    if (posStream != null) {
+      posStream.cancel();
+    }
+    setState(() {
+      selectedLocation=previewLocation;
+      selectedDistance=previewDistance;
+      selectedImage=previewImage;
+      previewLocation=null;
+      previewImage=null;
+      previewDistance=null;
+    });
+    posStream = geo.getPositionStream(locationOptions).listen((current) {
+      List<LatLng> route = [];
+      LatLng now = LatLng(current.latitude, current.longitude);
+      route.add(now);
+      route.add(u.getLatLong());
+
+      setState(() {
+        if (!isNavigation) {
+          isNavigation = true;
+        }
+        if(lastHeading==null) {
+          lastHeading = current.heading;
+        }
+        var diference= lastHeading-current.heading;
+        if(diference.abs()>5.0)
+          {
+            lastHeading=current.heading;
+          }
+        print("last Heading $lastHeading");
+        controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+            target: now, tilt: 55.0, zoom: zoom, bearing: lastHeading)));
+
+        getDistanceNavigation(now, u.getLatLong()).then((text) {
+          selectedDistance = text;
+        });
+
+        _routeNavigator.clear();
+        _routeNavigator.add(Polyline(
+          polylineId: PolylineId('${u.id}'),
+          visible: true,
+          points: route,
+          color: Colors.blue,
+          width: 4,
+        ));
+      });
+    });
+
+    /*
+    var locationOptions = LocationOptions(accuracy: LocationAccuracy.bestForNavigation, distanceFilter: 10);
+
+    posStream=
+    geo.getPositionStream(locationOptions).listen((event){
+      double lat=event.latitude;
+      double lon=event.longitude;
+      setNewPosition(lat,lon);
+    });
+
+     */
+  }
+
+  detenerNavegacion() {
+    if (posStream != null) posStream.cancel();
+    setState(() {
+      isNavigation = false;
+      selectedLocation = null;
+      _routeNavigator.clear();
+      selectedDistance = null;
+      selectedImage = null;
+    });
+  }
+
+  void setNewPosition(double lat, double lon) {
+    //  double distanceInMeters = geo.distanceBetween(52.2165157, 6.9437819, 52.3546274, 4.8285838);
+  }
+
+  Future<String> getDistanceNavigation(LatLng init, LatLng end) async {
+    double distanciaMts = await geo.distanceBetween(
+        init.latitude, init.longitude, end.latitude, end.longitude);
+    if (distanciaMts < 15 && posStream != null) {
+      posStream.cancel();
+    }
+    if (distanciaMts >= 1000) {
+      return 'a ' + (distanciaMts / 1000).toStringAsFixed(1) + ' kms';
+    } else {
+      return 'a ' + distanciaMts.toStringAsFixed(0) + ' mts';
+    }
+  }
+
+  void closePreview() {
+    setState(() {
+      if(isNavigation && posStream!=null && posStream.isPaused)
+        {
+          print('Reiniciando Navegacion');
+          posStream.resume();
+        }
+      previewLocation=null;
+      previewDistance=null;
+      previewImage=null;
+    });
+
+
   }
 }
