@@ -7,16 +7,16 @@ import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class Ubicacion {
-  final String categoria;
+  final String category;
   final bool expand;
-  final String imagen;
+  final String image;
   final List<Location> locations;
 
   Ubicacion({
-    @required this.categoria,
+    @required this.category,
     @required this.locations,
     @required this.expand,
-    @required this.imagen,
+    @required this.image,
   });
 
   factory Ubicacion.fromJson(String str) => Ubicacion.fromMap(json.decode(str));
@@ -24,33 +24,33 @@ class Ubicacion {
   String toJson() => json.encode(toMap());
 
   factory Ubicacion.fromMap(Map<String, dynamic> json) => Ubicacion(
-    categoria: json["categoria"],
+    category: json["category"],
     expand: json["expand"] == null ? false : json["expand"],
     locations: List<Location>.from(json["locations"].map((x) => Location.fromMap(x))),
-    imagen: json["imagen"] == null ? null : json["imagen"],
+    image: json["image"] == null ? null : json["image"],
   );
 
   Map<String, dynamic> toMap() => {
-    "categoria": categoria,
+    "category": category,
     "locations": List<dynamic>.from(locations.map((x) => x.toMap())),
     "expand": expand,
-    "imagen": imagen,
+    "image": image,
   };
 }
 
 class Location {
   final String id;
-  final String nombre;
-  final String imagen;
-  final double latitud;
-  final double longitud;
+  final String title;
+  final String image;
+  final double latitude;
+  final double longitude;
 
   Location({
     @required this.id,
-    @required this.nombre,
-    @required this.imagen,
-    @required this.latitud,
-    @required this.longitud,
+    @required this.title,
+    @required this.image,
+    @required this.latitude,
+    @required this.longitude,
   });
 
   factory Location.fromJson(String str) => Location.fromMap(json.decode(str));
@@ -59,21 +59,21 @@ class Location {
 
   factory Location.fromMap(Map<String, dynamic> json) => Location(
     id: json["id"],
-    nombre: json["nombre"],
-    imagen: json["imagen"],
-    latitud: json["latitud"].toDouble(),
-    longitud: json["longitud"].toDouble(),
+    title: json["title"],
+    image: json["image"],
+    latitude: json["latitude"].toDouble(),
+    longitude: json["longitude"].toDouble(),
   );
 
   Map<String, dynamic> toMap() => {
     "id": id,
-    "nombre": nombre,
-    "imagen": imagen,
-    "latitud": latitud,
-    "longitud": longitud,
+    "title": title,
+    "image": image,
+    "latitude": latitude,
+    "longitude": longitude,
   };
 
   LatLng getLatLong(){
-    return LatLng(this.latitud, this.longitud);
+    return LatLng(this.latitude, this.longitude);
   }
 }

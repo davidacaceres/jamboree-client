@@ -134,22 +134,28 @@ Future<bool> loadContentUrl() async {
 
 Future<bool> loadLocationAsset() async {
   print('cargando ubicaciones desde archivo local');
-  String jsondata= await rootBundle.loadString('assets/json/locations_example.json');
-_listLocations.clear();
-  var jStringList = json.decode(jsondata);
-  for (int u =0; u < jStringList.length ; u++ ) {
-    // print('cargando elemento $u \n ${jStringList[u]}');
-    Ubicacion content=Ubicacion.fromMap(jStringList[u]);
-    _listLocations.add(content);
-
+  try {
+    String jsondata = await rootBundle.loadString(
+        'assets/json/locations_example.json');
+    _listLocations.clear();
+    var jStringList = json.decode(jsondata);
+    for (int u = 0; u < jStringList.length; u++) {
+      // print('cargando elemento $u \n ${jStringList[u]}');
+      Ubicacion content = Ubicacion.fromMap(jStringList[u]);
+      _listLocations.add(content);
+    }
+    print('Finalizo la carga del ubicaciones desde archivo local');
+    return true;
+  }catch(ex){
+    print('error al cargar archivo de ubicaciones $ex');
+    return false;
   }
-  print('Finalizo la carga del ubicaciones desde archivo local');
-  return true;
 }
 
 
 Future<bool> loadLocationsUrl() async {
-
+  return loadLocationAsset();
+  /*
   try {
     bool connected=false;
     try {
@@ -192,6 +198,8 @@ Future<bool> loadLocationsUrl() async {
     print('Error al recibir archivo con ubicaciones $e');
   }
   return false;
+
+   */
 
 }
 

@@ -8,21 +8,21 @@ class _LocationsProvider {
 
   Future<List<LocationView>> getLocationsView() async {
     if (_ubicacionesEntry==null) {
-      print('No se encuentran ubicaciones');
+      print('No se encuentran ubicaciones para el widget, se intentara carcar nuevamente');
       List<Ubicacion> _ubicaciones = getLocationsMap();
       if(_ubicaciones==null || _ubicaciones.length<=0) return null;
       _ubicacionesEntry = [];
       for (int index = 0; index < _ubicaciones.length; index++) {
         Ubicacion ubE = _ubicaciones[index];
-        LocationView cat = LocationView(ubE.categoria);
+        LocationView cat = LocationView(ubE.category);
         cat.expand=ubE.expand;
-        cat.imagen=ubE.imagen;
+        cat.imagen=ubE.image;
         List<LocationView> childs = [];
         for (int u = 0; u < ubE.locations.length; u++) {
           Location l = ubE.locations[u];
-          LocationView child = LocationView(l.nombre);
-          if (l.imagen != null && l.imagen.isNotEmpty) {
-            child.imagen = l.imagen;
+          LocationView child = LocationView(l.title);
+          if (l.image != null && l.image.isNotEmpty) {
+            child.imagen = l.image;
           }
           child.id = l.id;
           child.position = l.getLatLong();
