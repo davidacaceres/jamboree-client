@@ -97,39 +97,54 @@ https://rxlabz.github.io/panache
 }
 
 ```
-## Json para definir contenido del tipo imagen
+## Json para definir contenido de las ubicaciones
 
 
 Las imagenes deben estar contenidas en el proyecto, google map, no soporta imagenes desde una url, solamente directo del directorio assets.
 
 ```
-[{
-  "id":"1",
-  "nombre":"Almacén",
-  "latitud":-32.912553,
-  "longitud":-71.494323,
-  "imagen": "assets/img/locations/shopping-128.png"
-},
+[
   {
-    "id":"2",
-    "nombre":"Hospital",
-    "latitud":-32.913463,
-    "longitud":-71.496061,
-    "imagen": "assets/img/locations/medical.png"
+    "categoria": "Generales",
+    "expand": true,
+    "imagen": "assets/img/locations/shopping-128.png",
+    "locations": [
+      {
+        "id":"1",
+        "nombre":"Almacén",
+        "latitud":-32.912553,
+        "longitud":-71.494323,
+        "imagen": "assets/img/locations/shopping-128.png"
+      },
+      {
+        "id":"2",
+        "nombre":"Hospital",
+        "latitud":-32.913463,
+        "longitud":-71.496061,
+        "imagen": "assets/img/locations/medical.png",
+        "imagen": "assets/img/locations/scout.png"
+      }
+    ]
   },
   {
-    "id":"3",
-    "nombre":"Centro Operación",
-    "latitud":-32.922462,
-    "longitud":-71.506968,
-    "imagen": "assets/img/locations/scout.png"
-  },
-  {
-    "id":"4",
-    "nombre":"Policía",
-    "latitud":-32.920012,
-    "longitud":-71.509200,
-    "imagen": "assets/img/locations/police.png"
+    "categoria": "Servicios",
+    "locations": [
+      {
+        "id":"3",
+        "nombre":"Centro Operación",
+        "latitud":-32.922462,
+        "longitud":-71.506968,
+        "imagen": "assets/img/locations/scout.png"
+      },
+      {
+        "id":"4",
+        "nombre":"Policía",
+        "latitud":-32.920012,
+        "longitud":-71.509200,
+        "imagen": "assets/img/locations/police.png"
+      }
+    ]
   }
+
 ]
 ```

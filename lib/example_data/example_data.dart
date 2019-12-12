@@ -3,12 +3,12 @@ import 'dart:io';
 
 import 'package:Pasaporte_2020/model/carrousel.dart';
 import 'package:Pasaporte_2020/model/content.dart';
-import 'package:Pasaporte_2020/model/location.dart';
+import 'package:Pasaporte_2020/model/ubicacion.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
 
 final List<Content> _listContent =[];
-final List<UbicacionModel> _listLocations =[];
+final List<Ubicacion> _listLocations =[];
 
 final List<Carrousel> _listCarrousel = [
   new Carrousel(
@@ -66,18 +66,21 @@ Content findExampleContent(String id){
 
 
 Future<bool> loadContentAsset() async {
-  print('cargando contenido desde archivo local');
-  String jsondata= await rootBundle.loadString('assets/json/data_jme.json');
+  try {
+    print('cargando contenido desde archivo local');
+    String jsondata = await rootBundle.loadString('assets/json/data_jme.json');
 
-  var jStringList = json.decode(jsondata);
-  for (int u =0; u < jStringList.length ; u++ ) {
-   // print('cargando elemento $u \n ${jStringList[u]}');
-    Content content=Content.fromMap(jStringList[u]);
-    _listContent.add(content);
-
+    var jStringList = json.decode(jsondata);
+    for (int u = 0; u < jStringList.length; u++) {
+      Content content = Content.fromMap(jStringList[u]);
+      _listContent.add(content);
+    }
+    print('Finalizo la carga del contenido desde archivo local');
+    return true;
+  }catch(ex){
+    print('Error al cargar ubicaciones desde json local $ex');
   }
-  print('Finalizo la carga del contenido desde archivo local');
-  return true;
+  return false;
 }
 
 Future<bool> loadContentUrl() async {
@@ -129,6 +132,22 @@ Future<bool> loadContentUrl() async {
 }
 
 
+Future<bool> loadLocationAsset() async {
+  print('cargando ubicaciones desde archivo local');
+  String jsondata= await rootBundle.loadString('assets/json/locations_example.json');
+_listLocations.clear();
+  var jStringList = json.decode(jsondata);
+  for (int u =0; u < jStringList.length ; u++ ) {
+    // print('cargando elemento $u \n ${jStringList[u]}');
+    Ubicacion content=Ubicacion.fromMap(jStringList[u]);
+    _listLocations.add(content);
+
+  }
+  print('Finalizo la carga del ubicaciones desde archivo local');
+  return true;
+}
+
+
 Future<bool> loadLocationsUrl() async {
 
   try {
@@ -158,7 +177,7 @@ Future<bool> loadLocationsUrl() async {
         for (int u =0; u < jStringList.length ; u++ ) {
 
 
-          UbicacionModel content=UbicacionModel.fromJson(jStringList[u]);
+          Ubicacion content=Ubicacion.fromJson(jStringList[u]);
           _listLocations.add(content);
 
         }
@@ -173,8 +192,9 @@ Future<bool> loadLocationsUrl() async {
     print('Error al recibir archivo con ubicaciones $e');
   }
   return false;
+
 }
 
-List<UbicacionModel> getLocations() {
+List<Ubicacion> getLocationsMap() {
   return _listLocations;
 }
