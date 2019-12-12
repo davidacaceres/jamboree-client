@@ -134,6 +134,14 @@
 									"background_color":[248,177,25],
 									"data":"Entre el 19 y el 25 de enero de 2019, acamparemos juntos más de mil patrullas provenientes de todo nuestro país y de algunos países vecinos que nos visitarán y serán parte de esta celebración."
 								}
+						},
+						{
+							"image_conf":
+								{
+									"source":"http://parlamento.jamboree.cl/app/attachment_97824570.gif",
+									"align":"center",
+									"background_color":[248,177,25]
+								} 
 						}
 					]
 				}
@@ -158,12 +166,54 @@
 								}
 						},
 						{
-							"paragraph_conf":
-								{ 
-									"text_color":[0, 0, 0],
-									"data":"<ul><li>1976: Quebrada de Macul<\/li><li>1982: Lago Peñuelas<\/li><li>1986: Panguipulli<\/li><li>1992: Los Lagos<\/li><li>1996: Parral<\/li><li>2002: Picarquín<\/li><li>2009: Picarquín<\/li><li>2013: Picarquín<\/li><li>2016: Picarquín<\/li><\/ul>"
-								}
-						},
+							"time_line_conf": {
+								"textColor": [0,0,0],
+								"linePosition": "left",
+								"lineColor": [248,177,25],
+								"lines":
+								[
+									{
+										"title": "Quebrada de Macul",
+										"time": "1976",
+										"timeColor": [248,177,25]
+									},
+									{
+										"title": "Lago Peñuelas",
+										"time": "1982"
+									},
+									{
+										"title": "Panguipulli",
+										"time": "1986"
+									},
+									{
+										"title": "Los Lagos",
+										"time": "1992"
+									},
+									{
+										"title": "Parral",
+										"time": "1996"
+									},
+									{
+										"title": "Picarquín",
+										"time": "2002"
+									},
+									{
+										"title": "Picarquín",
+										"time": "2009"
+									},
+									{
+										"title": "8° Jamboree Nacional - Picarquín",
+										"time": "2013",
+										"image": "http://parlamento.jamboree.cl/logo_jam2013.png"
+									},
+									{
+										"title": "9° Jamboree Nacional - Picarquín",
+										"time": "2016",
+										"image": "http://parlamento.jamboree.cl/logo_jam2016.png"
+									}
+								]
+							}
+						},							
 						{
 							"list_conf":
 							{
@@ -171,25 +221,32 @@
 								"textColor":[0,0,0],
 								"fontSize":13.0,
 								"fontFamily": "Arial",
+								"height": 200.0,
 								"items":
 								[
 								{
-									"backgroundColor":[248,177,25],
-									"image": "http://parlamento.jamboree.cl/logo_jam2016.jpg",
-									"title": "<b>1976<\/b>",
-									"titleColor":[255,255,255],
-									"titleFontSize": 13.2,
-									"titleFontFamiy": "Arial",
-									"subtitle":"Quebrada de Macul",
-									"subtitleColor":[100,100,100],
-									"subtitleFontSize": 13.2,
-									"subtitleFontFamiy": "Arial"
+									"backgroundColor":[100,100,100],
+									"title": "1976",
+									"subtitle":"Quebrada de Macul"
 								},
 								{
+									"backgroundColor":[248,177,25],
 									"image": "http://parlamento.jamboree.cl/logo_jam2013.png",
 									"title": "2013",
 									"subtitle":"Picarquín"
-								}    
+								},    
+								{
+									"backgroundColor":[248,177,25],
+									"image": "http://parlamento.jamboree.cl/logo_jam2016.jpg",
+									"title": "<b>2016<\/b>",
+									"titleColor":[255,255,255],
+									"titleFontSize": 13.2,
+									"titleFontFamiy": "Arial",
+									"subtitle":"Picarquín",
+									"subtitleColor":[100,100,100],
+									"subtitleFontSize": 13.2,
+									"subtitleFontFamiy": "Arial"
+								}
 							 ]
 							}
 						},
@@ -382,13 +439,54 @@
 							}
                     },
 					{
-						"paragraph_conf":
-							{ 
-								"text_color":[224,0,122],
-								"background_color":[255,255,255],
-								"data":"<ul><li>Respetar la Ley y la Promesa Scout.<\/li><li>Respetar las leyes y normas del pa&iacute;s.<\/li><li>Ser considerado y respetuoso con los dem&aacute;s.<\/li><li>No utilizar lenguaje ofensivo ni realizar acciones que puedan serlo.<\/li><li>No consumir ni facilitar alcohol, tabaco o drogas a otras personas.<\/li><li>Ser respetuoso de la propiedad privada y cuidadoso con las instalaciones del evento.<\/li><li>Cuidar mi salud e higiene personal, as&iacute; como cuidar de los otros<\/li><li>Cuidar y respetar el medio ambiente.<\/li><li>Respetar las indicaciones de los equipos de Subcampo y de las personas a cargo de las actividades y los m&oacute;dulos.<\/li><\/ul>"
+							"list_conf":
+							{
+								"backgroundColor":[255,255,255],
+								"textColor":[0,0,0],
+								"fontSize":13.0,
+								"fontFamily": "Arial",
+								"height": 200.0,
+								"items":
+								[
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Respetar la Ley y la Promesa Scout"
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Respetar las leyes y normas del pa&iacute;s."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Ser considerado y respetuoso con los dem&aacute;s."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "No utilizar lenguaje ofensivo ni realizar acciones que puedan serlo."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "No consumir ni facilitar alcohol, tabaco o drogas a otras personas."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Ser respetuoso de la propiedad privada y cuidadoso con las instalaciones del evento."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Cuidar mi salud e higiene personal, as&iacute; como cuidar de los otros"
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Cuidar y respetar el medio ambiente."
+								},
+								{
+									"backgroundColor":[200,200,200],
+									"title": "Respetar las indicaciones de los equipos de Subcampo y de las personas a cargo de las actividades y los m&oacute;dulos."
+								}
+							 ]
 							}
-                    }
+						}
                 ]
 			}
 		]
@@ -405,12 +503,54 @@
 					"content":
 					[
 						{
-							"paragraph_conf":
-								{ 
-									"text_color":[0, 0, 0],
-									"background_color":[255,255,255],
-									"data":"<ol><li>La gu&iacute;a y el scout es digna y digno de confianza<\/li>\r\n<li>La gu&iacute;a y el scout es leal<\/li>\r\n<li>La gu&iacute;a y el scout sirve sin esperar recompensa<\/li>\r\n<li>La gu&iacute;a y el scout comparte con todos<\/li>\r\n<li>La gu&iacute;a y el scout es alegre y cordial<\/li>\r\n<li>La gu&iacute;a y el scout protege la vida y la naturaleza<\/li>\r\n<li>La gu&iacute;a y el scout es responsable y nada hace a medias<\/li>\r\n<li>La gu&iacute;a y el scout es optimista<\/li>\r\n<li>La gu&iacute;a y el scout cuida las cosas y valora el trabajo<\/li>\r\n<li>La gu&iacute;a y el scout es coherente en pensamiento, palabra y acci&oacute;n<\/li>\r\n<\/ol>"
+							"list_conf":
+							{
+								"backgroundColor":[255,255,255],
+								"textColor":[0,0,0],
+								"items":
+								[
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+									"title": "La gu&iacute;a y el scout es digna y digno de confianza"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+									"title": "La gu&iacute;a y el scout es leal"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+									"title": "La gu&iacute;a y el scout sirve sin esperar recompensa"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+									"title": "La gu&iacute;a y el scout comparte con todos"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+									"title": "La gu&iacute;a y el scout es alegre y cordial"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/6_50px.png",
+									"title": "La gu&iacute;a y el scout protege la vida y la naturaleza"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/7_50px.png",
+									"title": "es responsable y nada hace a medias"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/8_50px.png",
+									"title": "La gu&iacute;a y el scout es optimista"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/9_50px.png",
+									"title": "La gu&iacute;a y el scout cuida las cosas y valora el trabajo"
+								},
+								{
+									"image": "http://parlamento.jamboree.cl/app/numeros/10_50px.png",
+									"title": "es coherente en pensamiento, palabra y acci&oacute;n"
 								}
+							 ]
+							}
 						}
 					]
 				},
