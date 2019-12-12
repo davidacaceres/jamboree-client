@@ -1,29 +1,212 @@
-[{
-  "id":"1",
-  "nombre":"Almacén",
-  "latitud":-32.912553,
-  "longitud":-71.494323,
-  "imagen": "assets/img/locations/shopping-128.png"
-},
+[
+  {
+    "id":"1",
+    "nombre":"La Academia",
+    "latitud":-33.959457,
+    "longitud":-70.6269032,
+    "imagen": "assets/img/locations/medical.png"
+  },
   {
     "id":"2",
-    "nombre":"Hospital",
-    "latitud":-32.913463,
-    "longitud":-71.496061,
+    "nombre":"Cabildos",
+    "latitud":-33.9589854,
+    "longitud":-70.6280083,
     "imagen": "assets/img/locations/medical.png"
   },
   {
     "id":"3",
-    "nombre":"Centro Operación",
-    "latitud":-32.922462,
-    "longitud":-71.506968,
-    "imagen": "assets/img/locations/scout.png"
+    "nombre":"El Estadio",
+    "latitud":-33.9592257,
+    "longitud":-70.6307978,
+    "imagen": "assets/img/locations/medical.png"
   },
   {
     "id":"4",
-    "nombre":"Policía",
-    "latitud":-32.920012,
-    "longitud":-71.509200,
-    "imagen": "assets/img/locations/police.png"
+    "nombre":"El Coliseo",
+    "latitud":-33.9499623,
+    "longitud":-70.6263586,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"5",
+    "nombre":"Expo - El Parque",
+    "latitud":-33.9545901,
+    "longitud":-70.627174,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"6",
+    "nombre":"Expo - El Puerto",
+    "latitud":-33.9536467,
+    "longitud":-70.6257578,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"7",
+    "nombre":"Expo - El Puerto",
+    "latitud":-33.953368,
+    "longitud":-70.6282628,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"8",
+    "nombre":"Escenario",
+    "latitud":-33.9530594,
+    "longitud":-70.6269165,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"9",
+    "nombre":"Expo - Senderos",
+    "latitud":-33.9655678,
+    "longitud":-70.6232396,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"10",
+    "nombre":"Expo - Rutas",
+    "latitud":-33.9621687,
+    "longitud":-70.6285504,
+    "imagen": "assets/img/locations/medical.png"
+  },
+  {
+    "id":"101",
+    "nombre":"Reserva Nacional Los Flamencos",
+    "latitud":-33.9555071,
+    "longitud":-70.6278895,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"102",
+    "nombre":"Reserva Nacional Los Huemules del Niblinto",
+    "latitud":-33.9550977,
+    "longitud":-70.6286084,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"103",
+    "nombre":"Reserva Nacional Las Vicuñas",
+    "latitud":-33.9544569,
+    "longitud":-70.629177,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"104",
+    "nombre":"Reserva Nacional Pampa del Tamarugal",
+    "latitud":-33.9536026,
+    "longitud":-70.6291341,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"105",
+    "nombre":"Reserva Nacional Isla Mocha",
+    "latitud":-33.9528817,
+    "longitud":-70.6288551,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"106",
+    "nombre":"Parque Nacional Pan de Azúcar",
+    "latitud":-33.9522499,
+    "longitud":-70.6284367,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"107",
+    "nombre":"Parque Nacional Nevado de Tres Cruces",
+    "latitud":-33.9518227,
+    "longitud":-70.6278466,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"108",
+    "nombre":"Parque Radal Siete Tazas",
+    "latitud":-33.951529,
+    "longitud":-70.6271492,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"109",
+    "nombre":"Reserva Nacional Lago Peñuelas",
+    "latitud":-33.9527127,
+    "longitud":-70.6252717,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"110",
+    "nombre":"Reserva Nacional Futaleufú",
+    "latitud":-33.9533712,
+    "longitud":-70.6250571,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"111",
+    "nombre":"Parque Nacional Volcán Isluga",
+    "latitud":-33.9541722,
+    "longitud":-70.6251751,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"112",
+    "nombre":"Parque Nacional Kawésqar",
+    "latitud":-33.9550087,
+    "longitud":-70.6253897,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"113",
+    "nombre":"Parque Nacional Laguna del Laja",
+    "latitud":-33.9554003,
+    "longitud":-70.6260978,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"114",
+    "nombre":"Parque Nacional La Campana",
+    "latitud":-33.9555427,
+    "longitud":-70.6268381,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"115",
+    "nombre":"Parque Nacional Morro Moreno",
+    "latitud":-33.9625622,
+    "longitud":-70.6268174,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"116",
+    "nombre":"Reserva Nacional Pingüino de Humboldt",
+    "latitud":-33.9636834,
+    "longitud":-70.6273431,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"117",
+    "nombre":"Reserva Nacional Laguna Parrillar",
+    "latitud":-33.9619749,
+    "longitud":-71.496061,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"118",
+    "nombre":"Reserva Nacional Katalalixar",
+    "latitud":-33.9629982,
+    "longitud":-70.6301219,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"119",
+    "nombre":"Parque Nacional Lauca",
+    "latitud":-33.9622329,
+    "longitud":-70.6325037,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+  },
+  {
+    "id":"120",
+    "nombre":"Parque Nacional Puyehue",
+    "latitud":-33.962838,
+    "longitud":-70.6324393,
+    "imagen": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
   }
 ]
