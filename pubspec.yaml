@@ -44,13 +44,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/
+    - assets/img/carousel/
     - assets/img/inicial/
     - assets/img/locations/
     - assets/img/subcampos/
     - assets/icon/
+    - assets/icon/mapa/
+    - assets/icon/numeros/
     - assets/fonts/
     - assets/json/
-    - assets/img/carousel/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
