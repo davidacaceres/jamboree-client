@@ -6,7 +6,8 @@
 		"title": "¿Qué es un Jamboree?",
 		"titleList": "¿Qué es un Jamboree?",
 		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
-		"background_page":[248,177,25],
+		"background_page":[255,255,255],
+		"search": "Jamboree país campamento América Mundial evento Interamericano protagonistas Baden-Powell movimiento Picarquín Jamborees Robert fiesta",
 		"display":[
 			{
 				"short_title":"Contenidos",
@@ -15,8 +16,8 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"¡Bienvenidos y bienvenidas al 10° Jamboree Nacional 2020 - Picarquin, Chile!"
 							}
                     }
@@ -36,40 +37,40 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"La palabra Jamboree quiere decir fiesta grande o celebración. Un Jamboree para el movimiento Scout es un gran campamento en que participan jóvenes provenientes de distintos lugares."
 							}
                     },
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"Robert Baden-Powell la eligió porque le gustaba su sonido alegre, jovial y festivo que tenía mucho que ver con los jóvenes, que son siempre los protagonistas de un Jamboree."
 							}
                     },
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"Así fue como esta palabra pasó a denominar al más importante evento del Movimiento Scout: el Jamboree Scout Mundial, una reunión de miles de jóvenes scouts provenientes de más de 150 países que se realiza cada cuatro años, siempre en un país distinto."
 							}
                     },
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"Picarquín, el lugar que ahora es sede de nuestro campamento, fue en 1999 sde del 19° Jamboree Scout Mundial; el primero y único realizado hasta hoy en América Latina."
 							}
                     },
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[248,177,25],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"Pero esta palabra no solo designa a los campamentos mundiales en que se reúnen jóvenes scouts de todo el mundo. También existe un Jamboree Scout Interamericano, donde se reúnen jóvenes scouts de toda América y Jamborees nacionales que se realizan en cada país y reúnen a los miembros de los Movimientos Scout y Guía de ese país, como en el caso de nuestro evento."
 							}
                     }
@@ -113,7 +114,7 @@
 			"order": 2,
 			"title": "El 10° Jamboree Nacional",
 			"image":"assets/img/logo_mono_4.png",
-			"background_page":[248,177,25],
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -123,7 +124,7 @@
 							"paragraph_conf":
 								{ 
 									"text_color":[0, 0, 0],
-									"background_color":[248,177,25],
+									"background_color":[255,255,255],
 									"data":"En esta oportunidad la Hacienda Picarquin, en San Francisco de Mostazal, región del Libertador Bernardo O´Higgins, será la sede de la fiesta grande de las guías y los scouts de Chile."
 								}
 						},
@@ -131,17 +132,9 @@
 							"paragraph_conf":
 								{ 
 									"text_color":[0, 0, 0],
-									"background_color":[248,177,25],
+									"background_color":[255,255,255],
 									"data":"Entre el 19 y el 25 de enero de 2019, acamparemos juntos más de mil patrullas provenientes de todo nuestro país y de algunos países vecinos que nos visitarán y serán parte de esta celebración."
 								}
-						},
-						{
-							"image_conf":
-								{
-									"source":"http://parlamento.jamboree.cl/app/attachment_97824570.gif",
-									"align":"center",
-									"background_color":[248,177,25]
-								} 
 						}
 					]
 				}
@@ -155,7 +148,7 @@
 			"background_page":[255,255,255],
 			"display":[
 				{
-					"short_title":"Info",
+					"short_title":"Nacionales",
 					"content":
 					[
 						{
@@ -170,12 +163,12 @@
 								"textColor": [0,0,0],
 								"linePosition": "left",
 								"lineColor": [248,177,25],
+								"iconColor": [248,177,25],
 								"lines":
 								[
 									{
 										"title": "Quebrada de Macul",
-										"time": "1976",
-										"timeColor": [248,177,25]
+										"time": "1976"
 									},
 									{
 										"title": "Lago Peñuelas",
@@ -209,47 +202,29 @@
 									{
 										"title": "9° Jamboree Nacional - Picarquín",
 										"time": "2016",
-										"image": "http://parlamento.jamboree.cl/logo_jam2016.png"
+										"image": "http://parlamento.jamboree.cl/logo_jam2016.jpg"
 									}
 								]
 							}
-						},							
-						{
-							"list_conf":
-							{
-								"backgroundColor":[255,255,255],
-								"textColor":[0,0,0],
-								"fontSize":13.0,
-								"fontFamily": "Arial",
-								"height": 200.0,
-								"items":
-								[
-								{
-									"backgroundColor":[100,100,100],
-									"title": "1976",
-									"subtitle":"Quebrada de Macul"
-								},
-								{
-									"backgroundColor":[248,177,25],
-									"image": "http://parlamento.jamboree.cl/logo_jam2013.png",
-									"title": "2013",
-									"subtitle":"Picarquín"
-								},    
-								{
-									"backgroundColor":[248,177,25],
-									"image": "http://parlamento.jamboree.cl/logo_jam2016.jpg",
-									"title": "<b>2016<\/b>",
-									"titleColor":[255,255,255],
-									"titleFontSize": 13.2,
-									"titleFontFamiy": "Arial",
-									"subtitle":"Picarquín",
-									"subtitleColor":[100,100,100],
-									"subtitleFontSize": 13.2,
-									"subtitleFontFamiy": "Arial"
-								}
-							 ]
-							}
 						},
+						{
+							"paragraph_conf":
+								{ 
+									"data":"Además, tuvimos el honor de ser los organizadores y anfitriones de los eventos scouts internacionales:"
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"data":"<ul><li>6° Jamboree Scout Panamericano, Villarica, 1989<\/li><li>19° Jamboree Scout Mundial, Picarquín, 1999<\/li><\/ul>"
+								}
+						}
+					]
+				},
+				{
+					"short_title":"Internacionales",
+					"content":
+					[
 						{
 							"paragraph_conf":
 								{ 
@@ -273,7 +248,7 @@
 			"order": 4,
 			"title": "El lema del 10° Jamboree",
 			"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
-			"background_page":[224,0,122],
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -282,8 +257,8 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
-									"background_color":[224,0,122],
+									"text_color":[0,0,0],
+									"background_color":[255,255,255],
 									"data":"El lema de un evento es una idea fuerza que se pretende instalar en las mentes de quienes participan de él."
 								}
 						},
@@ -292,14 +267,14 @@
 								{
 									"font": "Gingerline DEMO Regular",
 									"fontSize": 14.0,
-									"text_color":[255, 255, 255],
+									"text_color":[0,0,0],
 									"data":"<h1><center>EL CAMBIO ES AHORA<\/center><\/h1>"
 								}
 						},
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
+									"text_color":[0,0,0],
 									"data":"es el lema de nuestro 10° Jamboree Nacional."
 								}
 						}
@@ -312,7 +287,7 @@
 			"order": 5,
 			"title": "El logo-Insignia de nuestro Jamboree",
 			"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
-			"background_page":[224,0,122],
+			"background_page":[255,255,255],
 			"display":[
 				{
 					"short_title":"Info",
@@ -321,7 +296,7 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
+									"text_color":[0,0,0],
 									"data":"Este es logo oficial del 10° Jamboree Nacional 2020."
 								}
 						},
@@ -330,36 +305,36 @@
 								{
 									"source":"assets/img/logo_jamboree_color.png",
 									"align":"center",
-									"background_color":[224,0,122]
+									"background_color":[255,255,255]
 								} 
 						},
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
+									"text_color":[0,0,0],
 									"data":"<center><b>¿Qué significado tiene los diferentes elementos de la insignia del Xº Jamboree Nacional?<\/b><\/center>"
 								}
 						},
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
-									"background_color":[224,0,122],
+									"text_color":[0,0,0],
+									"background_color":[255,255,255],
 									"data":"El desarrollo de la insignia conmemorativa del 10º Jamboree Nacional que organiza nuestra Asociación surge de la inspiración de la propuesta de “Favia” miembro beneficiario de nuestra institución y que a través del llamado que hiciéramos a través de las redes sociales envío su propuesta gráfica. En ella se aprecian dos manos tomadas, este gesto normalmente se utiliza para graficar la unión de dos personas, un saludo espontáneo o cómo símbolo de fuerza conjunta."
 								}
 						},
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[255, 255, 255],
-									"background_color":[224,0,122],
+									"text_color":[0,0,0],
+									"background_color":[255,255,255],
 									"data":"En atención al lema <b>\"El Cambio es Ahora\"<\/b>, descrito por los mismos beneficiarios en diferentes instancias de participación en las que fueron consultados, busca ser un llamado a la acción; acción cotidiana de cada uno de nuestras guías y scouts en su contexto personal, sea este familiar, escolar o al interior de su patrulla, unidad o grupo, en definitiva reconocernos como agentes de cambio hoy, con las capacidades y conocimientos que hoy contamos, con la fuerza que nos da la juventud y con el entusiasmo y optimismo propios de nuestro movimiento."
 								}
 						},
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[224,0,122],
+									"text_color":[0,0,0],
 									"background_color":[255,255,255],
 									"data":"Hoy hacemos un guiño al Jamboree Mundial que organizamos como Asociación hace ya 20 años atrás, es por esto que integramos elementos gráficos de esa imagen para conmemorar la importancia de este evento en nuestra historia como institución."
 								}
@@ -375,7 +350,7 @@
 						{
 							"paragraph_conf":
 								{ 
-									"text_color":[224,0,122],
+									"text_color":[0,0,0],
 									"background_color":[255,255,255],
 									"data":"Finalmente, en cuanto a los colores seleccionados, estos corresponden tanto a los colores institucionales como a algunos de los que representan objetivos sustentables que propone la ONU y que hemos hecho nuestros para avanzar en el trabajo de un mundo mejor."
 								}
@@ -391,8 +366,8 @@
 		"title": "Código de Conducta del 10° Jamboree Nacional",
 		"titleList": "Código de Conducta",
 		"image":"http://parlamento.jamboree.cl/avatar_jamboree.png",
-		"background_page":[224,0,122],
-		"titleColor":[255,255,255],
+		"background_page":[255,255,255],
+		"titleColor":[0,0,0],
 		"display":[
 			{
 				"short_title":"Contenidos",
@@ -401,16 +376,16 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[224,0,122],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"El Jamboree es una fiesta de encuentro, de intercambio y de amistad enmarcado en los valores de la Promesa y la Ley. Por eso te invitamos a disfrutar este encuentro respetando el código de convivencia, cuidando tu higiene y salud y protegiendo el medio ambiente."
 							}
                     },
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[255,255,255],
-								"background_color":[224,0,122],
+								"text_color":[0,0,0],
+								"background_color":[255,255,255],
 								"data":"Lee, reflexiona y comprométete a hacer todo lo que de ti dependa para que esta experiencia sea inolvidable para ti y para cada una de las personas que compartirán contigo estos días de aventura."
 							}
                     }
@@ -433,7 +408,7 @@
 					{
 						"paragraph_conf":
 							{ 
-								"text_color":[224,0,122],
+								"text_color":[0,0,0],
 								"background_color":[255,255,255],
 								"data":"Como Guía o Scout, participante del 10° Jamboree Nacional, comprometo a:"
 							}
@@ -449,39 +424,39 @@
 								"items":
 								[
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Respetar la Ley y la Promesa Scout"
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Respetar las leyes y normas del pa&iacute;s."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Ser considerado y respetuoso con los dem&aacute;s."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "No utilizar lenguaje ofensivo ni realizar acciones que puedan serlo."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "No consumir ni facilitar alcohol, tabaco o drogas a otras personas."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Ser respetuoso de la propiedad privada y cuidadoso con las instalaciones del evento."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Cuidar mi salud e higiene personal, as&iacute; como cuidar de los otros"
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Cuidar y respetar el medio ambiente."
 								},
 								{
-									"backgroundColor":[200,200,200],
+									"backgroundColor":[240,240,240],
 									"title": "Respetar las indicaciones de los equipos de Subcampo y de las personas a cargo de las actividades y los m&oacute;dulos."
 								}
 							 ]
@@ -986,6 +961,7 @@
 			"title": "Supermercado y alimentación",
 			"image":"assets/img/logo_jamboree_color.png",
 			"background_page":[255,255,255],
+			"search" : "supermercado alimentación supermercados ingredientes provisiones colaciones hortalizas congelados refrescos comedores alimentos abarrotes productos efectivo despacho quioscos envasado verduras venderán puestos comprar locales cecinas compras lácteos frutas huevos pagos venta balón carne lata gas",
 			"display":[
 				{
 					"short_title":"Info",
@@ -996,7 +972,23 @@
 								{ 
 									"text_color":[0, 0, 0],
 									"background_color":[255,255,255],
-									"data":"TEXTO"
+									"data":"Las patrullas deberán preparar ellas mismas sus alimentos. Para comprar las provisiones, en el Jamboree habrá un supermercado con dos locales de atención al servicio de guías y scouts. Los supermercados proveerán frutas, verduras y hortalizas, huevos, cecinas, lácteos, abarrotes, productos de carne (congelados), entre otros ingredientes necesarios para preparar la alimentación. También venderán gas envasado, en lata y en balón. Las compras deberán hacerse directamente en el supermercado, no habrá despacho “a carpa”, y los pagos se realizarán en efectivo pues no operarán otros medios de pago."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"Los miembros de los equipos de Servicio y otros adultos a cargo de la organización del evento, recibirán su alimentación en comedores especialmente habilitados para ellos."
+								}
+						},
+						{
+							"paragraph_conf":
+								{ 
+									"text_color":[0, 0, 0],
+									"background_color":[255,255,255],
+									"data":"Habrá también quioscos y puestos de venta de refrescos y colaciones en diferentes lugares del Jamboree."
 								}
 						}
 					]
