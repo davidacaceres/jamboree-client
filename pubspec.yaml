@@ -27,6 +27,7 @@ dependencies:
   tinycolor: ^1.0.2 # Permite manejar los colores para oscurecerlos o aclararlos.
   timeline_list: ^0.0.3
   photo_view: ^0.9.0
+  get_it:
 
 dev_dependencies:
   flutter_test:

@@ -25,43 +25,37 @@ class SearchResult extends StatelessWidget {
                         )),
               )
             ]),
-        Expanded(child: buildList(listado)),
+        Expanded(child: buildList(context,listado)),
       ],
     );
   }
 
-  Widget buildList(List<Content> contents) {
+  Widget buildList(BuildContext context,List<Content> contents) {
     return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: listado.length,
       itemBuilder: (BuildContext context, int index) {
-        return getListItem(listado[index], index);
+        return getListItem(context,listado[index], index);
       },
     );
   }
 
-  Widget getListItem(Content content, index) {
+  Widget getListItem(BuildContext context,Content content, index) {
     final makeListTile = ListTile(
         onTap: () {
-//          Navigator.push(
-//              context,
-//              MaterialPageRoute(
-//                  builder: (context) => DetailPage2(lesson: content)));
+          Navigator.pushNamed(context, "detail",arguments: content);
         },
-        //  contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         leading: Container(
-          child: getAvatar(
-              urlImage: "https://picsum.photos/id/$index/200/300",
-              radius: 18.0),
+          child: Padding(padding: EdgeInsets.only(top:3.0, bottom: 3.0),child:getImageContent(url: content.image)),
         ),
-        title: Text((
+        title: Container(child:Text((
           content.titleList==null?content.title:content.titleList),
-          style:  TextStyle(color: Colors.black87,fontFamily: 'Arial',fontSize: 12),
-        ),
+          overflow: TextOverflow.visible,
+          style:  TextStyle(color: Colors.black87,fontFamily: 'Arial',fontSize: 14),
+        )),
         trailing:
             Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 16.0));
-
     final contentCard = Card(
       elevation: 0.1,
       margin: new EdgeInsets.symmetric(horizontal: 10, vertical: 0.5),

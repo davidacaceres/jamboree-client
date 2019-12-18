@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                 controller: new ScrollController(keepScrollOffset: false),
                 children: <Widget>[
               carrusel,
-              ContentRootWidget(contentRoot: getExampleRootContent())
+              ContentRootWidget(contentRoot: dataProvider.getExampleRootContent())
             ]))
       ],
     );
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
     if (size.height > 800 && size.height > size.width) {
       print('con carrusel');
       return CarrouselWidget(
-        list: getExampleCarrousel(),
+        list: dataProvider.getExampleCarrousel(),
       );
     } else {
       print('sin carrusel');

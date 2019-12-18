@@ -7,7 +7,6 @@ import 'package:flutter/widgets.dart';
 
 
 class SearchPage extends StatefulWidget {
-  String searchText;
 
 
   @override
@@ -16,8 +15,9 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
  // final List<Content> resultado=getExampleContent();
-  SearchFieldWidget searchBar;
-  final historyList = HistoryListWidget(historia: getExampleHistory());
+  String searchText;
+  final SearchFieldWidget searchBar= SearchFieldWidget();
+  final historyList = HistoryListWidget(historia: dataProvider.getExampleHistory());
 
 
 
@@ -25,13 +25,12 @@ class _SearchPageState extends State<SearchPage> {
   void initState() {
     super.initState();
     historyList.addCallBackHistoryValue(historySelect);
+    searchBar.addCallBackParentToSearch(search);
 
   }
 
   @override
   Widget build(BuildContext context) {
-    searchBar= SearchFieldWidget(textSearch:widget.searchText);
-    searchBar.addCallBackParentToSearch(search);
 
     return Scaffold(
         body: Padding(
@@ -49,9 +48,9 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget getList(){
-    if(widget.searchText!=null && widget.searchText.isNotEmpty){
+    if(searchText!=null && searchText.isNotEmpty){
       print('Generando Listado de Resultado');
-      var result = getExampleSearchContent(widget.searchText);
+      var result = dataProvider.getExampleSearchContent(searchText);
       print('Resultado de la busqueda: ${result.length}');
       return SearchResult(listado: result );
     }else{
@@ -62,9 +61,9 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   search(String text) {
-    print("1:$text");
+    print("Buscando--->:$text");
     setState(() {
-      widget.searchText=text;
+      searchText=text;
     });
   }
 
@@ -72,7 +71,7 @@ class _SearchPageState extends State<SearchPage> {
     print("Parent Receive from Child :$text");
 
     setState(() {
-      widget.searchText=text;
+      searchText=text;
     });
   }
 }

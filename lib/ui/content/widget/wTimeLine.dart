@@ -40,7 +40,6 @@ class _WTimelineState extends State<WTimeline> {
         context, widget.timeLineConf.lineColor, Colors.white);
     Color tlBgColor = getBackgroundColor(
         context, widget.timeLineConf.backgroundColor, widget.bgColorParent);
-
     var timeLine = timelineModel(position, lineColor);
 
     return Container(
@@ -95,16 +94,20 @@ class _WTimelineState extends State<WTimeline> {
     TextStyle timeStyle = TextStyle(
         color: timeColor, fontFamily: timeFontFamily, fontSize: timeFontSize);
     print("Code Pint ${Icons.star.codePoint}");
+    final Color iconColor = getTextColor(
+        context, widget.timeLineConf.iconColor, Colors.black);
+
+
     Icon icono;
     if (i == (widget.lines.length - 1)) {
       icono = Icon(
         Icons.av_timer,
-        color: Colors.white,
+        color: iconColor,
       );
     } else if (i == 0) {
-      icono = Icon(Icons.access_time, color: Colors.white);
+      icono = Icon(Icons.access_time, color: iconColor);
     } else {
-      icono = Icon(Icons.timelapse, color: Colors.white);
+      icono = Icon(Icons.timelapse, color: iconColor);
     }
 
     if (timeLine.image == null || timeLine.image.isEmpty) {

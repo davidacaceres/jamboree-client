@@ -51,6 +51,7 @@ https://rxlabz.github.io/panache
     "fontFamily": "Arial",
     "linePosition": "left",
     "lineColor": [251,0,0],
+    "iconColor": [251,0,0],
     "lines": [
         {
             "position": "left",

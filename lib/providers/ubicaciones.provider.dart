@@ -3,13 +3,14 @@ import 'package:Pasaporte_2020/model/ubicacion.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class _LocationsProvider {
+  bool loaded=false;
   List<LocationView> _ubicacionesEntry;
 
 
   Future<List<LocationView>> getLocationsView() async {
-    if (_ubicacionesEntry==null) {
+    if (_ubicacionesEntry==null && !loaded) {
       print('No se encuentran ubicaciones para el widget, se intentara carcar nuevamente');
-      List<Ubicacion> _ubicaciones = getLocationsMap();
+      List<Ubicacion> _ubicaciones = dataProvider.getLocationsMap();
       if(_ubicaciones==null || _ubicaciones.length<=0) return null;
       _ubicacionesEntry = [];
       for (int index = 0; index < _ubicaciones.length; index++) {
@@ -31,6 +32,7 @@ class _LocationsProvider {
         cat.children = childs;
         _ubicacionesEntry.add(cat);
       }
+      loaded=true;
     }
 
     return _ubicacionesEntry;
