@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
-import 'package:Pasaporte_2020/model/location.dart';
+import 'package:Pasaporte_2020/providers/ubicaciones.provider.dart';
 import 'package:Pasaporte_2020/ui/map/widget/w_list_locations.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapWidget extends StatefulWidget {
-  final List<UbicacionModel> listaUbicacion;
+  final List<LocationView> listaUbicacion;
 
   MapWidget({Key key, @required this.listaUbicacion}) : super(key: key);
 
@@ -30,7 +30,7 @@ class MapWidgetState extends State<MapWidget> {
   Widget mapWidget;
   Set<Marker> _markers = Set();
   final Completer<GoogleMapController> _controller = Completer();
-  UbicacionModel selectedLocation;
+  LocationView selectedLocation;
   Image selectedImage;
   String selectedDistance;
   Geolocator geo = Geolocator();
@@ -43,7 +43,7 @@ class MapWidgetState extends State<MapWidget> {
 
   bool isNavigation = false;
 
-  UbicacionModel previewLocation;
+  LocationView previewLocation;
   String previewDistance;
   Image previewImage;
 
@@ -58,7 +58,8 @@ class MapWidgetState extends State<MapWidget> {
   @override
   void dispose() {
     print('limpiando con dispose');
-    posStream.cancel();
+
+    posStream?.cancel();
     isNavigation = false;
     _routeNavigator.clear();
     selectedLocation = null;
@@ -97,8 +98,7 @@ class MapWidgetState extends State<MapWidget> {
         ),
         Container(
           //height: double.infinity,
-          margin: EdgeInsets.only(
-              bottom: Platform.isIOS ? 80.0 : 10.0, right: 10.0),
+          margin: EdgeInsets.only(bottom: 80.0, right: 10.0),
           alignment: Alignment.centerRight,
           child: Column(
             children: <Widget>[
@@ -136,9 +136,10 @@ class MapWidgetState extends State<MapWidget> {
             ],
           ),
         ),
-        (isNavigation!= null && isNavigation
-            ? _makeCardNavigation():Container()),
-        (previewLocation!=null?_showCardPreview():Container()),
+        (isNavigation != null && isNavigation
+            ? _makeCardNavigation()
+            : Container()),
+        (previewLocation != null ? _showCardPreview() : Container()),
         getLoading(),
         Container(
           height: double.infinity,
@@ -201,9 +202,9 @@ class MapWidgetState extends State<MapWidget> {
     );
   }
 
-  setPosition(UbicacionModel location) async {
+  setPosition(LocationView location) async {
     await loadDataPreview(location);
-    print('Posicion nueva de camara ${location.nombre}');
+    print('Posicion nueva de camara ${location.title}');
   }
 
   Future<Set<Marker>> getLocations() async {
@@ -212,29 +213,31 @@ class MapWidgetState extends State<MapWidget> {
       return markers;
 
     for (var i = 0; i < widget.listaUbicacion.length; i++) {
-      UbicacionModel f = widget.listaUbicacion[i];
-      var image;
-      if (Platform.isIOS) {
-        image = await BitmapDescriptor.fromAssetImage(
-          ImageConfiguration(
-              size: Size(20.0, 30.0), platform: TargetPlatform.iOS),
-          f.imagen,
-        );
-      } else {
-        image = await BitmapDescriptor.fromAssetImage(
-          ImageConfiguration(
-            size: Size(40.0, 60.0),
-          ),
-          f.imagen,
-        );
+      LocationView ub = widget.listaUbicacion[i];
+      for (var j = 0; j < ub.children.length; j++) {
+        LocationView f = ub.children[j];
+        var image;
+        if (Platform.isIOS) {
+          image = await BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(
+                size: Size(20.0, 30.0), platform: TargetPlatform.iOS),
+            f.imagen,
+          );
+        } else {
+          image = await BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(
+              size: Size(40.0, 60.0),
+            ),
+            f.imagen,
+          );
+        }
+        markers.add(Marker(
+            markerId: MarkerId(f.id),
+            icon: image,
+            position: f.position,
+            infoWindow: InfoWindow(title: '${f.title}'),
+            onTap: () => loadDataPreview(f)));
       }
-
-      markers.add(Marker(
-          markerId: MarkerId(f.id),
-          icon: image,
-          position: f.getLatLong(),
-          infoWindow: InfoWindow(title: '${f.nombre}'),
-          onTap: () => loadDataPreview(f)));
     }
 
     return markers;
@@ -292,7 +295,7 @@ class MapWidgetState extends State<MapWidget> {
     });
   }
 
-  Future<String> getDistance(UbicacionModel m) async {
+  Future<String> getDistance(LocationView m) async {
     gpsEnabled = await geo.isLocationServiceEnabled().timeout(timeOutGps);
     if (!gpsEnabled) {
       return '';
@@ -306,7 +309,7 @@ class MapWidgetState extends State<MapWidget> {
           .timeout(timeOutGps);
 
       double distanciaMts = await geo.distanceBetween(current.latitude,
-          current.longitude, m.getLatLong().latitude, m.getLatLong().longitude);
+          current.longitude, m.position.latitude, m.position.longitude);
 
       if (distanciaMts >= 1000) {
         distanciaFinal =
@@ -383,7 +386,7 @@ class MapWidgetState extends State<MapWidget> {
                       ),
                       Container(
                           child: Text(
-                        previewLocation.nombre,
+                        previewLocation.title,
                         overflow: TextOverflow.visible,
                         textAlign: TextAlign.center,
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -392,7 +395,7 @@ class MapWidgetState extends State<MapWidget> {
                         height: 5.0,
                       ),
                       (previewDistance != null && previewDistance.isNotEmpty
-                          ? Text("${previewDistance}")
+                          ? Text("$previewDistance")
                           : Container()),
                       SizedBox(
                         height: 10.0,
@@ -448,7 +451,7 @@ class MapWidgetState extends State<MapWidget> {
                           width: MediaQuery.of(context).size.width * 0.70,
                           padding: EdgeInsets.only(top: 0.0),
                           child: Text(
-                            selectedLocation.nombre,
+                            selectedLocation.title,
                             overflow: TextOverflow.visible,
                             softWrap: true,
                             textAlign: TextAlign.start,
@@ -539,51 +542,13 @@ class MapWidgetState extends State<MapWidget> {
     }
   }
 
-  loadDataPreview(UbicacionModel f) async {
-    /*
-    bool cont=true;
-    if(isNavigation)
-      {
-        await showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            // return object of type Dialog
-            return AlertDialog(
-              title: new Text("Navegación"),
-              content: new Text("Se detendra la ruta actual,\n ¿esta Seguro?"),
-              actions: <Widget>[
-                // usually buttons at the bottom of the dialog
-                new FlatButton(
-                  child: new Text("Si"),
-                  onPressed: () {
-                    cont=false;
-                    Navigator.of(context).pop();
-                    detenerNavegacion();
-
-                  },
-                ),
-                new FlatButton(
-                  child: new Text("No"),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                )
-              ],
-            );
-          },
-        );
-      }
-    if(cont) return;
-    print('paso igual');
-
-     */
+  loadDataPreview(LocationView f) async {
     setState(() {
       loading = true;
     });
-    if(posStream!=null)
-     posStream.pause();
+    if (posStream != null) posStream.pause();
     GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newLatLng(f.getLatLong()));
+    controller.animateCamera(CameraUpdate.newLatLng(f.position));
     Image image = getIconGoogleMap(url: f.imagen, width: 40, height: 40);
 
     String d = await getDistance(f);
@@ -596,47 +561,46 @@ class MapWidgetState extends State<MapWidget> {
     });
   }
 
-  startNavigation(UbicacionModel u) async {
+  startNavigation(LocationView u) async {
     print('Iniciar Navegacion');
 
-    var locationOptions =
-        LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 10,timeInterval: 5);
+    var locationOptions = LocationOptions(
+        accuracy: LocationAccuracy.best, distanceFilter: 10, timeInterval: 5);
 
     GoogleMapController controller = await _controller.future;
     if (posStream != null) {
       posStream.cancel();
     }
     setState(() {
-      selectedLocation=previewLocation;
-      selectedDistance=previewDistance;
-      selectedImage=previewImage;
-      previewLocation=null;
-      previewImage=null;
-      previewDistance=null;
+      selectedLocation = previewLocation;
+      selectedDistance = previewDistance;
+      selectedImage = previewImage;
+      previewLocation = null;
+      previewImage = null;
+      previewDistance = null;
     });
     posStream = geo.getPositionStream(locationOptions).listen((current) {
       List<LatLng> route = [];
       LatLng now = LatLng(current.latitude, current.longitude);
       route.add(now);
-      route.add(u.getLatLong());
+      route.add(u.position);
 
       setState(() {
         if (!isNavigation) {
           isNavigation = true;
         }
-        if(lastHeading==null) {
+        if (lastHeading == null) {
           lastHeading = current.heading;
         }
-        var diference= lastHeading-current.heading;
-        if(diference.abs()>5.0)
-          {
-            lastHeading=current.heading;
-          }
+        var diference = lastHeading - current.heading;
+        if (diference.abs() > 5.0) {
+          lastHeading = current.heading;
+        }
         print("last Heading $lastHeading");
         controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
             target: now, tilt: 55.0, zoom: zoom, bearing: lastHeading)));
 
-        getDistanceNavigation(now, u.getLatLong()).then((text) {
+        getDistanceNavigation(now, u.position).then((text) {
           selectedDistance = text;
         });
 
@@ -694,16 +658,13 @@ class MapWidgetState extends State<MapWidget> {
 
   void closePreview() {
     setState(() {
-      if(isNavigation && posStream!=null && posStream.isPaused)
-        {
-          print('Reiniciando Navegacion');
-          posStream.resume();
-        }
-      previewLocation=null;
-      previewDistance=null;
-      previewImage=null;
+      if (isNavigation && posStream != null && posStream.isPaused) {
+        print('Reiniciando Navegacion');
+        posStream.resume();
+      }
+      previewLocation = null;
+      previewDistance = null;
+      previewImage = null;
     });
-
-
   }
 }

@@ -1,29 +1,43 @@
-[{
-  "id":"1",
-  "nombre":"Almacén",
-  "latitud":-32.912553,
-  "longitud":-71.494323,
-  "imagen": "assets/img/locations/shopping-128.png"
-},
+[
   {
-    "id":"2",
-    "nombre":"Hospital",
-    "latitud":-32.913463,
-    "longitud":-71.496061,
-    "imagen": "assets/img/locations/medical.png"
+    "category": "Generales",
+    "image": "assets/img/locations/shopping-128.png",
+    "expand": true,
+    "locations": [
+      {
+        "id":"1",
+        "title":"Almacén",
+        "latitude":-32.912553,
+        "longitude":-71.494323,
+        "image": "assets/img/locations/shopping-128.png"
+      },
+      {
+        "id":"2",
+        "title":"Hospital",
+        "latitude":-32.913463,
+        "longitude":-71.496061,
+        "image": "assets/img/locations/medical.png"
+      }
+    ]
   },
   {
-    "id":"3",
-    "nombre":"Centro Operación",
-    "latitud":-32.922462,
-    "longitud":-71.506968,
-    "imagen": "assets/img/locations/scout.png"
-  },
-  {
-    "id":"4",
-    "nombre":"Policía",
-    "latitud":-32.920012,
-    "longitud":-71.509200,
-    "imagen": "assets/img/locations/police.png"
+    "category": "Servicios",
+    "locations": [
+      {
+        "id":"3",
+        "title":"Centro Operación",
+        "latitude":-32.922462,
+        "longitude":-71.506968,
+        "image": "assets/img/locations/scout.png"
+      },
+      {
+        "id":"4",
+        "title":"Policía",
+        "latitude":-32.920012,
+        "longitude":-71.509200,
+        "image": "assets/img/locations/police.png"
+      }
+    ]
   }
+
 ]

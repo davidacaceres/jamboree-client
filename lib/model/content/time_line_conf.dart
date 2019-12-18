@@ -11,6 +11,7 @@ class TimeLineConf {
   final String linePosition;
   final List<int> lineColor;
   final List<int> backgroundColor;
+  final List<int> iconColor;
 
 
   TimeLineConf({
@@ -20,7 +21,8 @@ class TimeLineConf {
     this.lines,
     this.linePosition,
     this.lineColor,
-    this.backgroundColor
+    this.backgroundColor,
+    this.iconColor,
   });
 
   factory TimeLineConf.fromJson(String str) => TimeLineConf.fromMap(json.decode(str));
@@ -35,6 +37,7 @@ class TimeLineConf {
     linePosition: (json["linePosition"]==null?null:json["linePosition"]),
     lineColor: (json["lineColor"]==null?null:List<int>.from(json["lineColor"].map((x) => x))),
     backgroundColor: (json["backgroundColor"]==null?null:List<int>.from(json["backgroundColor"].map((x) => x))),
+    iconColor: (json["iconColor"]==null?null:List<int>.from(json["iconColor"].map((x) => x))),
 
   );
 
@@ -46,6 +49,7 @@ class TimeLineConf {
     "linePosition":linePosition,
     "lineColor": (lineColor==null?null:List<dynamic>.from(lineColor.map((x) => x))),
     "backgroundColor": (backgroundColor==null?null:List<dynamic>.from(backgroundColor.map((x) => x))),
+    "iconColor": (iconColor==null?null:List<dynamic>.from(iconColor.map((x) => x))),
 
 
   };

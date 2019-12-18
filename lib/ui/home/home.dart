@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:Pasaporte_2020/example_data/example_data.dart';
 import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
-import 'package:Pasaporte_2020/model/location.dart';
 import 'package:Pasaporte_2020/providers/ubicaciones.provider.dart';
 import 'package:Pasaporte_2020/ui/home/widget/carrousel.dart';
 import 'package:Pasaporte_2020/ui/home/widget/content_root.dart';
@@ -136,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                 controller: new ScrollController(keepScrollOffset: false),
                 children: <Widget>[
               carrusel,
-              ContentRootWidget(contentRoot: getExampleRootContent())
+              ContentRootWidget(contentRoot: dataProvider.getExampleRootContent())
             ]))
       ],
     );
@@ -147,7 +146,7 @@ class _HomePageState extends State<HomePage> {
     if (size.height > 800 && size.height > size.width) {
       print('con carrusel');
       return CarrouselWidget(
-        list: getExampleCarrousel(),
+        list: dataProvider.getExampleCarrousel(),
       );
     } else {
       print('sin carrusel');
@@ -157,9 +156,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget makeMap() {
     return FutureBuilder(
-      future: ubicacionesProvider.obtenerListaUbicacionesLocal(),
+      future: locationProvider.getLocationsView(),
       builder:
-          (BuildContext context, AsyncSnapshot<List<UbicacionModel>> snapshot) {
+          (BuildContext context, AsyncSnapshot<List<LocationView>> snapshot) {
         if (snapshot.hasData) {
           return MaterialApp(
             home: MapWidget(key: mapKey,

@@ -136,7 +136,7 @@ class DisplayWidget extends StatelessWidget {
     for (var i = 0; i < list.length; i++) {
       Widget child = GestureDetector(
           onTap: () => Navigator.pushNamed(context, 'detail',
-              arguments: findExampleContent(list[i].id)),
+              arguments: dataProvider.findExampleContent(list[i].id)),
           child: _makeChild2(context, list[i]));
       childs.add(child);
     }

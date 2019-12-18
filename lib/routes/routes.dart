@@ -6,13 +6,24 @@ import 'package:Pasaporte_2020/ui/search/search_page.dart';
 import 'package:flutter/material.dart';
 
 final _rutas = <String, WidgetBuilder>{
-  '/': (BuildContext context) => SplashScreen(key:new GlobalKey<SplashScreenState>()),
-  'haveupdate': (BuildContext context) => SplashScreen(),
-  'downloadupdate': (BuildContext context) => SplashScreen(),
+  'initial': (BuildContext context) => SplashScreen(),
   'home': (BuildContext context) => HomePage(),
-  'search': (BuildContext context) =>SearchPage(),
-  'detail': (BuildContext context) =>DetailContent(),
-  'zoom': (BuildContext context) =>ImageZoomWidget(),
+  'search': (BuildContext context) => SearchPage(),
+  'detail': (BuildContext context) => DetailContent(),
+  'zoom': (BuildContext context) => ImageZoomWidget(),
 };
 
 Map<String, WidgetBuilder> getApplicationRoutes() => _rutas;
+
+class NavigationService {
+  final GlobalKey<NavigatorState> navigatorKey =
+      new GlobalKey<NavigatorState>();
+
+  Future<dynamic> navigateTo(String routeName) {
+    return navigatorKey.currentState.pushNamed(routeName);
+  }
+
+  bool goBack() {
+    return navigatorKey.currentState.pop();
+  }
+}
