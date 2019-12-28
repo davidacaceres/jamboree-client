@@ -10,23 +10,26 @@ class Colors {
   static const Color color_7 = Color(0xFF372967);
   static final Color iconsColor = Colors.color_2;
   static final Color color_9 = Color(0xfffafafa);
+
+  static final Color color_10= Color(4280724140);
+  static final Color color_11= Color(4280622686);
 }
 
 class ScBottomBar {
   ///Color de fondo de la barra inferior
-  static final Color background = Colors.color_4;
+  static final Color background = Colors.color_10;
 
   ///Color de icono no seleccioando
-  static final Color unSelect = Colors.color_1;
+  static final Color unSelect = Colors.color_9;
 
   ///Color de icono seleccionado
-  static final Color selected = Colors.color_7;
+  static final Color selected = Colors.color_11;
 
   ///Color de linea que indica cual esta seleccioanado
-  static final Color indicatorColor = Colors.color_2;
+  static final Color indicatorColor = Colors.color_11;
 
   ///Color para el borde Superior de la barra de tab inferior
-  static final Color topBorder = Colors.color_4;
+  static final Color topBorder = Colors.color_11;
 }
 
 class ScHomePage {
@@ -54,7 +57,7 @@ class ScHomePage {
 }
 
 class ScHomeSearch {
-  static final Color background = Colors.color_4;
+  static final Color background = Colors.color_10;
   static final Color iconsColor = Colors.color_7;
 }
 
@@ -81,7 +84,7 @@ class ScSplashScreen {
       fontSize: 28.0,
       shadows: <Shadow>[Shadow(blurRadius: 20.0, color: Colors.color_5)]);
 
-  static final String assetUrl = 'assets/img/inicial/IMG_4905.JPG';
+  static final String assetUrl = 'assets/img/inicial/start_bgimage.jpg';
   static final BoxFit fill = BoxFit.fitHeight;
 }
 

@@ -36,7 +36,7 @@ class HomeSearchBar extends StatelessWidget {
           child: TextField(
             //    enabled: false,
             decoration: InputDecoration(
-                border: InputBorder.none, hintText: 'Buscar'),
+                border: InputBorder.none, hintText: 'Buscador'),
             onTap: () {
               _loadSearchPage(context);
             },

@@ -115,7 +115,7 @@ class MapWidgetState extends State<MapWidget> {
                 height: 10.0,
               ),
               FloatingActionButton(
-                child: Icon(Icons.list),
+                child: Image.asset('assets/img/locations/App_contenido.png'),
                 backgroundColor: theme.ScMapButtons.background,
                 elevation: 10.0,
                 onPressed: () {
@@ -126,7 +126,7 @@ class MapWidgetState extends State<MapWidget> {
                 height: 10.0,
               ),
               FloatingActionButton(
-                child: Icon(Icons.filter_center_focus),
+                child: Image.asset('assets/img/locations/App_ubicacion.png'),
                 backgroundColor: theme.ScMapButtons.background,
                 elevation: 10.0,
                 onPressed: () {
@@ -156,7 +156,7 @@ class MapWidgetState extends State<MapWidget> {
 
   Widget _popUpLayer() {
     return PopupMenuButton<MapType>(
-      icon: Icon(Icons.layers),
+      //icon: new Image.asset('images/icons/logout.png'),
       onSelected: (MapType result) {
         setState(() {
           _defaultMapType = result;

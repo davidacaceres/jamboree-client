@@ -145,9 +145,13 @@ class _ExamplesProvider {
           var jStringList = json.decode(utf8.decode(response.bodyBytes));
           try {_listLocations.clear();
             for (int u = 0; u < jStringList.length; u++) {
-              Ubicacion ubica = Ubicacion.fromJson(jStringList[u]);
-              if(!_listLocations.contains(ubica))
-                _listLocations.add(ubica);
+              try {
+                Ubicacion ubica = Ubicacion.fromMap(jStringList[u]);
+                if (!_listLocations.contains(ubica))
+                  _listLocations.add(ubica);
+              }catch(ex1){
+                print('[LOC] error al procesar registro de ubicacion : ${jStringList[u]}   [ERROR: $ex1]');
+              }
             }
           } catch (ex) {
             print('[LOC] Error al transformar ubicacion a json $ex');
