@@ -39,7 +39,7 @@ class SplashScreenState extends State<SplashScreen> {
             decoration: BoxDecoration(
                 image: DecorationImage(image: ExactAssetImage(sc_theme.ScSplashScreen.assetUrl), fit: BoxFit.cover)),
             child: CustomPaint(
-                painter: CurvePainter(),
+              //  painter: CurvePainter(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +47,7 @@ class SplashScreenState extends State<SplashScreen> {
                     Expanded(
                       flex: 6,
                       child: Align(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.center,
                           child: Theme(
                             data: Theme.of(context).copyWith(
                                 accentColor:
@@ -55,40 +55,6 @@ class SplashScreenState extends State<SplashScreen> {
                             child: progress,
                           )),
                     ),
-                    Expanded(
-                        child: Row(children: <Widget>[
-                      Align(
-                          alignment: Alignment.bottomLeft,
-                          child: new Container(
-                              height: 30,
-                              decoration: new BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(10),
-                                color: sc_theme
-                                    .ScSplashScreen.backgroundAsociacion,
-                              ),
-                              child: Image.asset(
-                                'assets/img/agsch-headerr.png',
-                                fit: BoxFit.fitHeight,
-                              ))),
-                      Align(
-                          alignment: Alignment.topCenter,
-                          child: Padding(
-                              padding: EdgeInsets.all(4),
-                              child: AutoSizeText(
-                                sc_theme.ScSplashScreen.text,
-                                style: sc_theme.ScSplashScreen.styleText,
-                              ))),
-                      Padding(
-                          padding: EdgeInsets.all(4),
-                          child: Align(
-                              alignment: Alignment.topRight,
-                              child: Image.asset(
-                                'assets/img/logo_jamboree_color.png',
-                                height: 70,
-                                fit: BoxFit.fitHeight,
-                              )))
-                    ]))
                   ],
                 ))));
   }
@@ -96,48 +62,9 @@ class SplashScreenState extends State<SplashScreen> {
   Future<void> init() async {
     try {
       await dataProvider.loadData();
-//      _navigationService.navigateTo("home");
       Navigator.of(context).pushReplacementNamed("home");
-
-      /*
-          .loadContentUrl()
-          .then((value) => dataProvider.loadLocationsUrl().then((onValue) {
-                Navigator.of(context).pushReplacementNamed("home");
-
-              }));
-*/
-      /*.then((result) {
-        if (result != -99) {
-          Navigator.pushReplacementNamed(context, 'home');
-          print(
-              '[INIT] finalizo la carga de archivo json, se direcciona al home $result');
-        }
-      });*/
-    } catch (ex) {
+   } catch (ex) {
       print('error al redireccionar al home $ex');
     }
-  }
-}
-
-class CurvePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint();
-    paint.color = sc_theme.ScSplashScreen.background;
-    paint.style = PaintingStyle.fill;
-    var path = Path();
-    path.moveTo(0, size.height * 0.85);
-    path.quadraticBezierTo(
-        size.width / 2, size.height * 0.8, size.width, size.height * 0.85);
-
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
   }
 }

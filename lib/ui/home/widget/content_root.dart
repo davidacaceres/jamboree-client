@@ -50,6 +50,7 @@ class ContentRootWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Container(
             decoration: BoxDecoration(
+
                 borderRadius: BorderRadius.circular(10),
                 gradient: theme.ScHomePage.cardGradient,
                 border: theme.ScHomePage.cardBorder,

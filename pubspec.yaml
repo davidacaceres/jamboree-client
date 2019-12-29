@@ -66,4 +66,25 @@ flutter:
     - family: Gingerline DEMO Regular
       fonts:
         - asset: assets/fonts/Gingerline DEMO.otf
+    - family: Aspira Nar Black
+      fonts:
+            - asset: assets/fonts/Aspira Narrow Black.otf
+    - family: Aspira Nar Light
+      fonts:
+            - asset: assets/fonts/Aspira Narrow Light.otf
+    - family: Aspira Nar Medium
+      fonts:
+            - asset: assets/fonts/Aspira Narrow Medium.otf
+    - family: Aspira Nar
+      fonts:
+            - asset: assets/fonts/Aspira Narrow Regular.otf
+    - family: Aspira Nar Thin
+      fonts:
+            - asset: assets/fonts/Aspira Narrow Thin.otf
+    - family: BlowBrush
+      fonts:
+            - asset: assets/fonts/blowbrush.ttf
+    - family: DK Lemon Yellow Sun
+      fonts:
+            - asset: assets/fonts/DK Lemon Yellow Sun.otf
 

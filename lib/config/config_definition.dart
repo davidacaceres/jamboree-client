@@ -13,6 +13,8 @@ class Colors {
 
   static final Color color_10= Color(4280724140);
   static final Color color_11= Color(4280622686);
+  static final Color color_12= Color(4285966810);
+  static final Color color_13= Color(4281483365);
 }
 
 class ScBottomBar {
@@ -34,7 +36,7 @@ class ScBottomBar {
 
 class ScHomePage {
   ///Color de fondo de la pagina principal
-  static final Color background = Colors.color_9;
+  static final Color background = Colors.color_12;
 
   ///Indica el Color a utilizar para el borde, si BorderStyle.none, no muestra borde
   static final Border cardBorder =
@@ -42,7 +44,7 @@ class ScHomePage {
 
   ///Indica el gradiente a utilizar para mostrar el fondo del contenido
   static final Gradient cardGradient = LinearGradient(
-      colors: [Colors.color_1, Colors.color_1],
+      colors: [Colors.color_12, Colors.color_12],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       stops: [0.8, 0.7],
@@ -51,7 +53,7 @@ class ScHomePage {
   static final TextStyle cardTextStyle = TextStyle(
       fontFamily: "Montserrat",
       //fontStyle: FontStyle.italic,
-      color: Colors.color_5,
+      color: Colors.color_9,
       fontWeight: FontWeight.w600,
       fontSize: 16);
 }
@@ -68,7 +70,7 @@ class ScHistorySearch {
 
 class ScSplashScreen {
   static final Color backgroundAsociacion = Colors.color_7.withOpacity(0.0);
-  static final Color background = Colors.color_7;
+  static final Color background = Colors.color_13;
   static final Duration duration = Duration(seconds: 10);
   static final Color colorText = Colors.color_1;
   static final String text = 'Jamboree 2020';
@@ -84,12 +86,12 @@ class ScSplashScreen {
       fontSize: 28.0,
       shadows: <Shadow>[Shadow(blurRadius: 20.0, color: Colors.color_5)]);
 
-  static final String assetUrl = 'assets/img/inicial/start_bgimage.jpg';
+  static final String assetUrl = 'assets/img/inicial/start_image.jpg';
   static final BoxFit fill = BoxFit.fitHeight;
 }
 
 class ScContent {
-  static final Color barTopColor = Colors.color_4;
+  static final Color barTopColor = Colors.color_10;
   static final Color colorIconBack = Colors.color_7;
   static final Color defaultColor = Colors.color_9;
   static final Color tabPrimaryColor = Colors.color_3;

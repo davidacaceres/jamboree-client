@@ -1,5 +1,6 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
+import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/model/content/content_element.dart';
 import 'package:Pasaporte_2020/model/content/display.dart';
 import 'package:Pasaporte_2020/model/content/image_conf.dart';
@@ -192,7 +193,9 @@ class DisplayWidget extends StatelessWidget {
        Color bgDColor=getBackgroundColor(context, l.backgroundColor);
        TextStyle txtStyle=TextStyle(color:getTextColor(context, l.textColor),fontSize: l.fontSize, fontFamily: l.fontFamily);
 
-     return Column(children: _getListItems(context, l.items,bgDColor,txtStyle, l.heigth));
+     return Container(
+         color: bgDColor,
+         child:Column(children: _getListItems(context, l.items,bgDColor,txtStyle, l.heigth)));
 
 
 
