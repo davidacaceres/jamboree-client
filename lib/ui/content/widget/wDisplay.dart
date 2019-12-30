@@ -1,6 +1,5 @@
 import 'package:Pasaporte_2020/config/config_definition.dart' as config;
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/model/content.dart';
 import 'package:Pasaporte_2020/model/content/content_element.dart';
 import 'package:Pasaporte_2020/model/content/display.dart';
 import 'package:Pasaporte_2020/model/content/image_conf.dart';
@@ -56,23 +55,29 @@ class DisplayWidget extends StatelessWidget {
       } else if (c.paragraphConf != null) {
         print('es parrafo');
         result.add(_getParagraph(context, c.paragraphConf, initial));
-      } else if (c.listConf!=null){
+      } else if (c.listConf != null) {
         print('Es Lista');
-        result.add(_getList(context,c));
-      } else if (c.timeLineConf!=null){
+        result.add(_getList(context, c));
+      } else if (c.timeLineConf != null) {
         print('Es linea de tiempo');
-        result.add(_getTimeLine(context,bgColorParent,display,c.timeLineConf));
+        result
+            .add(_getTimeLine(context, bgColorParent, display, c.timeLineConf));
       }
     }
     if (display.childs != null && display.childs.length > 0) {
-      result.add(_getChilds(context, display.childs, null));
+//      result.add(_getChilds(context, display.childs, null));
+      result.add(Container(
+          child: Column(children: _getChilds2(context, display.childs, null))));
     }
 
     return result;
   }
 
   Widget _getPicture(BuildContext context, ImageConf conf) {
-    return ImageWidget(bgColorParent: bgColorParent,conf: conf,);
+    return ImageWidget(
+      bgColorParent: bgColorParent,
+      conf: conf,
+    );
     /*
     Alignment align = getAlignment(conf.align);
     Color bgColor =
@@ -132,6 +137,11 @@ class DisplayWidget extends StatelessWidget {
     return Column(children: _getChild(context, childs));
   }
 
+  List<Widget> _getChilds2(
+      BuildContext context, List<Child> childs, Color colorCard) {
+    return _getChild(context, childs);
+  }
+
   List<Widget> _getChild(BuildContext context, List<Child> list) {
     List<Widget> childs = [];
     for (var i = 0; i < list.length; i++) {
@@ -144,8 +154,6 @@ class DisplayWidget extends StatelessWidget {
     return childs;
   }
 
-
-
   Widget _makeChild2(BuildContext context, Child child) {
     Color bgColor =
         getBackgroundColor(context, child.backgroundColor, bgColorParent);
@@ -155,32 +163,43 @@ class DisplayWidget extends StatelessWidget {
     if (txtColor.value == bgColor.value) {
       print('Es el mismo color');
       txtColor =
-          TinyColor
-              .fromRGB(r: bgColor.red, g: bgColor.green, b: bgColor.blue)
+          TinyColor.fromRGB(r: bgColor.red, g: bgColor.green, b: bgColor.blue)
               .darken(100)
               .color;
     }
 
+    Color lineColor =
+        getBackgroundColor(context, child.lineColor, bgColorParent);
 
-    return Card(
-        elevation: 8.0,
-        margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+    double fontSize = (child.fontSize == 0 ? 14.0 : child.fontSize);
+    String fontFamily = (child.fontFamily == null || child.fontFamily.isEmpty
+        ? "Arial"
+        : child.fontFamily);
+
+    return Container(
+        color: lineColor,
+        padding: EdgeInsets.only(bottom: 1.0),
+//        elevation: 8.0,
+        //   margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
         child: Container(
             decoration: BoxDecoration(color: bgColor),
             child: ListTile(
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
-                leading: child.image==null || child.image.isEmpty?null:Container(
-                  padding: EdgeInsets.only(right: 12.0),
-                  decoration: new BoxDecoration(
-                      border: new Border(
-                          right: new BorderSide(width: 1.0, color: txtColor))),
-                  child: getImageContent(url: child.image),
-                ),
+//                contentPadding:
+//                    EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+                leading: child.image == null || child.image.isEmpty
+                    ? null
+                    : Container(
+                        padding: EdgeInsets.only(right: 12.0),
+                        decoration: new BoxDecoration(
+                            border: new Border(
+                                right: new BorderSide(
+                                    width: 1.0, color: txtColor))),
+                        child: getImageContent(url: child.image),
+                      ),
                 title: Text(
                   child.title,
                   style:
-                      TextStyle(color: txtColor, fontWeight: FontWeight.w500),
+                      TextStyle(color: txtColor, fontWeight: FontWeight.bold,fontSize: fontSize,fontFamily: fontFamily),
                 ),
                 // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
                 trailing: Icon(Icons.keyboard_arrow_right,
@@ -188,31 +207,38 @@ class DisplayWidget extends StatelessWidget {
   }
 
   Widget _getList(BuildContext context, ContentElement c) {
-     ListConf l=c.listConf;
-     //valores por defecto
-       Color bgDColor=getBackgroundColor(context, l.backgroundColor);
-       TextStyle txtStyle=TextStyle(color:getTextColor(context, l.textColor),fontSize: l.fontSize, fontFamily: l.fontFamily);
+    ListConf l = c.listConf;
+    //valores por defecto
+    Color bgDColor = getBackgroundColor(context, l.backgroundColor);
+    TextStyle txtStyle = TextStyle(
+        color: getTextColor(context, l.textColor),
+        fontSize: l.fontSize,
+        fontFamily: l.fontFamily);
 
-     return Container(
-         color: bgDColor,
-         child:Column(children: _getListItems(context, l.items,bgDColor,txtStyle, l.heigth)));
-
-
-
-
+    return Container(
+        color: bgDColor,
+        child: Column(
+            children:
+                _getListItems(context, l.items, bgDColor, txtStyle, l.heigth)));
   }
 
-  List<Widget> _getListItems(BuildContext context, List<Item> items, Color bgDColor, TextStyle txtStyle,double height) {
+  List<Widget> _getListItems(BuildContext context, List<Item> items,
+      Color bgDColor, TextStyle txtStyle, double height) {
     List<Widget> itemsW = [];
     for (var i = 0; i < items.length; i++) {
-      itemsW.add(ItemRow(items[i],bgDColor,txtStyle,height));
+      itemsW.add(ItemRow(items[i], bgDColor, txtStyle, height));
     }
     return itemsW;
   }
 
-  Widget _getTimeLine(BuildContext context,Color bgcolor, Display d, TimeLineConf timeLineConf) {
-    return WTimeline(display:d,bgColorParent: bgcolor ,timeLineConf: timeLineConf,lines: timeLineConf.lines,title: display.shortTitle,);
-
+  Widget _getTimeLine(BuildContext context, Color bgcolor, Display d,
+      TimeLineConf timeLineConf) {
+    return WTimeline(
+      display: d,
+      bgColorParent: bgcolor,
+      timeLineConf: timeLineConf,
+      lines: timeLineConf.lines,
+      title: display.shortTitle,
+    );
   }
-
 }
