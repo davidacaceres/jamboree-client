@@ -52,7 +52,7 @@ class MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
-    checkGPS();
+  //  checkGPS();
   }
 
   @override
