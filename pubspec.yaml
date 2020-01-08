@@ -1,7 +1,7 @@
 name: Pasaporte_2020
 description: Pasaporte Jamboree 2020 Chile
 
-version: 1.0.0+3
+version: 1.0.0+4
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -37,7 +37,9 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon.png"
+  image_path_android: "assets/icon/icon.jpg"
+  image_path_ios: "assets/icon/icon.jpg"
+  adaptive_icon_background: "#ffffff"
 
 flutter:
   uses-material-design: true
