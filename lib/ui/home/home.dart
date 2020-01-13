@@ -102,13 +102,13 @@ class _HomePageState extends State<HomePage> {
                     )),
                     actions: <Widget>[
                       FlatButton(
-                        child: Text('No'),
+                        child: Text('Cancelar'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
                       ),
                       FlatButton(
-                        child: Text('Si'),
+                        child: Text('Salir'),
                         onPressed: () {
                           //Navigator.of(context).pop();
                           SystemNavigator.pop();

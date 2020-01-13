@@ -52,7 +52,7 @@ class DetailContent extends StatelessWidget {
       txtStyle = txtStyle.copyWith(fontFamily: content.font);
     }
     if (content.fontSize != null && content.fontSize > 0) {
-      txtStyle = txtStyle.copyWith(fontSize: content.fontSize);
+      txtStyle = txtStyle.copyWith(fontSize: content.fontSize,fontWeight: FontWeight.bold);
     }
 
     return Padding(
@@ -76,6 +76,7 @@ class DetailContent extends StatelessWidget {
                       softWrap: true,
                       maxLines: 3,
                       style: txtStyle,
+
                     )))
           ],
         ));
@@ -123,7 +124,8 @@ class DetailContent extends StatelessWidget {
     int countTabs = displays.length;
     BoxDecoration decoration = BoxDecoration(
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10), topRight: Radius.circular(10)));
+            topLeft: Radius.circular(10), topRight: Radius.circular(10))
+    );
 
     return Expanded(
         flex: 5,
@@ -135,12 +137,12 @@ class DetailContent extends StatelessWidget {
               child: Column(children: <Widget>[
                 Container(
                     height: 50,
-                    margin: EdgeInsets.only(left: 5, right: 5, bottom: 10),
+//                    margin: EdgeInsets.only(left: 5, right: 5, bottom: 10),
                     decoration: BoxDecoration(
-                      border: Border.all(
-                          color: primaryColor),
+//                      border: Border.all(
+//                          color: primaryColor),
                       color: secondaryColor,
-                      borderRadius: BorderRadius.circular(10),
+//                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: TabBar(
                         isScrollable: false,
@@ -155,7 +157,8 @@ class DetailContent extends StatelessWidget {
                                   blurRadius: 20)
                             ],
                             color:primaryColor,
-                            borderRadius: BorderRadius.circular(10)),
+//                            borderRadius: BorderRadius.circular(10)
+                        ),
                         tabs: getTabsTitle(context,displays,textColor))),
                 Expanded(
                     child: Container(
@@ -172,6 +175,11 @@ class DetailContent extends StatelessWidget {
 
     for (var i = 0; i < displays.length; i++) {
       final Display dsp = displays[i];
+      double fontSize = (dsp.fontSize == 0 ? 14.0 : dsp.fontSize);
+      String fontFamily = (dsp.fontFamily == null || dsp.fontFamily.isEmpty
+          ? "Arial"
+          : dsp.fontFamily);
+
       final tab = Tab(
           child: Align(
               alignment: Alignment.center,
@@ -179,7 +187,7 @@ class DetailContent extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                 dsp.shortTitle,
-                style: TextStyle(color:textColor,fontSize: 14),
+                style: TextStyle(color:textColor,fontSize: fontSize,fontFamily: fontFamily,fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.visible,
                 maxLines: 2,

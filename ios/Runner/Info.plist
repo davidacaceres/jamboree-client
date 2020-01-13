@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<true/>
+	<string>Permite obtener tu posicion para calcular la distancia a los campamentos y servicios</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<true/>
+	<string>Permite obtener tu posicion para calcular la distancia a los campamentos y servicios</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
