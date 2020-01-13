@@ -2,7 +2,7 @@
 	{
 		"category": "Programa",
 		"image": "assets/img/locations/shopping-128.png",
-		"expand": true,
+		"expand": false,
 		"locations":
 		[
 		  {
@@ -75,12 +75,12 @@
 			"longitude":-70.6285504,
 			"image": "assets/img/locations/medical.png"
 		  }
-		  ]
+		]
 	},
 	{
 		"category": "Subcampos",
-		"image": "assets/img/locations/shopping-128.png",
-		"expand": true,
+		"image": "assets/icon/mapa/subcampo.png",
+		"expand": false,
 		"locations":
 		[
 		  {
@@ -102,126 +102,126 @@
 			"title":"Reserva Nacional Las Vicuñas",
 			"latitude":-33.9544569,
 			"longitude":-70.629177,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"104",
 			"title":"Reserva Nacional Pampa del Tamarugal",
 			"latitude":-33.9536026,
 			"longitude":-70.6291341,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"105",
 			"title":"Reserva Nacional Isla Mocha",
 			"latitude":-33.9528817,
 			"longitude":-70.6288551,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"106",
 			"title":"Parque Nacional Pan de Azúcar",
 			"latitude":-33.9522499,
 			"longitude":-70.6284367,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"107",
 			"title":"Parque Nacional Nevado de Tres Cruces",
 			"latitude":-33.9518227,
 			"longitude":-70.6278466,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"108",
 			"title":"Parque Radal Siete Tazas",
 			"latitude":-33.951529,
 			"longitude":-70.6271492,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"109",
 			"title":"Reserva Nacional Lago Peñuelas",
 			"latitude":-33.9527127,
 			"longitude":-70.6252717,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"110",
 			"title":"Reserva Nacional Futaleufú",
 			"latitude":-33.9533712,
 			"longitude":-70.6250571,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"111",
 			"title":"Parque Nacional Volcán Isluga",
 			"latitude":-33.9541722,
 			"longitude":-70.6251751,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"112",
 			"title":"Parque Nacional Kawésqar",
 			"latitude":-33.9550087,
 			"longitude":-70.6253897,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"113",
 			"title":"Parque Nacional Laguna del Laja",
 			"latitude":-33.9554003,
 			"longitude":-70.6260978,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"114",
 			"title":"Parque Nacional La Campana",
 			"latitude":-33.9555427,
 			"longitude":-70.6268381,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"115",
 			"title":"Parque Nacional Morro Moreno",
 			"latitude":-33.9625622,
 			"longitude":-70.6268174,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"116",
 			"title":"Reserva Nacional Pingüino de Humboldt",
 			"latitude":-33.9636834,
 			"longitude":-70.6273431,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"117",
 			"title":"Reserva Nacional Laguna Parrillar",
 			"latitude":-33.9619749,
 			"longitude":-71.496061,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"118",
 			"title":"Reserva Nacional Katalalixar",
 			"latitude":-33.9629982,
 			"longitude":-70.6301219,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"119",
 			"title":"Parque Nacional Lauca",
 			"latitude":-33.9622329,
 			"longitude":-70.6325037,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  },
 		  {
 			"id":"120",
 			"title":"Parque Nacional Puyehue",
 			"latitude":-33.962838,
 			"longitude":-70.6324393,
-			"image": "http://parlamento.jamboree.cl/app/mapa/subcampo.png"
+			"image": "assets/icon/mapa/subcampo.png"
 		  }
 		]
 	}

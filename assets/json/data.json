@@ -11932,43 +11932,31 @@
 								"items":
 								[
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/gorros.png",
 										"title": "Gorro para el sol.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
 										"title": "Uso de bloqueador solar factor 50 previo al inicio del módulo.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
-										"title": "Bloqueador solar por patrulla factor 50.",
+										"title": "bloqueador solar por patrulla factor 50.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/botella.png",
 										"title": "Botella con agua.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bototos.png",
-										"title": "Bototos con caña o zapatillas con huella aptas para trekking.",
+										"title": "Bototos con caña o zapatillas con huella aptas para trekking. No se permitirá el ingreso a participantes con zapatillas de lona, vans o sandalias.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/zapatillas.png",
-										"title": "No se permitirá el ingreso a participantes con zapatillas de lona, vans o sandalias.",
-										"backgroundColor":[50,64,101],
-										"titleColor":[255,255,255]
-									},
-									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/polera.png",
 										"title": "Polera que cubra los hombros. No se permitirá el ingreso de participantes con poleras de tiritas o musculosas.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
@@ -12000,37 +11988,31 @@
 								"items":
 								[
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/gorros.png",
 										"title": "Idealmente gorros tipo safari y/o con cubre cuello.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
 										"title": "Aplicar bloqueador en todas las zonas expuestas directamente al sol y reforzar el aplicado cada 1 hora.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/botella.png",
 										"title": "Botella de 500ml para evitar peso adicional ya que habrán dispuestos por lo menos 2 puntos de hidratación por los que pasarán las patrullas.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/calcetines.png",
 										"title": "Uso de calcetines 3\/4 que queden sobre el tobillo para evitar heridas provocadas por el calzado. Evitar uso de soquetes o calcetines invisibles.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/polera.png",
 										"title": "Idealmente usar poleras con filtro UV y material respirable.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/morral.png",
 										"title": "Evitar uso de morrales con cordones o tirantes muy delgados ya que se pueden generar heridas por roce al caminar.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
