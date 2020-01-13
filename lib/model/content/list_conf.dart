@@ -16,7 +16,7 @@ class ListConf {
     this.fontFamily,
     this.items,
     this.backgroundColor,
-    this.heigth
+    this.heigth,
   });
 
   factory ListConf.fromJson(String str) => ListConf.fromMap(json.decode(str));
@@ -40,7 +40,6 @@ class ListConf {
     "items": List<dynamic>.from(items.map((x) => x.toMap())),
     "backgroundColor": List<dynamic>.from(backgroundColor.map((x) => x)),
     "heigth": heigth,
-
   };
 }
 

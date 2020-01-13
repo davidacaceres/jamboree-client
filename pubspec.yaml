@@ -1,7 +1,7 @@
 name: Pasaporte_2020
 description: Pasaporte Jamboree 2020 Chile
 
-version: 1.0.0+5
+version: 1.0.0+6
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
@@ -48,7 +48,10 @@ flutter:
     - assets/img/
     - assets/img/carousel/
     - assets/img/inicial/
+    - assets/img/jamborees/
     - assets/img/locations/
+    - assets/img/panolines/
+    - assets/img/senderos/
     - assets/img/subcampos/
     - assets/icon/
     - assets/icon/mapa/

@@ -88,7 +88,7 @@ class _ExamplesProvider {
         };
         try {
           final response = await http
-              .get('http://parlamento.jamboree.cl/data_jme.json',
+              .get('http://parlamento.jamboree.cl/data.json',
                   headers: headers)
               .timeout(Duration(seconds: 15));
           if (response.statusCode == 200) {
