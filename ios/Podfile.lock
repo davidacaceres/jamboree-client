@@ -29,7 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - android_intent (from `.symlinks/plugins/android_intent/ios`)
-  - Flutter (from `.symlinks/flutter/ios-release`)
+  - Flutter (from `.symlinks/flutter/ios`)
   - geolocator (from `.symlinks/plugins/geolocator/ios`)
   - google_api_availability (from `.symlinks/plugins/google_api_availability/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
@@ -47,7 +47,7 @@ EXTERNAL SOURCES:
   android_intent:
     :path: ".symlinks/plugins/android_intent/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios-release"
+    :path: ".symlinks/flutter/ios"
   geolocator:
     :path: ".symlinks/plugins/geolocator/ios"
   google_api_availability:
