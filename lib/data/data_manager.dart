@@ -8,10 +8,10 @@ import 'dart:io';
 
 import 'package:Pasaporte_2020/data/data_store.dart';
 
-const urlVersion = 'http://parlamento.jamboree.cl/version.json';
-const urlContent = 'http://parlamento.jamboree.cl/locations_jme.json';
-const urlLocation = 'http://parlamento.jamboree.cl/locations_jme.json';
-const server = 'parlamento.jamboree.cl';
+const urlVersion = 'http://pasaporte.jamboree.cl/version.json';
+const urlContent = 'http://pasaporte.jamboree.cl/data.json';
+const urlLocation = 'http://pasaporte.jamboree.cl/locations.json';
+const server = 'pasaporte.jamboree.cl';
 
 Version _version;
 bool checkedVersion;
@@ -54,6 +54,13 @@ Future<List<Content>> getContent() async {
   return contents;
 }
 
+/**
+ * Retorna true. cuando:
+ * - Archivo local de version no se encuentra
+ * - Lectura de archivo de version local da una exception
+ * -
+ * -
+ */
 Future<bool> _checkVersion() async {
   print('[DM] Verificando version de sistema');
   File file = await getVersionFile();
@@ -100,11 +107,11 @@ Future<bool> downloadContentFile( ) async {
     try {
       final result = await InternetAddress.lookup("jamboree.cl");
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        print('[DM] connected to parlamento.jamboree.cl');
+        print('[DM] connected to pasaporte.jamboree.cl');
         connected = !connected;
       }
     } on SocketException catch (_) {
-      print( '[DM] No se pudo conectar a parlamento.jaboree.cl');
+      print( '[DM] No se pudo conectar a pasaporte.jaboree.cl');
       return false;
     }
     if (connected) {
@@ -113,7 +120,7 @@ Future<bool> downloadContentFile( ) async {
         HttpHeaders.acceptCharsetHeader: "utf-8" // or whatever
       };
       final response = await http
-          .get('http://parlamento.jamboree.cl/data_jme.json', headers: headers);
+          .get('http://pasaporte.jamboree.cl/data.json', headers: headers);
       if (response.statusCode == 200) {
         print(
             "[DM] Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");

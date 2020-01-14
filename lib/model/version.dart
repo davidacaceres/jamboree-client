@@ -7,8 +7,8 @@ import 'dart:convert';
 
 class Version {
   final String description;
-  final int content;
-  final int location;
+  final double content;
+  final double location;
 
   Version({
     @required this.description,

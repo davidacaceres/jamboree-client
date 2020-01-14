@@ -27,6 +27,11 @@ class Content {
   List<int> tabSecondaryColor;
   List<int> tabTextColor;
 
+  String rootFontFamily;
+  List<int> rootFontColor;
+  double rootFontSize;
+
+
   Content(
       {this.id,
       this.order,
@@ -42,7 +47,11 @@ class Content {
       this.fontSize,
       this.tabPrimaryColor,
       this.tabSecondaryColor,
-      this.tabTextColor});
+      this.tabTextColor,
+      this.rootFontColor,
+      this.rootFontFamily,
+      this.rootFontSize,
+});
 
   factory Content.fromMap(Map<String, dynamic> json) => Content(
         id: json["id"],
@@ -69,6 +78,12 @@ class Content {
         tabTextColor: json["tabTextColor"] == null
             ? null
             : List<int>.from(json["tabTextColor"].map((x) => x)),
+        rootFontColor: json["rootFontColor"] == null
+            ? null
+            : List<int>.from(json["rootFontColor"].map((x) => x)),
+        rootFontSize: json["rootFontSize"],
+        rootFontFamily: json["rootFontFamily"],
+
       );
 
   Map<String, dynamic> toMap() => {
@@ -97,5 +112,8 @@ class Content {
         "tabTextColor": tabTextColor == null
             ? null
             : List<dynamic>.from(tabTextColor.map((x) => x)),
+        "rootFontFamily": rootFontFamily,
+        "rootFontSize": rootFontSize,
+        "rootFontColor": rootFontColor == null ? null: List<dynamic>.from(tabTextColor.map((x) => x)),
       };
 }

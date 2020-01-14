@@ -35,13 +35,39 @@ class _ExamplesProvider {
   }
 
   List<Content> getExampleSearchContent(String search) {
-    List<Content> ressult = _listContent
-        .where((i) =>
-            i.search != null &&
-            i.search.toLowerCase().contains(search.toLowerCase()))
-        .toList();
+  if(search==null || search.isEmpty) return [];
+
+    Set<Content> resultado = Set<Content>();
+    List<String> palabras=search.split(" ");
+
+    List<Set<Content>> resultados= [];
+
+    for (int u = 0; u < palabras.length; u++) {
+      print('[CONT] BUSCANDO PALABRA ${palabras[u]}');
+      Set<Content> rPalabra = _listContent
+          .where((i) =>
+      i.search != null &&
+          i.search.toLowerCase().contains(palabras[u].toLowerCase())).toSet();
+
+      print('[CONT] ${rPalabra.length} COINCIDENCIAS ENCONTRADAS PARA PALABRA ${palabras[u]} ');
+      if(rPalabra.length>0)
+        {
+          resultados.add(rPalabra);
+        }
+    }
+
+    resultado.addAll(resultados[0]);
+    resultados.forEach((element){
+      resultado= resultado.intersection(element);
+
+    });
+
+
+    print('[CONT] RESULTADO BUSQUEDA DE $search total: ${resultado.length}');
+
     addExampleHistory(search);
-    return ressult;
+
+    return resultado.toList();
   }
 
   List<Carrousel> getExampleCarrousel() {
@@ -75,11 +101,11 @@ class _ExamplesProvider {
         final result = await InternetAddress.lookup("jamboree.cl")
             .timeout(Duration(seconds: 5));
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-          print('[CONT] connected to parlamento.jamboree.cl');
+          print('[CONT] connected to pasaporte.jamboree.cl');
           connected = !connected;
         }
       } catch (ex) {
-        print('[CONT] not connected to parlamento.jamboree.cl $ex');
+        print('[CONT] not connected to pasaporte.jamboree.cl $ex');
       }
       if (connected) {
         Map<String, String> headers = {
@@ -88,12 +114,12 @@ class _ExamplesProvider {
         };
         try {
           final response = await http
-              .get('http://parlamento.jamboree.cl/data.json',
+              .get('http://pasaporte.jamboree.cl/data.json',
                   headers: headers)
               .timeout(Duration(seconds: 15));
           if (response.statusCode == 200) {
             print(
-                "[CONT] Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");
+                "[CONT] Se encontro archivo en pasaporte.jamboree.cl con informacion de actualizacion");
             // print(response.body);
 
             var jStringList = json.decode(utf8.decode(response.bodyBytes));
@@ -124,11 +150,11 @@ class _ExamplesProvider {
         final result = await InternetAddress.lookup("jamboree.cl");
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
           print(
-              '[LOC] Connected to parlamento.jamboree.cl to download content');
+              '[LOC] Connected to pasaporte.jamboree.cl to download content');
           connected = !connected;
         }
       } on SocketException catch (_) {
-        print('[LOC] Not connected to parlamento.jamboree.cl');
+        print('[LOC] Not connected to pasaporte.jamboree.cl');
       }
       if (connected) {
         Map<String, String> headers = {
@@ -137,11 +163,11 @@ class _ExamplesProvider {
         };
         print('[LOC] Llamando url internet para descargar ubicaciones');
         final response = await http.get(
-            'http://parlamento.jamboree.cl/locations_jme.json',
+            'http://pasaporte.jamboree.cl/locations.json',
             headers: headers);
         if (response.statusCode == 200) {
           print(
-              "[LOC] Se encontro archivo de ubicaciones en parlamento.jamboree.cl");
+              "[LOC] Se encontro archivo de ubicaciones en pasaporte.jamboree.cl");
           var jStringList = json.decode(utf8.decode(response.bodyBytes));
           try {_listLocations.clear();
             for (int u = 0; u < jStringList.length; u++) {
