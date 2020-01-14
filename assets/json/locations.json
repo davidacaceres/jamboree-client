@@ -1,0 +1,464 @@
+[
+	{
+		"category": "Programa",
+		"image": "assets/icon/App_programa.png",
+		"expand": false,
+		"locations": [
+			{
+				"id": "1",
+				"title": "La Academia",
+				"latitude": -33.959457,
+				"longitude": -70.6269032,
+				"image": "assets/icon/mapa/academia.png"
+			},
+			{
+				"id": "2",
+				"title": "Cabildos",
+				"latitude": -33.9589854,
+				"longitude": -70.6280083,
+				"image": "assets/icon/mapa/cabildos.png"
+			},
+			{
+				"id": "3",
+				"title": "El Estadio",
+				"latitude": -33.9592257,
+				"longitude": -70.6307978,
+				"image": "assets/icon/mapa/estadio.png"
+			},
+			{
+				"id": "4",
+				"title": "El Coliseo",
+				"latitude": -33.9499623,
+				"longitude": -70.6263586,
+				"image": "assets/icon/mapa/torneo.png"
+			},
+			{
+				"id": "5",
+				"title": "Expo - El Parque",
+				"latitude": -33.9545901,
+				"longitude": -70.627174,
+				"image": "assets/icon/mapa/parque.png"
+			},
+			{
+				"id": "6",
+				"title": "Expo - El Puerto",
+				"latitude": -33.9536467,
+				"longitude": -70.6257578,
+				"image": "assets/icon/mapa/puerto.png"
+			},
+			{
+				"id": "7",
+				"title": "Expo - El Puerto",
+				"latitude": -33.953368,
+				"longitude": -70.6282628,
+				"image": "assets/icon/mapa/puerto.png"
+			},
+			{
+				"id": "8",
+				"title": "Escenario",
+				"latitude": -33.9530594,
+				"longitude": -70.6269165,
+				"image": "assets/icon/mapa/escenario.png"
+			},
+			{
+				"id": "9",
+				"title": "Expo - Senderos",
+				"latitude": -33.9655678,
+				"longitude": -70.6232396,
+				"image": "assets/icon/mapa/senderos.png"
+			},
+			{
+				"id": "10",
+				"title": "Expo - Ciclovia",
+				"latitude": -33.9621687,
+				"longitude": -70.6285504,
+				"image": "assets/icon/mapa/ciclovia.png"
+			},
+			{
+				"id": "11",
+				"title": "Jamboree TV",
+				"latitude": -33.9526488,
+				"longitude": -70.6272042,
+				"image": "assets/icon/mapa/jamboreetv.png"
+			},
+			{
+				"id": "12",
+				"title": "Bowlpark",
+				"latitude": -33.9530601,
+				"longitude": -70.6276156,
+				"image": "assets/icon/mapa/bowlpark.png"
+			}
+		]
+	},
+	{
+		"category": "Subcampos",
+		"image": "assets/icon/App_subcampos.png",
+		"expand": false,
+		"locations": [
+			{
+				"id": "101",
+				"title": "Reserva Nacional Los Flamencos",
+				"latitude": -33.9555071,
+				"longitude": -70.6278895,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "102",
+				"title": "Reserva Nacional Los Huemules del Niblinto",
+				"latitude": -33.9550977,
+				"longitude": -70.6286084,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "103",
+				"title": "Reserva Nacional Las Vicuñas",
+				"latitude": -33.9544569,
+				"longitude": -70.629177,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "104",
+				"title": "Reserva Nacional Pampa del Tamarugal",
+				"latitude": -33.9536026,
+				"longitude": -70.6291341,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "105",
+				"title": "Reserva Nacional Isla Mocha",
+				"latitude": -33.9528817,
+				"longitude": -70.6288551,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "106",
+				"title": "Parque Nacional Pan de Azúcar",
+				"latitude": -33.9522499,
+				"longitude": -70.6284367,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "107",
+				"title": "Parque Nacional Nevado de Tres Cruces",
+				"latitude": -33.9518227,
+				"longitude": -70.6278466,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "108",
+				"title": "Parque Radal Siete Tazas",
+				"latitude": -33.951529,
+				"longitude": -70.6271492,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "109",
+				"title": "Reserva Nacional Lago Peñuelas",
+				"latitude": -33.9527127,
+				"longitude": -70.6252717,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "110",
+				"title": "Reserva Nacional Futaleufú",
+				"latitude": -33.9533712,
+				"longitude": -70.6250571,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "111",
+				"title": "Parque Nacional Volcán Isluga",
+				"latitude": -33.9541722,
+				"longitude": -70.6251751,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "112",
+				"title": "Parque Nacional Kawésqar",
+				"latitude": -33.9550087,
+				"longitude": -70.6253897,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "113",
+				"title": "Parque Nacional Laguna del Laja",
+				"latitude": -33.9554003,
+				"longitude": -70.6260978,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "114",
+				"title": "Parque Nacional La Campana",
+				"latitude": -33.9555427,
+				"longitude": -70.6268381,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "115",
+				"title": "Parque Nacional Morro Moreno",
+				"latitude": -33.9625622,
+				"longitude": -70.6268174,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "116",
+				"title": "Reserva Nacional Pingüino de Humboldt",
+				"latitude": -33.9636834,
+				"longitude": -70.6273431,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "117",
+				"title": "Reserva Nacional Laguna Parrillar",
+				"latitude": -33.9619749,
+				"longitude": -71.496061,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "118",
+				"title": "Reserva Nacional Katalalixar",
+				"latitude": -33.9629982,
+				"longitude": -70.6301219,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "119",
+				"title": "Parque Nacional Lauca",
+				"latitude": -33.9622329,
+				"longitude": -70.6325037,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "120",
+				"title": "Parque Nacional Puyehue",
+				"latitude": -33.962838,
+				"longitude": -70.6324393,
+				"image": "assets/icon/mapa/subcampo.png"
+			},
+			{
+				"id": "121",
+				"title": "Monumento Natural Cueva del Milodón (Servicio)",
+				"latitude": -33.9505994,
+				"longitude": -70.6258267,
+				"image": "assets/icon/mapa/subservicio.png"
+			},
+			{
+				"id": "122",
+				"title": "Monumento Nacional Salar de Surire (Servicio)",
+				"latitude": -33.9639259,
+				"longitude": -70.6254886,
+				"image": "assets/icon/mapa/subservicio.png"
+			},
+			{
+				"id": "123",
+				"title": "Aldea Fray Jorge",
+				"latitude": -33.9527165,
+				"longitude": -70.6275981,
+				"image": "assets/icon/mapa/aldea.png"
+			},
+			{
+				"id": "124",
+				"title": "Aldea Ralco",
+				"latitude": -33.9528411,
+				"longitude": -70.6262087,
+				"image": "assets/icon/mapa/aldea.png"
+			},
+			{
+				"id": "125",
+				"title": "Aldea Río Clarillo",
+				"latitude": -33.961402,
+				"longitude": -70.6281292,
+				"image": "assets/icon/mapa/aldea.png"
+			}
+		]
+	},
+	{
+		"category": "Servicios",
+		"image": "assets/icon/App_servicios.png",
+		"expand": false,
+		"locations": [
+			{
+				"id": "201",
+				"title": "Punto se seguridad",
+				"latitude": -33.9585918,
+				"longitude": -70.6324967,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "202",
+				"title": "Punto de seguridad",
+				"latitude": -33.9588787,
+				"longitude": -70.6307962,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "203",
+				"title": "Punto de seguridad",
+				"latitude": -33.9599733,
+				"longitude": -70.6314292,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "204",
+				"title": "Punto de seguridad",
+				"latitude": -33.9618812,
+				"longitude": -70.6284955,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "205",
+				"title": "Punto de seguridad",
+				"latitude": -33.9605846,
+				"longitude": -70.6282216,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "206",
+				"title": "Punto de seguridad",
+				"latitude": -33.961588,
+				"longitude": -70.6264755,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "207",
+				"title": "Punto de seguridad",
+				"latitude": -33.9592031,
+				"longitude": -70.6252121,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "208",
+				"title": "Punto de seguridad",
+				"latitude": -33.9572231,
+				"longitude": -70.6275992,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "209",
+				"title": "Punto de seguridad",
+				"latitude": -33.9546748,
+				"longitude": -70.6272155,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "210",
+				"title": "Punto de seguridad",
+				"latitude": -33.9523805,
+				"longitude": -70.6267988,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "211",
+				"title": "Punto de seguridad",
+				"latitude": -33.9500545,
+				"longitude": -70.6264154,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "212",
+				"title": "Punto de seguridad",
+				"latitude": -33.9586481,
+				"longitude": -70.6279176,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "213",
+				"title": "Punto de seguridad",
+				"latitude": -33.9635532,
+				"longitude": -70.6261281,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "214",
+				"title": "Punto de seguridad",
+				"latitude": -33.9628935,
+				"longitude": -70.6346012,
+				"image": "assets/icon/mapa/seguridad.png"
+			},
+			{
+				"id": "215",
+				"title": "Posta de salud",
+				"latitude": -33.9529001,
+				"longitude": -70.6280208,
+				"image": "assets/icon/mapa/salud.png"
+			},
+			{
+				"id": "216",
+				"title": "Posta de salud",
+				"latitude": -33.9531315,
+				"longitude": -70.6257999,
+				"image": "assets/icon/mapa/salud.png"
+			},
+			{
+				"id": "217",
+				"title": "Posta de salud",
+				"latitude": -33.9613526,
+				"longitude": -70.6286591,
+				"image": "assets/icon/mapa/salud.png"
+			},
+			{
+				"id": "218",
+				"title": "Hospital",
+				"latitude": -33.9574861,
+				"longitude": -70.6281227,
+				"image": "assets/icon/mapa/salud.png"
+			},
+			{
+				"id": "219",
+				"title": "Servicios Generales",
+				"latitude": -33.9575631,
+				"longitude": -70.6287523,
+				"image": "assets/icon/mapa/ssgg.png"
+			},
+			{
+				"id": "220",
+				"title": "Supermercado",
+				"latitude": -33.9581491,
+				"longitude": -70.6299982,
+				"image": "assets/icon/mapa/supermercado.png"
+			},
+			{
+				"id": "221",
+				"title": "Supermercado",
+				"latitude": -33.951943,
+				"longitude": -70.6263623,
+				"image": "assets/icon/mapa/supermercado.png"
+			},
+			{
+				"id": "222",
+				"title": "CampCard",
+				"latitude": -33.9585502,
+				"longitude": -70.6303941,
+				"image": "assets/icon/mapa/campcard.png"
+			},
+			{
+				"id": "223",
+				"title": "CampCard",
+				"latitude": -33.9520923,
+				"longitude": -70.6264311,
+				"image": "assets/icon/mapa/campcard.png"
+			},
+			{
+				"id": "224",
+				"title": "Camping Scout",
+				"latitude": -33.9582563,
+				"longitude": -70.6297864,
+				"image": "assets/icon/mapa/camping.png"
+			},
+			{
+				"id": "225",
+				"title": "Registro",
+				"latitude": -33.9587066,
+				"longitude": -70.630131,
+				"image": "assets/icon/mapa/registro.png"
+			},
+			{
+				"id": "226",
+				"title": "Patio de Comidas",
+				"latitude": -33.9586132,
+				"longitude": -70.6297394,
+				"image": "assets/icon/mapa/patiocomidas.png"
+			}
+		]
+	}
+]
