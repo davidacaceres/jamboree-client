@@ -101,11 +101,11 @@ class _ExamplesProvider {
         final result = await InternetAddress.lookup("jamboree.cl")
             .timeout(Duration(seconds: 5));
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-          print('[CONT] connected to parlamento.jamboree.cl');
+          print('[CONT] connected to pasaporte.jamboree.cl');
           connected = !connected;
         }
       } catch (ex) {
-        print('[CONT] not connected to parlamento.jamboree.cl $ex');
+        print('[CONT] not connected to pasaporte.jamboree.cl $ex');
       }
       if (connected) {
         Map<String, String> headers = {
@@ -119,7 +119,7 @@ class _ExamplesProvider {
               .timeout(Duration(seconds: 15));
           if (response.statusCode == 200) {
             print(
-                "[CONT] Se encontro archivo en parlamento.jamboree.cl con informacion de actualizacion");
+                "[CONT] Se encontro archivo en pasaporte.jamboree.cl con informacion de actualizacion");
             // print(response.body);
 
             var jStringList = json.decode(utf8.decode(response.bodyBytes));
@@ -150,11 +150,11 @@ class _ExamplesProvider {
         final result = await InternetAddress.lookup("jamboree.cl");
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
           print(
-              '[LOC] Connected to parlamento.jamboree.cl to download content');
+              '[LOC] Connected to pasaporte.jamboree.cl to download content');
           connected = !connected;
         }
       } on SocketException catch (_) {
-        print('[LOC] Not connected to parlamento.jamboree.cl');
+        print('[LOC] Not connected to pasaporte.jamboree.cl');
       }
       if (connected) {
         Map<String, String> headers = {
@@ -167,7 +167,7 @@ class _ExamplesProvider {
             headers: headers);
         if (response.statusCode == 200) {
           print(
-              "[LOC] Se encontro archivo de ubicaciones en parlamento.jamboree.cl");
+              "[LOC] Se encontro archivo de ubicaciones en pasaporte.jamboree.cl");
           var jStringList = json.decode(utf8.decode(response.bodyBytes));
           try {_listLocations.clear();
             for (int u = 0; u < jStringList.length; u++) {
