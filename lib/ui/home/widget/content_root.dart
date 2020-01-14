@@ -1,4 +1,5 @@
 import 'package:Pasaporte_2020/model/content.dart';
+import 'package:Pasaporte_2020/utils/ColorUtils.dart';
 import 'package:Pasaporte_2020/utils/ImageUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:Pasaporte_2020/config/config_definition.dart' as theme;
@@ -46,6 +47,11 @@ class ContentRootWidget extends StatelessWidget {
   Widget _subWidget(
       BuildContext context, Content content, double hImage, double wImage) {
 
+    double rootFontSize= content.rootFontColor==null?theme.ScHomePage.cardTextStyle.fontSize:content.rootFontSize;
+    String rootFontFamily= ((content.rootFontFamily==null || content.rootFontFamily.isEmpty) ? theme.ScHomePage.cardTextStyle.fontFamily:content.rootFontFamily);
+    Color rootFontColor= getTextColor(context, content.rootFontColor,theme.ScHomePage.cardTextStyle.color) ;
+
+
     return Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Container(
@@ -77,7 +83,7 @@ class ContentRootWidget extends StatelessWidget {
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.visible,
                         maxLines: 2,
-                        style: theme.ScHomePage.cardTextStyle,
+                      style: TextStyle(fontFamily: rootFontFamily,fontSize: rootFontSize,color: rootFontColor),
                       ))
                 ])));
   }
