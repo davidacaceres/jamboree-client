@@ -35,13 +35,30 @@ class _ExamplesProvider {
   }
 
   List<Content> getExampleSearchContent(String search) {
-    List<Content> ressult = _listContent
-        .where((i) =>
-            i.search != null &&
-            i.search.toLowerCase().contains(search.toLowerCase()))
-        .toList();
+
+
+    final resultado = Set<Content>();
+    List<String> palabras=search.split(" ");
+
+    for (int u = 0; u < palabras.length; u++) {
+      print('[CONT] BUSCANDO PALABRA ${palabras[u]}');
+      List<Content> rPalabra = _listContent
+          .where((i) =>
+      i.search != null &&
+          i.search.toLowerCase().contains(palabras[u].toLowerCase()))
+          .toList();
+
+      print('[CONT] ${rPalabra.length} COINCIDENCIAS ENCONTRADAS PARA PALABRA ${palabras[u]} ');
+      if(rPalabra.length>0)
+        {
+          resultado.addAll(rPalabra);
+        }
+    }
+    print('[CONT] RESULTADO BUSQUEDA DE $search total: ${resultado.length}');
+
     addExampleHistory(search);
-    return ressult;
+
+    return resultado.toList();
   }
 
   List<Carrousel> getExampleCarrousel() {
@@ -88,7 +105,7 @@ class _ExamplesProvider {
         };
         try {
           final response = await http
-              .get('http://parlamento.jamboree.cl/data.json',
+              .get('http://pasaporte.jamboree.cl/data.json',
                   headers: headers)
               .timeout(Duration(seconds: 15));
           if (response.statusCode == 200) {
@@ -137,7 +154,7 @@ class _ExamplesProvider {
         };
         print('[LOC] Llamando url internet para descargar ubicaciones');
         final response = await http.get(
-            'http://parlamento.jamboree.cl/locations_jme.json',
+            'http://pasaporte.jamboree.cl/locations_jme.json',
             headers: headers);
         if (response.statusCode == 200) {
           print(

@@ -54,6 +54,13 @@ Future<List<Content>> getContent() async {
   return contents;
 }
 
+/**
+ * Retorna true. cuando:
+ * - Archivo local de version no se encuentra
+ * - Lectura de archivo de version local da una exception
+ * -
+ * -
+ */
 Future<bool> _checkVersion() async {
   print('[DM] Verificando version de sistema');
   File file = await getVersionFile();
