@@ -35,25 +35,34 @@ class _ExamplesProvider {
   }
 
   List<Content> getExampleSearchContent(String search) {
+  if(search==null || search.isEmpty) return [];
 
-
-    final resultado = Set<Content>();
+    Set<Content> resultado = Set<Content>();
     List<String> palabras=search.split(" ");
+
+    List<Set<Content>> resultados= [];
 
     for (int u = 0; u < palabras.length; u++) {
       print('[CONT] BUSCANDO PALABRA ${palabras[u]}');
-      List<Content> rPalabra = _listContent
+      Set<Content> rPalabra = _listContent
           .where((i) =>
       i.search != null &&
-          i.search.toLowerCase().contains(palabras[u].toLowerCase()))
-          .toList();
+          i.search.toLowerCase().contains(palabras[u].toLowerCase())).toSet();
 
       print('[CONT] ${rPalabra.length} COINCIDENCIAS ENCONTRADAS PARA PALABRA ${palabras[u]} ');
       if(rPalabra.length>0)
         {
-          resultado.addAll(rPalabra);
+          resultados.add(rPalabra);
         }
     }
+
+    resultado.addAll(resultados[0]);
+    resultados.forEach((element){
+      resultado= resultado.intersection(element);
+
+    });
+
+
     print('[CONT] RESULTADO BUSQUEDA DE $search total: ${resultado.length}');
 
     addExampleHistory(search);
@@ -154,7 +163,7 @@ class _ExamplesProvider {
         };
         print('[LOC] Llamando url internet para descargar ubicaciones');
         final response = await http.get(
-            'http://pasaporte.jamboree.cl/locations_jme.json',
+            'http://pasaporte.jamboree.cl/locations.json',
             headers: headers);
         if (response.statusCode == 200) {
           print(
