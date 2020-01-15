@@ -28,7 +28,7 @@
 			{
 				"id": "4",
 				"title": "El Coliseo",
-				"latitude": -33.9499623,
+				"latitude": -33.9494995,
 				"longitude": -70.6263586,
 				"image": "assets/icon/mapa/torneo.png"
 			},
@@ -457,6 +457,20 @@
 				"title": "Patio de Comidas",
 				"latitude": -33.9586132,
 				"longitude": -70.6297394,
+				"image": "assets/icon/mapa/patiocomidas.png"
+			},
+			{
+				"id": "227",
+				"title": "Comedor servicio (central)",
+				"latitude": -33.9576736,
+				"longitude": -70.6305714,
+				"image": "assets/icon/mapa/patiocomidas.png"
+			},
+			{
+				"id": "228",
+				"title": "Comedor servicio (periférico)",
+				"latitude": -33.9521345,
+				"longitude": -70.6258541,
 				"image": "assets/icon/mapa/patiocomidas.png"
 			}
 		]

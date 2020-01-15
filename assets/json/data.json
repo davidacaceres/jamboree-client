@@ -5,7 +5,7 @@
 		"root": true,
 		"title": "El 10° Jamboree Nacional",
 		"titleList": "El 10° Jamboree Nacional",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":20.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -79,7 +79,7 @@
 		"id": "1.1",
 		"order": 1,
 		"title": "Mensaje del jefe de campo",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -172,7 +172,7 @@
 		"id": "1.2",
 		"order": 2,
 		"title": "¿Qué es un Jamboree?",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -238,7 +238,7 @@
 		"id": "1.3",
 		"order": 3,
 		"title": "Jamborees Nacionales",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -272,63 +272,63 @@
 									{
 										"title": "Quebrada de Macul, <i>'Senda scout, camino de paz'<\/i>",
 										"subtitle": "1976",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree76.png",
+										"image": "assets/img/jamborees/insignia_jamboree76.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 									},
 									{
 										"title": "Lago Peñuelas, <i>'Pueblo de hermanos, tierra de paz'<\/i>",
 										"subtitle": "1982",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree82.png",
+										"image": "assets/img/jamborees/insignia_jamboree82.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Panguipulli, <i>'Fuerza joven por la paz / Fuerza nueva por la paz'<\/i>",
 										"subtitle": "1986",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree86.png",
+										"image": "assets/img/jamborees/insignia_jamboree86.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Los Lagos, <i>'Crecer en la aventura'<\/i>",
 										"subtitle": "1992",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree92.png",
+										"image": "assets/img/jamborees/insignia_jamboree92.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Parral, <i>'Un nuevo desafío'<\/i>",
 										"subtitle": "1996",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree96.png",
+										"image": "assets/img/jamborees/insignia_jamboree96.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Picarquín, <i>'Descubre la aventura'<\/i>",
 										"subtitle": "2002",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree2002.png",
+										"image": "assets/img/jamborees/insignia_jamboree2002.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Picarquín, <i>'Jamboree del centenario: En senda a los 200 años'<\/i>",
 										"subtitle": "2009",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree2009.png",
+										"image": "assets/img/jamborees/insignia_jamboree2009.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Picarquín, <i>'Una misión, muchas aventuras'<\/i>",
 										"subtitle": "2013",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree2013.png",
+										"image": "assets/img/jamborees/jamboree2013.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										},
 									{
 										"title": "Picarquín, <i>'Construyendo futuro'<\/i>",
 										"subtitle": "2016",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree2016.png",
+										"image": "assets/img/jamborees/jamboree2016.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 										}
@@ -356,14 +356,14 @@
 									{
 										"title": "6° Jamboree Scout Panamericano, <i>'América, por la paz'<\/i>",
 										"subtitle": "Villarica, 1989",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree99.png",
+										"image": "assets/img/jamborees/insignia_jamboree89.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 									},
 									{
 										"title": "19° Jamboree Scout Mundial, <i>'Juntos construyendo la paz'<\/i>",
 										"subtitle": "Picarquín, 1999",
-										"image": "http://parlamento.jamboree.cl/app/jamborees/jamboree89.png",
+										"image": "assets/img/jamborees/insignia_jamboree99.png",
 										"backgroundColor":[112,166,59],
 										"titleColor":[50,64,101]
 									}
@@ -387,7 +387,7 @@
 		"id": "1.4",
 		"order": 4,
 		"title": "El Lema del 10° Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -499,7 +499,7 @@
 		"id": "1.5",
 		"order": 5,
 		"title": "El Logo – Insignia de nuestro Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_queesjamboree.png",
+		"image":"assets/icon/App_queesjamboree.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -527,7 +527,7 @@
 							"font":"Aspira Nar Medium",
 							"fontSize":18.0,
 							"background_color":[193,123,0],
-							"data": "De los trabajos enviado hubo algunos que se destacaron y permitieron inspirar el concepto general del logo o emblema. Otros diseños enviados permitieron complementar la idea central. Y fue Roberto Arel, diseñador gráfico, dirigente del San Javier del distrito Puerto Montt, quien aglutinó todo en el logo final."
+							"data": "De los trabajos enviados hubo algunos que se destacaron y permitieron inspirar el concepto general del logo o emblema. Otros diseños enviados permitieron complementar la idea central. Dentro de estos destacó el enviado por <b>Flavia Carreño<\/b> del grupo Academia Mafeking, el cual sirve de inspiración principal. Finalmente, fue Roberto Arel, diseñador gráfico, dirigente del San Javier del distrito Puerto Montt, quien aglutinó todo en el logo final."
 						}
 					},
 					{
@@ -558,7 +558,7 @@
 		"root": true,
 		"title": "Código de Conducta",
 		"titleList": "Código de Conducta",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -714,7 +714,7 @@
 		"id": "2.1",
 		"order": 1,
 		"title": "Nuestra Ley y Promesa",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -784,62 +784,62 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "La gu&iacute;a y el scout es digna y digno de confianza",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "La gu&iacute;a y el scout es leal",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "La gu&iacute;a y el scout sirve sin esperar recompensa",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "La gu&iacute;a y el scout comparte con todos",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "La gu&iacute;a y el scout es alegre y cordial",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/6_50px.png",
+								"image": "assets/icon/numeros/6_50px.png",
 								"title": "La gu&iacute;a y el scout protege la vida y la naturaleza",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/7_50px.png",
+								"image": "assets/icon/numeros/7_50px.png",
 								"title": "es responsable y nada hace a medias",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/8_50px.png",
+								"image": "assets/icon/numeros/8_50px.png",
 								"title": "La gu&iacute;a y el scout es optimista",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/9_50px.png",
+								"image": "assets/icon/numeros/9_50px.png",
 								"title": "La gu&iacute;a y el scout cuida las cosas y valora el trabajo",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/10_50px.png",
+								"image": "assets/icon/numeros/10_50px.png",
 								"title": "es coherente en pensamiento, palabra y acci&oacute;n",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -864,7 +864,7 @@
 		"id": "2.1.1",
 		"order": 1,
 		"title": "Rapa Nui",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -894,7 +894,7 @@
 		"id": "2.1.2",
 		"order": 2,
 		"title": "Aymara",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -951,7 +951,7 @@
 		"id": "2.1.3",
 		"order": 3,
 		"title": "Mapudungun",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -981,7 +981,7 @@
 		"id": "2.2",
 		"order": 2,
 		"title": "Nuestro uniforme",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1038,7 +1038,7 @@
 		"id": "2.3",
 		"order": 3,
 		"title": "Lugar de campamento",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1148,7 +1148,7 @@
 		"id": "2.4",
 		"order": 4,
 		"title": "Pertenencias personales",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1205,7 +1205,7 @@
 		"id": "2.5",
 		"order": 5,
 		"title": "Advertencia respecto de daños",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1253,7 +1253,7 @@
 		"id": "2.6",
 		"order": 6,
 		"title": "Consumo de alcohol y tabaco",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1301,7 +1301,7 @@
 		"id": "2.7",
 		"order": 7,
 		"title": "Relaciones interpersonales",
-		"image":"http://parlamento.jamboree.cl/app/App_codigoconducta.png",
+		"image":"assets/icon/App_codigoconducta.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1369,7 +1369,7 @@
 		"root": true,
 		"title": "Planes de acción y seguridad",
 		"titleList": "Planes de acción y seguridad",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -1440,7 +1440,7 @@
 		"id": "3.1",
 		"order": 1,
 		"title": "Protocolos de seguridad",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1508,7 +1508,7 @@
 		"id": "3.1.1",
 		"order": 1,
 		"title": "Ingreso de participantes",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1531,50 +1531,50 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "Una vez que las Compañías y Tropas hayan sido asignadas a los subcampos, el Responsable de cada uno de éstos se comunicará con los y las responsables de las unidades para entregarles información relevante en la vida de Subcampo, por ejemplo, aspectos de organización interna, de acampado y detalles propios de cada subcampo; todo esto ocurrirá durante el mes de noviembre y diciembre.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "El área de Registro y Acreditación entregará a seguridad los listados de cada Grupo, incluyendo la cantidad de beneficiarios, dirigentes, guiadoras y apoderados que participarán del Jamboree con la unidad y su asignación al subcampo respectivo.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "Al momento de ingresar a Picarquín, los participantes del 10º Jamboree Nacional, serán recibidos por un integrante del equipo de seguridad, quien se asegurará de que coincida la cantidad de personas que ingresan al recinto con los registros entregados por registro y acreditación.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "El Responsable de Delegación deberá presentar el “Certificado de Registro al día” en el caso de poseerlo (este documento es entregado a los grupos que tengan todas las cuotas pagadas y la lista de los participantes actualizada), con ello podrán dirigirse al sector de Entrega de Kits del evento para solicitar estos materiales.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "En caso de no poseer el certificado de registro al día o que las nóminas de participantes no coinciden la cantidad de personas que están ingresando, las unidades deberán dirigirse al sector de acampada para dejar sus pertenencias y el o la responsable de la delegación tendrá que acercarse a registro y acreditación para regularizar su situación y, posteriormente, solicitar su kit en el sector de entrega de Kits. (este proceso debe realizarse si o si el mismo día de ingreso).",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/6_50px.png",
+								"image": "assets/icon/numeros/6_50px.png",
 								"title": "Al llegar al subcampo, un integrante del equipo de subcampo los recibirá y les indicará cuál es el lugar de acampada asignado a su unidad.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/7_50px.png",
+								"image": "assets/icon/numeros/7_50px.png",
 								"title": "El administrador o administradora del subcampo verificará dos documentos con el responsable de la delegación: autorización de participación para todos los menores de edad y ficha médica actualizada para todos los participantes, incluidos guiadoras, dirigentes y apoderados. En caso de no poseer este último documento, deberán completarlo en el lugar.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/8_50px.png",
+								"image": "assets/icon/numeros/8_50px.png",
 								"title": "Los buses en los que viajen los participantes y que se quedarán durante el evento en el predio deberán completar un enlace previamente y estando en el lugar, no podrán moverse dentro del recinto hasta el día de salida de los contingentes.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1589,7 +1589,7 @@
 		"id": "3.1.2",
 		"order": 2,
 		"title": "Salida en caso de accidente",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1612,32 +1612,32 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "El Equipo de Salud emitirá un “Formulario de Salida de Emergencia”, el cual tendrá el nombre del miembro Beneficiario, del Adulto acompañante, Grupo al cual pertenecen y Subcampo. Este es un documento doble, es decir tiene una copia para registrar salida y entrada.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "Con el documento emitido, las personas que se dirigen al centro asistencial pasarán por portería, donde personal de seguridad retendrá una de las copias del documento de salida como respaldo.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "Después de salir las personas, un integrante del equipo de seguridad deberá informar por radio al módulo de registro y acreditación de la salida en caso de accidente. Con el fin de manejar la misma información.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "Al volver del recinto asistencial, las personas que salieron deberán entregar la segunda copia del documento en portería, quien la archivarán junto a la primera copia entregada al momento de salir y deberán informar al equipo de registro.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "Al finalizar cada turno el supervisor de turno de seguridad deberá llevar todos los documentos recibidos por salidas en caso de accidente y corroborar que coincida con la información que maneja el equipo de Salud, siendo entregados al equipo de censo y control.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1653,7 +1653,7 @@
 		"id": "3.1.3",
 		"order": 3,
 		"title": "Salida transitoria de Dirigentes y Guiadoras",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1676,32 +1676,32 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "El dirigente o la guiadora que requiera salir transitoriamente del recinto deberá acercarse al módulo de registro y acreditación, en donde deberá informar por escrito el motivo de la salida y la duración estimada de ésta. Y se le solicitará la credencial del evento como garantía de su salida y se le devolverá cuando regrese.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "En registro y acreditación el o la encargado/a del turno, entregará un documento, el cual debe ser firmado por la guiadora o el dirigente, y el cual deberá presentar en portería al equipo de seguridad.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "El equipo de seguridad deberá timbrar el documento de autorización para poder hacer efectiva la salida transitoria.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "Al regreso, el dirigente o guiadora deberá presentar el documento de salida, el cual será timbrado nuevamente por el ingreso al recinto. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "El dirigente o la guiadora deberá dirigirse al módulo de registro y acreditación para entregar el documento, el cual se archivará debidamente y retirará su credencial del evento.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1717,7 +1717,7 @@
 		"id": "3.1.4",
 		"order": 4,
 		"title": "Ingreso y salida de visitas",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1740,38 +1740,38 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "Las visitas deberán identificarse con el equipo de seguridad que se encuentre en portería e indicar el motivo de la visita. Una persona de seguridad deberá acompañar a la visita al módulo de administración y finanzas, para cancelar el valor de su visita, posteriormente deberá pasar a registro y acreditación. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "Si va de visita en vehículo deberá quedar en el estacionamiento y dirigirse a pie junto a la persona de seguridad. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "En el módulo de registro y acreditación se le pedirán sus datos personales, información de contacto y el motivo de la visita. Se le indicará el tiempo de permanencia máximo que podrá estar en el recinto. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "Se le hará entrega de una credencial temporal de visita y a cambio deberán dejar un documento de identificación, que serán devuelto al final de su estadía. A su vez, deberá devolver la credencial de visita temporal. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "Si es padre, apoderado o familiar de algún participante, deberá esperar en Registro y Acreditación hasta que llegue la Guiadora o el Dirigente a cargo del beneficiario. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/6_50px.png",
+								"image": "assets/icon/numeros/6_50px.png",
 								"title": "Una vez finalizado la visita, se le hará entrega del “Formulario de la salida”, el cual deberá mostrar dicho formulario para que Seguridad confirme la autorización y pueda hacer abandono definitivo del lugar.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1787,7 +1787,7 @@
 		"id": "3.1.5",
 		"order": 5,
 		"title": "Salida definitiva de menores de edad",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1810,44 +1810,44 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "El o la apoderado deberá identificarse con el integrante del equipo de seguridad que se encuentre en portería para indicarle el motivo por el cual desea ingresar al recinto.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "La persona de seguridad tomará contacto con registro y acreditación, quienes revisarán la entrada del apoderado al recinto. En el caso de ser aceptado el ingreso, se le acompañará hasta el módulo de registro y acreditación. Se debe tener especial cuidado con niños y niñas que tengan orden de alejamiento o alguna cautelar similar.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "En el módulo de registro y acreditación, se le pedirán sus datos personales, información de contacto y el parentesco. Además, se le pedirá la cédula de identidad para poder llenar el formulario de salida del menor.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "En caso de que la persona que esté acudiendo a retirar al participante no esté en la autorización, el apoderado deberá informar mediante un correo electrónico a registrojamboree@guiasyscoutschile.cl la autorización efectiva de la salida. Indicando claramente el nombre, RUT y parentesco de la persona que va a retirar al participante.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/5_50px.png",
+								"image": "assets/icon/numeros/5_50px.png",
 								"title": "Registro y acreditación tomará contacto con el o la responsable de subcampo correspondiente para informar la situación y se le solicitará que le indique al adulto responsable que debe acompañar al o la beneficiario/a hasta el módulo de registro y acreditación, con todas las pertenencias del menor.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/6_50px.png",
+								"image": "assets/icon/numeros/6_50px.png",
 								"title": "El ”Formulario de salida” debe contar con la firma del apoderado, responsable de unidad y del equipo de registro y Acreditación, según el turno de trabajo (solo son 3 firmas). En caso de que la autorización haya llegado vía correo (punto 4) se debe adjuntar el correo impreso.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/7_50px.png",
+								"image": "assets/icon/numeros/7_50px.png",
 								"title": "Una vez finalizado el proceso, se le hará entrega del formulario de la salida y de la fotocopia de la cédula de identidad al apoderado, quien deberá mostrar dicho formulario para que seguridad confirme la autorización y pueda hacer abandono definitivo del lugar.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1863,7 +1863,7 @@
 		"id": "3.1.6",
 		"order": 6,
 		"title": "Salida definitiva de mayor de edad",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1886,20 +1886,20 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "Cualquier voluntario mayor de edad que desee hacer abandono definitivo del recinto deberá completar el ”Formulario de salida definitiva del evento” indicando el motivo por el cual abandona. ",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "Dicho formulario deberá ser firmado por la persona que desea retirarse, un integrante del equipo de registro y acreditación y el responsable de Subcampo de servicio.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "Se le escaneará e imprimirá la cédula de identidad por ambos lados y junto con el formulario de salida, la persona que se retira deberá mostrarlo a un integrante del Equipo de Seguridad, quien informará a través de una comunicación radial, el retiro efectivo de la persona en cuestión.",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -1915,7 +1915,7 @@
 		"id": "3.2",
 		"order": 2,
 		"title": "¿Cómo Ayudar?",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -1978,7 +1978,7 @@
 		"id": "3.3",
 		"order": 3,
 		"title": "Equidad y derechos",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2046,7 +2046,7 @@
 		"id": "3.4",
 		"order": 4,
 		"title": "Salud mental",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2113,7 +2113,7 @@
 		"id": "3.5",
 		"order": 5,
 		"title": "Higiene y salud",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2187,7 +2187,7 @@
 		"id": "3.5.1",
 		"order": 5,
 		"title": "Aseo Personal",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2260,7 +2260,7 @@
 		"id": "3.5.2",
 		"order": 5,
 		"title": "Tiempo de descanso",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2313,7 +2313,7 @@
 		"id": "3.5.3",
 		"order": 3,
 		"title": "Para las actividades",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2391,7 +2391,7 @@
 		"id": "3.5.4",
 		"order": 4,
 		"title": "Cuidado de la carpa",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2463,7 +2463,7 @@
 		"id": "3.5.5",
 		"order": 5,
 		"title": "Cuídate de heridas, golpes, quemaduras",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2521,7 +2521,7 @@
 		"id": "3.5.6",
 		"order": 6,
 		"title": "Áreas restringidas",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2569,7 +2569,7 @@
 		"id": "3.5.7",
 		"order": 7,
 		"title": "Virus Hanta",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2660,7 +2660,7 @@
 		"id": "3.6",
 		"order": 6,
 		"title": "Que hacer en caso de emergencia",
-		"image":"http://parlamento.jamboree.cl/app/App_seguridad.png",
+		"image":"assets/icon/App_seguridad.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2793,7 +2793,7 @@
 		"root": true,
 		"title": "Los servicios del Jamboree",
 		"titleList": "Los servicios del Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -2870,7 +2870,7 @@
 		"id": "4.1",
 		"order": 1,
 		"title": "Plano del Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2878,15 +2878,19 @@
 		"tabPrimaryColor":[228,177,52],
 		"tabSecondaryColor":[206,137,0],
 		"tabTextColor":[50,64,101],
-		"search": "",
+		"search": "mapa plano",
 		"display": [
 			{
 				"short_title": "unico",
 				"content": [
 					{
-						"paragraph_conf": {
-							"data": "IMAGEN"
-						}
+						"image_conf":
+							{
+								"source":"http://pasaporte.jamboree.cl/app/img/mapajamboree.jpg",
+								"align":"center",
+								"background_color":[50,64,101],
+								"ownViewer":true
+							} 
 					}
 				]
 			}
@@ -2896,7 +2900,7 @@
 		"id": "4.2",
 		"order": 2,
 		"title": "Hospital y postas",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -2955,7 +2959,7 @@
 		"id": "4.2.1",
 		"order": 1,
 		"title": "¿Cómo funciona la atención?",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3012,7 +3016,7 @@
 		"id": "4.2.1.1",
 		"order": 1,
 		"title": "Paso 1: Admisión",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3061,7 +3065,7 @@
 		"id": "4.2.1.2",
 		"order": 2,
 		"title": "Paso 2: Categorización",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3146,7 +3150,7 @@
 		"id": "4.2.1.3",
 		"order": 3,
 		"title": "Paso 3: Sala de espera",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3185,7 +3189,7 @@
 		"id": "4.2.1.4",
 		"order": 4,
 		"title": "Paso 4: Atención médica",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3251,7 +3255,7 @@
 		"id": "4.2.2",
 		"order": 2,
 		"title": "Medicamentos",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3290,7 +3294,7 @@
 		"id": "4.2.3",
 		"order": 3,
 		"title": "Seguridad y prevención",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3338,7 +3342,7 @@
 		"id": "4.3",
 		"order": 3,
 		"title": "Tarjeta de prepago 'CampCard'",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3438,7 +3442,7 @@
 		"id": "4.3.1",
 		"order": 1,
 		"title": "Carga de Tarjetas",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3513,7 +3517,7 @@
 		"id": "4.3.2",
 		"order": 2,
 		"title": "Devolución de saldos",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3583,7 +3587,7 @@
 		"id": "4.4",
 		"order": 4,
 		"title": "Supermercado y alimentación",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3683,7 +3687,7 @@
 		"id": "4.4.1",
 		"order": 1,
 		"title": "Venta de gas",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3731,7 +3735,7 @@
 		"id": "4.4.2",
 		"order": 2,
 		"title": "Pack básico",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3770,7 +3774,7 @@
 		"id": "4.4.3",
 		"order": 3,
 		"title": "Pack menú para cada comida",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3809,7 +3813,7 @@
 		"id": "4.5",
 		"order": 5,
 		"title": "Camping Scout",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3848,7 +3852,7 @@
 		"id": "4.6",
 		"order": 6,
 		"title": "Residuos y basura",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3887,7 +3891,7 @@
 		"id": "4.7",
 		"order": 7,
 		"title": "Identificación durante el Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3931,7 +3935,7 @@
 		"id": "4.7.1",
 		"order": 1,
 		"title": "Pañolines",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -3974,7 +3978,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pBeneficiario.png",
+								"source":"assets/img/panolines/pBeneficiario.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -3992,7 +3996,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pAdultos.png",
+								"source":"assets/img/panolines/pAdultos.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -4010,7 +4014,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pPionerosCaminantes.png",
+								"source":"assets/img/panolines/pPionerosCaminantes.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -4028,7 +4032,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pAdultosServicio.png",
+								"source":"assets/img/panolines/pAdultosServicio.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -4046,7 +4050,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pResponsablesArea.png",
+								"source":"assets/img/panolines/pResponsablesArea.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -4064,7 +4068,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/panolines/pEquipoCampo.png",
+								"source":"assets/img/panolines/pEquipoCampo.png",
 								"align":"center",
 								"background_color":[193,123,0],
 								"ownViewer":true
@@ -4078,7 +4082,7 @@
 		"id": "4.7.2",
 		"order": 2,
 		"title": "Credencial",
-		"image":"http://parlamento.jamboree.cl/app/App_servicios.png",
+		"image":"assets/icon/App_servicios.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4119,7 +4123,7 @@
 		"root": true,
 		"title": "La vida en el Subcampo",
 		"titleList": "La vida en el Subcampo",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -4233,7 +4237,7 @@
 		"id": "5.1",
 		"order": 1,
 		"title": "La ciudad del Jamboree",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4290,7 +4294,7 @@
 		"id": "5.2",
 		"order": 2,
 		"title": "Servicios básicos del subcampo",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4334,7 +4338,7 @@
 		"id": "5.2.1",
 		"order": 1,
 		"title": "Toldo de regalo",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4382,7 +4386,7 @@
 		"id": "5.2.2",
 		"order": 1,
 		"title": "Mesones y pisos",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4460,7 +4464,7 @@
 		"id": "5.3",
 		"order": 3,
 		"title": "Alimentación",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4652,7 +4656,7 @@
 		"id": "5.3.1",
 		"order": 1,
 		"title": "Menú para participantes y adultos acompañantes",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":24.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4728,7 +4732,7 @@
 		"id": "5.3.1.1",
 		"order": 1,
 		"title": "Domingo 19",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4824,7 +4828,7 @@
 		"id": "5.3.1.2",
 		"order": 2,
 		"title": "Lunes 20",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -4920,7 +4924,7 @@
 		"id": "5.3.1.3",
 		"order": 3,
 		"title": "Martes 21",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5016,7 +5020,7 @@
 		"id": "5.3.1.4",
 		"order": 4,
 		"title": "Miércoles 22",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5112,7 +5116,7 @@
 		"id": "5.3.1.5",
 		"order": 5,
 		"title": "Jueves 23",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5208,7 +5212,7 @@
 		"id": "5.3.1.6",
 		"order": 6,
 		"title": "Viernes 24",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5304,7 +5308,7 @@
 		"id": "5.3.1.7",
 		"order": 7,
 		"title": "Sábado 25",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5400,7 +5404,7 @@
 		"id": "5.3.1.8",
 		"order": 8,
 		"title": "Domingo 26",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5482,7 +5486,7 @@
 		"id": "5.3.2",
 		"order": 2,
 		"title": "Cocinillas y fuegos",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5563,7 +5567,7 @@
 		"id": "5.4",
 		"order": 4,
 		"title": "Actividades cotidianas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5672,7 +5676,7 @@
 		"id": "5.4.1",
 		"order": 1,
 		"title": "Reflexiones y oraciones diarias",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5748,7 +5752,7 @@
 		"id": "5.4.1.1",
 		"order": 1,
 		"title": "Día 1 (19.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5796,7 +5800,7 @@
 		"id": "5.4.1.2",
 		"order": 2,
 		"title": "Día 2 (20.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5844,7 +5848,7 @@
 		"id": "5.4.1.3",
 		"order": 3,
 		"title": "Día 3 (21.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5892,7 +5896,7 @@
 		"id": "5.4.1.4",
 		"order": 4,
 		"title": "Día 4 (22.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5940,7 +5944,7 @@
 		"id": "5.4.1.5",
 		"order": 5,
 		"title": "Día 5 (23.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -5988,7 +5992,7 @@
 		"id": "5.4.1.6",
 		"order": 6,
 		"title": "Día 6 (24.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6036,7 +6040,7 @@
 		"id": "5.4.1.7",
 		"order": 7,
 		"title": "Día 7 (25.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6084,7 +6088,7 @@
 		"id": "5.4.1.8",
 		"order": 8,
 		"title": "Día 8 (26.1.2020)",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6114,7 +6118,7 @@
 		"id": "5.5",
 		"order": 5,
 		"title": "Actividades internas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6200,7 +6204,7 @@
 		"id": "5.5.1",
 		"order": 1,
 		"title": "Encuentros territoriales",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6239,7 +6243,7 @@
 		"id": "5.5.2",
 		"order": 2,
 		"title": "Comencemos el cambio",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6309,7 +6313,7 @@
 		"id": "5.5.3",
 		"order": 3,
 		"title": "InstaJam",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6366,7 +6370,7 @@
 		"id": "5.5.4",
 		"order": 4,
 		"title": "DirectJam",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6396,7 +6400,7 @@
 		"id": "5.5.5",
 		"order": 5,
 		"title": "Celebración en el subcampo",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6462,7 +6466,7 @@
 		"id": "5.5.6",
 		"order": 6,
 		"title": "Dejando huellas para el futuro",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6532,7 +6536,7 @@
 		"id": "5.6",
 		"order": 6,
 		"title": "Subcampos y Aldeas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6784,7 +6788,7 @@
 		"id": "5.6.1",
 		"order": 1,
 		"title": "Parque Nacional Morro Moreno",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -6809,7 +6813,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SMorroMoreno_t.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SMorroMoreno.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -7146,7 +7150,7 @@
 		"id": "5.6.2",
 		"order": 2,
 		"title": "Reserva Nacional Laguna Parrillar",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -7171,7 +7175,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLagunaParrillar.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLagunaParrillar.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -7488,7 +7492,7 @@
 		"id": "5.6.3",
 		"order": 3,
 		"title": "Reserva Nacional Isla Mocha",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -7513,7 +7517,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SIslaMocha.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SIslaMocha.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -7849,7 +7853,7 @@
 		"id": "5.6.4",
 		"order": 4,
 		"title": "Parque Nacional Pan de Azúcar",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -7874,7 +7878,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SPanDeAzucar.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SPanDeAzucar.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -8215,7 +8219,7 @@
 		"id": "5.6.5",
 		"order": 5,
 		"title": "Reserva Nacional Los Flamencos",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -8240,7 +8244,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLosFlamencos.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLosFlamencos.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -8567,7 +8571,7 @@
 		"id": "5.6.6",
 		"order": 6,
 		"title": "Reserva Nacional Las Vicuñas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -8592,7 +8596,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLasVicuñas.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLasVicunas.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -8953,7 +8957,7 @@
 		"id": "5.6.7",
 		"order": 7,
 		"title": "Parque Radal Siete Tazas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -8978,7 +8982,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SSieteTazas.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SSieteTazas.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -9310,7 +9314,7 @@
 		"id": "5.6.8",
 		"order": 8,
 		"title": "Reserva Nacional Katalalixar",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -9335,7 +9339,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SKatalalixar.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SKatalalixar.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -9676,7 +9680,7 @@
 		"id": "5.6.9",
 		"order": 9,
 		"title": "Reserva Nacional Pampa del Tamarugal",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":24.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -9701,7 +9705,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SPampaTamarugal.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SPampaTamarugal.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -10019,7 +10023,7 @@
 		"id": "5.6.10",
 		"order": 10,
 		"title": "Parque Nacional Lauca",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -10044,7 +10048,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLauca.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLauca.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -10361,7 +10365,7 @@
 		"id": "5.6.11",
 		"order": 11,
 		"title": "Parque Nacional Nevado de Tres Cruces",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":24.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -10386,7 +10390,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SNevadoTresCruces.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SNevadoTresCruces.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -10717,7 +10721,7 @@
 		"id": "5.6.12",
 		"order": 12,
 		"title": "Parque Nacional Volcán Isluga",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -10742,7 +10746,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SVolcanIsluga.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SVolcanIsluga.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -11040,7 +11044,7 @@
 		"id": "5.6.13",
 		"order": 13,
 		"title": "Reserva Nacional Futaleufú",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -11065,7 +11069,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SFutaleufú.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SFutaleufu.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -11449,7 +11453,7 @@
 		"id": "5.6.14",
 		"order": 14,
 		"title": "Parque Nacional Laguna del Laja",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -11474,7 +11478,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLagunaDelLaja.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLagunaDelLaja2.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -11810,7 +11814,7 @@
 		"id": "5.6.15",
 		"order": 15,
 		"title": "Reserva Nacional Pingüino de Humboldt",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":24.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -11835,7 +11839,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SPingüinodeHumbold.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SPinguinodeHumbold.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -12182,7 +12186,7 @@
 		"id": "5.6.16",
 		"order": 16,
 		"title": "Parque Nacional Kawéscar",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -12207,7 +12211,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SKawéskar.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SKaweskar.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -12538,7 +12542,7 @@
 		"id": "5.6.17",
 		"order": 17,
 		"title": "Parque Nacional Puyehue",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -12563,7 +12567,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SPuyehue.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SPuyehue.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -12905,7 +12909,7 @@
 		"id": "5.6.18",
 		"order": 18,
 		"title": "Reserva Nacional Los Huemules del Niblinto",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":24.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -12930,7 +12934,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SHuemules.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SHuemules.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -13256,7 +13260,7 @@
 		"id": "5.6.19",
 		"order": 19,
 		"title": "Parque Nacional La Campana",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -13281,7 +13285,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLaCampana.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLaCampana.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -13636,7 +13640,7 @@
 		"id": "5.6.20",
 		"order": 20,
 		"title": "Reserva Nacional Lago Peñuelas",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -13661,7 +13665,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SLagoPeñuelas.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SLagoPenuelas.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -14002,7 +14006,7 @@
 		"id": "5.7",
 		"order": 7,
 		"title": "Subcampos de Servicio",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -14055,7 +14059,7 @@
 		"id": "5.7.1",
 		"order": 1,
 		"title": "Monumento Natural Cueva del Milodón",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -14080,7 +14084,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SMilodonPioneros.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SMilodonPioneros.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -14175,7 +14179,7 @@
 		"id": "5.7.2",
 		"order": 2,
 		"title": "Monumento Natural Salar de Surire",
-		"image":"http://parlamento.jamboree.cl/app/App_subcampos.png",
+		"image":"assets/icon/App_subcampos.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -14200,7 +14204,7 @@
 					{
 						"image_conf":
 							{
-								"source":"http://parlamento.jamboree.cl/app/subcampos/SSurireCaminantes.png",
+								"source":"http://pasaporte.jamboree.cl/app/img/subcampos/SSurireCaminantes.png",
 								"align":"center",
 								"background_color":[193,123,0]
 							} 
@@ -14315,7 +14319,7 @@
 		"root": true,
 		"title": "Programa",
 		"titleList": "Módulos de Programa",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"rootFontFamily": "DK Lemon Yellow Sun",
@@ -14899,43 +14903,43 @@
 								"items":
 								[
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/gorros.png",
+										"image": "assets/img/senderos/gorros.png",
 										"title": "Gorro para el sol.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
+										"image": "assets/img/senderos/bloqueador.png",
 										"title": "Uso de bloqueador solar factor 50 previo al inicio del módulo.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
+										"image": "assets/img/senderos/bloqueador.png",
 										"title": "Bloqueador solar por patrulla factor 50.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/botella.png",
+										"image": "assets/img/senderos/botellas.png",
 										"title": "Botella con agua.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bototos.png",
+										"image": "assets/img/senderos/bototos.png",
 										"title": "Bototos con caña o zapatillas con huella aptas para trekking.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/zapatillas.png",
+										"image": "assets/img/senderos/zapatillas.png",
 										"title": "No se permitirá el ingreso a participantes con zapatillas de lona, vans o sandalias.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/polera.png",
+										"image": "assets/img/senderos/polera.png",
 										"title": "Polera que cubra los hombros. No se permitirá el ingreso de participantes con poleras de tiritas o musculosas.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
@@ -14967,37 +14971,37 @@
 								"items":
 								[
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/gorros.png",
+										"image": "assets/img/senderos/gorros.png",
 										"title": "Idealmente gorros tipo safari y/o con cubre cuello.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/bloqueador.png",
+										"image": "assets/img/senderos/bloqueador.png",
 										"title": "Aplicar bloqueador en todas las zonas expuestas directamente al sol y reforzar el aplicado cada 1 hora.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/botella.png",
+										"image": "assets/img/senderos/botellas.png",
 										"title": "Botella de 500ml para evitar peso adicional ya que habrán dispuestos por lo menos 2 puntos de hidratación por los que pasarán las patrullas.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/calcetines.png",
+										"image": "assets/img/senderos/calcetines.png",
 										"title": "Uso de calcetines 3\/4 que queden sobre el tobillo para evitar heridas provocadas por el calzado. Evitar uso de soquetes o calcetines invisibles.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/polera.png",
+										"image": "assets/img/senderos/polera.png",
 										"title": "Idealmente usar poleras con filtro UV y material respirable.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
 									},
 									{
-										"image": "http://parlamento.jamboree.cl/app/senderos/morral.png",
+										"image": "assets/img/senderos/morral.png",
 										"title": "Evitar uso de morrales con cordones o tirantes muy delgados ya que se pueden generar heridas por roce al caminar.",
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
@@ -15205,26 +15209,26 @@
 							"items":
 							[
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/1_50px.png",
+								"image": "assets/icon/numeros/1_50px.png",
 								"title": "Equipamiento",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/2_50px.png",
+								"image": "assets/icon/numeros/2_50px.png",
 								"title": "Inicio y Control",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/3_50px.png",
+								"image": "assets/icon/numeros/3_50px.png",
 								"title": "Equilibrio y Velocidad",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							},
 							{
-								"image": "http://parlamento.jamboree.cl/app/numeros/4_50px.png",
+								"image": "assets/icon/numeros/4_50px.png",
 								"title": "Experiencia en Rampa",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
@@ -15940,7 +15944,7 @@
 		"id": "6.7",
 		"order": 7,
 		"title": "Jamboree TV",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -15988,7 +15992,7 @@
 		"id": "6.8",
 		"order": 8,
 		"title": "Celebraciones Masivas",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -16038,7 +16042,7 @@
 		"id": "6.8.1",
 		"order": 1,
 		"title": "Inauguración",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -16077,7 +16081,7 @@
 		"id": "6.8.2",
 		"order": 2,
 		"title": "Velada",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -16125,7 +16129,7 @@
 		"id": "6.8.3",
 		"order": 3,
 		"title": "Clausura",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
@@ -16173,7 +16177,7 @@
 		"id": "6.9",
 		"order": 9,
 		"title": "Animación Religiosa",
-		"image":"http://parlamento.jamboree.cl/app/App_programa.png",
+		"image":"assets/icon/App_programa.png",
 		"fontSize":30.0,
 		"font":"DK Lemon Yellow Sun",
 		"titleColor": [209,173,53],
