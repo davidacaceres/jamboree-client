@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                         ]),
                     child: TabBar(
                         tabs: [
-                          Tab(icon: Icon(Icons.home, size: 30)),
+                          Tab(icon:Icon(Icons.home, size: 30)),//icon: Image.asset('assets/img/locations/App_capas.png')),//Icon(Icons.home, size: 30)),
                           Tab(icon: Icon(Icons.map, size: 30))
                         ],
                         unselectedLabelColor: theme.ScBottomBar.unSelect,

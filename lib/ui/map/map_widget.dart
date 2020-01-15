@@ -156,7 +156,7 @@ class MapWidgetState extends State<MapWidget> {
 
   Widget _popUpLayer() {
     return PopupMenuButton<MapType>(
-      //icon: new Image.asset('images/icons/logout.png'),
+      child: Image.asset('assets/img/locations/App_capas.png'),
       onSelected: (MapType result) {
         setState(() {
           _defaultMapType = result;
