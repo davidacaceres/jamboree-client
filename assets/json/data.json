@@ -14714,7 +14714,7 @@
 		"tabPrimaryColor":[228,177,52],
 		"tabSecondaryColor":[206,137,0],
 		"tabTextColor":[50,64,101],
-		"search": "libremente instituciones realizar deporte horario específico elegir contaminantes utilizando cupos ciclovía caminata recibir información participación participar desea previa participará crisis relacionadas vehículos especial parque instructores pueden disponibles ciudad climática senderos buena inscripción skateboard trekking retirar excluyentes días actividades moverse enseñarán scooters clase interior muy juegos podrán scouts puerto aprender patrulla hacen corta realizarán durante invitarán guías picarquín efectos expo distintos ticket disfrutar podrá desafíos realizó tienen completos bowlpark módulo subcampo mostrarán bicicletas día rampa breakdance través consecutivos limitados aldea duración ",
+		"search": "libremente instituciones realizar deporte horario específico elegir contaminantes utilizando cupos ciclovía caminata recibir información participación participar desea previa participará crisis relacionadas vehículos especial parque instructores pueden disponibles ciudad climática senderos buena inscripción skateboard trekking retirar excluyentes días actividades moverse enseñarán scooters clase interior muy juegos podrán scouts puerto aprender patrulla hacen corta realizarán durante invitarán guías picarquín efectos expo distintos ticket disfrutar podrá desafíos realizó tienen completos bowlpark módulo subcampo mostrarán bicicletas día breakdance través consecutivos limitados aldea duración ",
 		"display": [
 			{
 				"short_title": "unico",
@@ -14753,7 +14753,7 @@
 									},
 									{
 										"title": "Bowlpark",
-										"subtitle": "Una rampa de skateboard donde instructores te enseñarán a disfrutar de este deporte y realizarán una clase de breakdance.",
+										"subtitle": "Una pista de obstáculos de skateboard donde instructores te enseñarán a disfrutar de este deporte y realizarán una clase de breakdance.",
 										"subtitleFontSize": 14.0,
 										"backgroundColor":[50,64,101],
 										"titleColor":[255,255,255]
@@ -15176,7 +15176,7 @@
 		"tabPrimaryColor":[228,177,52],
 		"tabSecondaryColor":[206,137,0],
 		"tabTextColor":[50,64,101],
-		"search": "breakdancing cursos skateboard deporte entregarán lugar grupo mismo inicio experimentar fases actividad podrán encontrar equipamiento realizarán durante experiencia cuenta herramientas inscribirte control instructores poder puedes bowlpark equilibrio realizará día básicas rampa adicionalmente velocidad ",
+		"search": "breakdancing cursos skateboard deporte entregarán lugar grupo mismo inicio experimentar fases actividad podrán encontrar equipamiento realizarán durante experiencia cuenta herramientas inscribirte control instructores poder puedes bowlpark equilibrio realizará día básicas adicionalmente velocidad ",
 		"display": [
 			{
 				"short_title": "unico",
@@ -15187,7 +15187,7 @@
 							"font":"Aspira Nar Medium",
 							"fontSize":18.0,
 							"background_color":[193,123,0],
-							"data": "En Bowlpark podrán encontrar una rampa de skateboard, donde un grupo de instructores les entregarán las herramientas básicas para poder experimentar este deporte."
+							"data": "En Bowlpark podrán encontrar una pista de obstáculos de skateboard, donde un grupo de instructores les entregarán las herramientas básicas para poder experimentar este deporte."
 						}
 					},
 					{
@@ -15229,7 +15229,7 @@
 							},
 							{
 								"image": "assets/icon/numeros/4_50px.png",
-								"title": "Experiencia en Rampa",
+								"title": "Experiencia",
 								"backgroundColor":[50,64,101],
 								"titleColor":[255,255,255]
 							}
