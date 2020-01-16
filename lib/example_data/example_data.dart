@@ -55,17 +55,16 @@ class _ExamplesProvider {
           resultados.add(rPalabra);
         }
     }
-
-    resultado.addAll(resultados[0]);
-    resultados.forEach((element){
-      resultado= resultado.intersection(element);
-
-    });
-
+    if(resultados.isNotEmpty) {
+      resultado.addAll(resultados[0]);
+      resultados.forEach((element) {
+        resultado = resultado.intersection(element);
+      });
+      addExampleHistory(search);
+    }
 
     print('[CONT] RESULTADO BUSQUEDA DE $search total: ${resultado.length}');
 
-    addExampleHistory(search);
 
     return resultado.toList();
   }
