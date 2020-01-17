@@ -1,7 +1,7 @@
 name: Pasaporte_2020
 description: Pasaporte Jamboree 2020 Chile
 
-version: 1.0.2+11
+version: 1.0.2+12
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
