@@ -43,9 +43,6 @@ class DetailContent extends StatelessWidget {
   }
 
   Padding getTitle(BuildContext context, Content content,Color txtColor) {
-    //Color titleColor = getTextColor(
-    //    context, content.titleColor, sc_theme.ScContent.defaultTitleColor);
-
     TextStyle txtStyle =
         sc_theme.ScContent.titleContent.copyWith(color: txtColor);
     if (content.font != null && content.font.isNotEmpty) {
@@ -64,8 +61,8 @@ class DetailContent extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Padding(
                     padding: EdgeInsets.all(5),
-                    child: getImageContent(
-                        url: content.image, fit: BoxFit.contain))),
+                    child: Hero(tag: 'root_content_${content.id}',child:getImageContent(
+                        url: content.image, fit: BoxFit.contain)))),
             Expanded(
                 flex: 5,
                 child: Padding(

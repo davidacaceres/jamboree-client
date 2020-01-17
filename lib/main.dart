@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "initial",
       navigatorKey: locator<NavigationService>().navigatorKey,
       routes: getApplicationRoutes(),
+
       onGenerateRoute: (RouteSettings settings){
         print('[ROUTE] La ruta llamada es ${settings.name} y no fue encontrada, se deriva a home page');
         return MaterialPageRoute(builder:(BuildContext context)=> HomePage());

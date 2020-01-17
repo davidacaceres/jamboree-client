@@ -42,5 +42,10 @@ class Version {
   @override
   int get hashCode => description.hashCode;
 
+  @override
+  String toString() {
+    return 'Version{description: $description, content: $content, location: $location}';
+  }
+
 
 }

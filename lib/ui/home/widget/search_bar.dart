@@ -34,12 +34,13 @@ class HomeSearchBar extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: TextField(
-            //    enabled: false,
+            enabled: true,
             decoration: InputDecoration(
                 border: InputBorder.none, hintText: 'Buscador'),
             onTap: () {
               _loadSearchPage(context);
             },
+            enableInteractiveSelection: false,
           ),
         ),
       ],

@@ -10,6 +10,7 @@ Content contentFromJson(String str) => Content.fromMap(json.decode(str));
 
 String contentToJson(Content data) => json.encode(data.toMap());
 
+
 class Content {
   String id;
   int order;
@@ -114,6 +115,38 @@ class Content {
             : List<dynamic>.from(tabTextColor.map((x) => x)),
         "rootFontFamily": rootFontFamily,
         "rootFontSize": rootFontSize,
-        "rootFontColor": rootFontColor == null ? null: List<dynamic>.from(tabTextColor.map((x) => x)),
+        "rootFontColor": rootFontColor == null ? null: List<dynamic>.from(rootFontColor.map((x) => x)),
       };
+
+
+  Map toJson() => {
+    "id": id,
+    "order": order,
+    "title": title,
+    "titleList": titleList,
+    "image": image,
+    "background_page": backgroundPage == null
+        ? null
+        : List<dynamic>.from(backgroundPage.map((x) => x)),
+    "display": List<dynamic>.from(display.map((x) => x.toMap())),
+    "root": root,
+    "search": search,
+    "titleColor": titleColor == null
+        ? null
+        : List<dynamic>.from(titleColor.map((x) => x)),
+    "font": font,
+    "fontSize": fontSize,
+    "tabPrimaryColor": tabPrimaryColor == null
+        ? null
+        : List<dynamic>.from(tabPrimaryColor.map((x) => x)),
+    "tabSecondaryColor": tabSecondaryColor == null
+        ? null
+        : List<dynamic>.from(tabSecondaryColor.map((x) => x)),
+    "tabTextColor": tabTextColor == null
+        ? null
+        : List<dynamic>.from(tabTextColor.map((x) => x)),
+    "rootFontFamily": rootFontFamily,
+    "rootFontSize": rootFontSize,
+    "rootFontColor": rootFontColor == null ? null: List<dynamic>.from(rootFontColor.map((x) => x)),
+  };
 }

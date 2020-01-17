@@ -73,7 +73,7 @@ class ContentRootWidget extends StatelessWidget {
                   new Expanded(
                       child: Padding(
                           padding: EdgeInsets.all(15),
-                          child: getImageContent(url:content.image))),
+                          child: Hero(tag: 'root_content_${content.id}' ,child:getImageContent(url:content.image)))),
                   Container(
                       alignment: Alignment.bottomCenter,
                       width: MediaQuery.of(context).size.width*.40,

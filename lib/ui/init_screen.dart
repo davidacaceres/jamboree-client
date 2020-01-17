@@ -3,9 +3,6 @@ import 'dart:async';
 import 'package:Pasaporte_2020/config/config_definition.dart' as sc_theme;
 
 import 'package:Pasaporte_2020/example_data/example_data.dart';
-import 'package:Pasaporte_2020/providers/locator.dart';
-import 'package:Pasaporte_2020/routes/routes.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';

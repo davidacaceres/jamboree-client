@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:Pasaporte_2020/model/version.dart';
 import 'package:path_provider/path_provider.dart';
 
 
@@ -39,6 +38,12 @@ Future<File> getVersionFile() async{
   return await _localVersionFile;
 }
 
+
+Future<File> getLocationsFile() async{
+  return await _localLocationFile;
+}
+
+
 Future<File> getDataFile() async{
   return await _localDataFile;
 }
@@ -47,6 +52,7 @@ Future<File> writeLocalData(String data) async {
   final file = await _localDataFile;
 
   // Write the file
+  print('Save data file in: ${file.path}');
   return file.writeAsString(data,encoding: utf8);
 }
 
@@ -54,12 +60,14 @@ Future<File> writeLocalData(String data) async {
 Future<File> writeLocalLocations(String locationsJson) async {
   print('[DS] ******** Escribiendo archivo de ubicaciones');
   final file = await _localLocationFile;
-  return file.writeAsString(locationsJson);
+  return file.writeAsString(locationsJson,encoding: utf8);
 }
 
 
-Future<File> writeLocalVersion(Version versionJson) async {
+Future<File> writeLocalVersion(String version) async {
   print('[DS] ******** Escribiendo archivo de version');
-  final file = await _localLocationFile;
-  return file.writeAsString(versionJson.toString());
+  final file = await _localVersionFile;
+  print('Version to save: $version');
+  print('Save version file in: ${file.path}');
+  return file.writeAsString(version,encoding: utf8);
 }

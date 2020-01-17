@@ -59,12 +59,12 @@ class SearchResult extends StatelessWidget {
   Widget getListItem(BuildContext context, Content content, index) {
     final makeListTile = ListTile(
         onTap: () {
-          Navigator.pushNamed(context, "detail", arguments: content);
+          Navigator.pushNamed(context, "detail", arguments: content,);
         },
         leading: Container(
           child: Padding(
               padding: EdgeInsets.only(top: 3.0, bottom: 3.0),
-              child: getImageContent(url: content.image)),
+              child: Hero(tag: 'root_content_${content.id}' ,child:getImageContent(url: content.image))),
         ),
         title: Container(
             child: Text(

@@ -133,10 +133,6 @@ class DisplayWidget extends StatelessWidget {
     }
   }
 
-  Widget _getChilds(BuildContext context, List<Child> childs, Color colorCard) {
-    return Column(children: _getChild(context, childs));
-  }
-
   List<Widget> _getChilds2(
       BuildContext context, List<Child> childs, Color colorCard) {
     return _getChild(context, childs);
